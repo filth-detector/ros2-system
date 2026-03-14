@@ -23,22 +23,6 @@
   gz_type_name: gz.msgs.Twist
   direction: ROS_TO_GZ
 
-# 3D point cloud from simulated LiDAR → ROS
-# NOTE: Gazebo gpu_lidar publishes PointCloudPacked on <topic>/points,
-# i.e. /scan/points/points when sensor <topic> is /scan/points.
-- ros_topic_name: /scan/points
-  gz_topic_name: /scan/points/points
-  ros_type_name: sensor_msgs/msg/PointCloud2
-  gz_type_name: gz.msgs.PointCloudPacked
-  direction: GZ_TO_ROS
-
-# IMU data → ROS
-- ros_topic_name: /imu/data
-  gz_topic_name: /imu/data
-  ros_type_name: sensor_msgs/msg/Imu
-  gz_type_name: gz.msgs.IMU
-  direction: GZ_TO_ROS
-
 # TF from Gazebo diff_drive (odom → base_link) → ROS
 - ros_topic_name: /tf
   gz_topic_name: /tf
