@@ -1,0 +1,184 @@
+<?xml version="1.0"?>
+<!--
+  gazebo_properties.xacro — Gazebo Harmonic simulation plugins.
+
+  Conditionally included by robot.xacro when use_sim:=true.
+  Provides physics simulation for the differential-drive robot:
+
+  Plugins:
+    - DiffDrive         — Subscribes to /cmd_vel, publishes /odom + TF
+    - JointStatePublisher — Publishes /joint_states for wheel joints
+    - 3D GPU LiDAR      — Simulates Unitree L1 (360° × 18-line, 25 m range)
+    - IMU sensor         — 200 Hz accelerometer + gyroscope on base_link
+
+  Topic names use absolute paths so the ros_gz_bridge can map them
+  directly to ROS 2 topics without model-name scoping.
+-->
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <!-- ============================================================ -->
+    <!-- Differential Drive Controller                                 -->
+    <!-- ============================================================ -->
+    <gazebo>
+        <plugin filename="gz-sim-diff-drive-system"
+                name="gz::sim::systems::DiffDrive">
+            <left_joint>base_left_back_wheel_joint</left_joint>
+            <right_joint>base_right_back_wheel_joint</right_joint>
+            <wheel_separation>0.6355</wheel_separation>
+            <wheel_radius>0.1687</wheel_radius>
+            <max_linear_acceleration>2.5</max_linear_acceleration>
+            <min_linear_acceleration>-2.5</min_linear_acceleration>
+            <max_angular_acceleration>2.0</max_angular_acceleration>
+            <min_angular_acceleration>-2.0</min_angular_acceleration>
+            <max_linear_velocity>1.5</max_linear_velocity>
+            <min_linear_velocity>-0.5</min_linear_velocity>
+            <topic>/cmd_vel</topic>
+            <odom_topic>/odom</odom_topic>
+            <tf_topic>/tf</tf_topic>
+            <frame_id>odom</frame_id>
+            <child_frame_id>base_link</child_frame_id>
+            <odom_publish_frequency>10</odom_publish_frequency>
+        </plugin>
+    </gazebo>
+
+    <!-- ============================================================ -->
+    <!-- Joint State Publisher (wheel rotations)                       -->
+    <!-- ============================================================ -->
+    <gazebo>
+        <plugin filename="gz-sim-joint-state-publisher-system"
+                name="gz::sim::systems::JointStatePublisher">
+            <joint_name>base_left_back_wheel_joint</joint_name>
+            <joint_name>base_right_back_wheel_joint</joint_name>
+            <topic>/joint_states</topic>
+            <update_rate>10</update_rate>
+        </plugin>
+    </gazebo>
+
+    <!-- ============================================================ -->
+    <!-- 3D LiDAR sensor (simulates Unitree L1)                       -->
+    <!-- 360° horizontal, ~18 vertical lines, 25 m range, 10 Hz       -->
+    <!-- ============================================================ -->
+    <gazebo reference="lidar_link">
+        <sensor name="lidar" type="gpu_lidar">
+            <topic>/scan/points</topic>
+            <update_rate>10</update_rate>
+            <always_on>true</always_on>
+            <visualize>true</visualize>
+            <lidar>
+                <scan>
+                    <horizontal>
+                        <samples>360</samples>
+                        <resolution>1</resolution>
+                        <min_angle>-3.14159</min_angle>
+                        <max_angle>3.14159</max_angle>
+                    </horizontal>
+                    <vertical>
+                        <samples>18</samples>
+                        <resolution>1</resolution>
+                        <min_angle>-0.2618</min_angle>
+                        <max_angle>0.7854</max_angle>
+                    </vertical>
+                </scan>
+                <range>
+                    <min>0.1</min>
+                    <max>25.0</max>
+                    <resolution>0.01</resolution>
+                </range>
+                <noise>
+                    <type>gaussian</type>
+                    <mean>0</mean>
+                    <stddev>0.005</stddev>
+                </noise>
+            </lidar>
+        </sensor>
+    </gazebo>
+
+    <!-- ============================================================ -->
+    <!-- IMU sensor on base_link (200 Hz)                              -->
+    <!-- ============================================================ -->
+    <gazebo reference="base_link">
+        <sensor name="imu" type="imu">
+            <topic>/imu/data</topic>
+            <update_rate>200</update_rate>
+            <always_on>true</always_on>
+            <imu>
+                <angular_velocity>
+                    <x><noise type="gaussian"><mean>0</mean><stddev>0.0002</stddev></noise></x>
+                    <y><noise type="gaussian"><mean>0</mean><stddev>0.0002</stddev></noise></y>
+                    <z><noise type="gaussian"><mean>0</mean><stddev>0.0002</stddev></noise></z>
+                </angular_velocity>
+                <linear_acceleration>
+                    <x><noise type="gaussian"><mean>0</mean><stddev>0.017</stddev></noise></x>
+                    <y><noise type="gaussian"><mean>0</mean><stddev>0.017</stddev></noise></y>
+                    <z><noise type="gaussian"><mean>0</mean><stddev>0.017</stddev></noise></z>
+                </linear_acceleration>
+            </imu>
+        </sensor>
+    </gazebo>
+
+    <!-- ============================================================ -->
+    <!-- RGB Camera sensor (top of al_profile_link, faces +x/forward) -->
+    <!-- 640×480 @ 30 Hz, 80° horizontal FOV                          -->
+    <!-- ============================================================ -->
+    <gazebo reference="camera_link">
+        <sensor name="camera" type="camera">
+            <topic>/camera/image_raw</topic>
+            <update_rate>30</update_rate>
+            <always_on>true</always_on>
+            <visualize>true</visualize>
+            <camera>
+                <horizontal_fov>1.3962634</horizontal_fov>
+                <image>
+                    <width>640</width>
+                    <height>480</height>
+                    <format>R8G8B8</format>
+                </image>
+                <clip>
+                    <near>0.1</near>
+                    <far>100</far>
+                </clip>
+                <noise>
+                    <type>gaussian</type>
+                    <mean>0</mean>
+                    <stddev>0.007</stddev>
+                </noise>
+            </camera>
+        </sensor>
+    </gazebo>
+
+    <!-- ============================================================ -->
+    <!-- Wheel friction                                                -->
+    <!-- ============================================================ -->
+    <gazebo reference="left_back_wheel_link">
+        <mu1>1.0</mu1>
+        <mu2>1.0</mu2>
+        <kp>500000.0</kp>
+        <kd>10.0</kd>
+        <minDepth>0.001</minDepth>
+    </gazebo>
+
+    <gazebo reference="right_back_wheel_link">
+        <mu1>1.0</mu1>
+        <mu2>1.0</mu2>
+        <kp>500000.0</kp>
+        <kd>10.0</kd>
+        <minDepth>0.001</minDepth>
+    </gazebo>
+
+    <!-- Low friction caster for smooth turning -->
+    <gazebo reference="caster_wheel">
+        <mu1>0.001</mu1>
+        <mu2>0.001</mu2>
+        <kp>500000.0</kp>
+        <kd>10.0</kd>
+    </gazebo>
+
+    <!-- Base link visual colour in Gazebo -->
+    <gazebo reference="base_link">
+        <material>
+            <ambient>0.0 0.6 0.0 1</ambient>
+            <diffuse>0.0 0.6 0.0 1</diffuse>
+        </material>
+    </gazebo>
+
+</robot>

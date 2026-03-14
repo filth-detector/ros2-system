@@ -1,0 +1,68 @@
+# =============================================================================
+# gz_bridge_config.yaml — ros_gz_bridge topic mapping for Gazebo simulation.
+#
+# Maps Gazebo Harmonic transport topics to ROS 2 topics so that the
+# Nav2/SLAM stack receives the same messages it would from real hardware.
+#
+# IMPORTANT: Gazebo scopes sensor frame_ids as model/link/sensor
+# (e.g. my_robot/base_link/lidar).  A static TF publisher in
+# gazebo_launch.py bridges the scoped frame to the URDF frame.
+# =============================================================================
+
+# Simulation clock → ROS /clock (drives use_sim_time)
+- ros_topic_name: /clock
+  gz_topic_name: /clock
+  ros_type_name: rosgraph_msgs/msg/Clock
+  gz_type_name: gz.msgs.Clock
+  direction: GZ_TO_ROS
+
+# Velocity commands from Nav2/teleop → Gazebo diff_drive
+- ros_topic_name: /cmd_vel
+  gz_topic_name: /cmd_vel
+  ros_type_name: geometry_msgs/msg/Twist
+  gz_type_name: gz.msgs.Twist
+  direction: ROS_TO_GZ
+
+# 3D point cloud from simulated LiDAR → ROS
+# NOTE: Gazebo gpu_lidar publishes PointCloudPacked on <topic>/points,
+# i.e. /scan/points/points when sensor <topic> is /scan/points.
+- ros_topic_name: /scan/points
+  gz_topic_name: /scan/points/points
+  ros_type_name: sensor_msgs/msg/PointCloud2
+  gz_type_name: gz.msgs.PointCloudPacked
+  direction: GZ_TO_ROS
+
+# IMU data → ROS
+- ros_topic_name: /imu/data
+  gz_topic_name: /imu/data
+  ros_type_name: sensor_msgs/msg/Imu
+  gz_type_name: gz.msgs.IMU
+  direction: GZ_TO_ROS
+
+# TF from Gazebo diff_drive (odom → base_link) → ROS
+- ros_topic_name: /tf
+  gz_topic_name: /tf
+  ros_type_name: tf2_msgs/msg/TFMessage
+  gz_type_name: gz.msgs.Pose_V
+  direction: GZ_TO_ROS
+
+# Joint states (wheel rotations) → ROS
+- ros_topic_name: /joint_states
+  gz_topic_name: /joint_states
+  ros_type_name: sensor_msgs/msg/JointState
+  gz_type_name: gz.msgs.Model
+  direction: GZ_TO_ROS
+
+# Camera image → ROS
+- ros_topic_name: /camera/image_raw
+  gz_topic_name: /camera/image_raw
+  ros_type_name: sensor_msgs/msg/Image
+  gz_type_name: gz.msgs.Image
+  direction: GZ_TO_ROS
+
+# Camera info → ROS
+- ros_topic_name: /camera/camera_info
+  gz_topic_name: /camera/camera_info
+  ros_type_name: sensor_msgs/msg/CameraInfo
+  gz_type_name: gz.msgs.CameraInfo
+  direction: GZ_TO_ROS

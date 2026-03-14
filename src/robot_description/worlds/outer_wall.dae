@@ -1,0 +1,2979 @@
+<?xml version="1.0" ?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+	<asset>
+		<contributor>
+			<authoring_tool>pCon.planner [8.13.0.101]</authoring_tool>
+		</contributor>
+		<created>2026-03-01T15:48:06</created>
+		<modified>2026-03-01T15:48:06</modified>
+		<title></title>
+		<unit meter="1" name="meters" />
+		<up_axis>Z_UP</up_axis>
+	</asset>
+	<library_visual_scenes>
+		<visual_scene id="defaultScene">
+			<node id="Node_0" name="EGR_INSERT" layer="_72_EGR_INSERT">
+				<node id="Node_1" name="x3g_room:Wall:Right" layer="_72_EGR_ROOM5_D3_WALL">
+					<matrix>-1 0 0 27.140351 0 -1 0 -2.5215348 0 0 1 0 0 0 0 1 </matrix>
+					<instance_geometry url="#geom_3d_0">
+						<bind_material>
+							<technique_common>
+								<instance_material symbol="geom_3d_0_material" target="#_daed54b0fe6e11e1a21f0800200c9a66">
+									<bind_vertex_input semantic="texcoord0" input_semantic="TEXCOORD" input_set="0" />
+								</instance_material>
+							</technique_common>
+						</bind_material>
+					</instance_geometry>
+				</node>
+				<node id="Node_2" name="x3g_room:Wall:Left" layer="_72_EGR_ROOM5_D3_WALL">
+					<matrix>-1 0 0 27.140351 0 -1 0 -2.5215348 0 0 1 0 0 0 0 1 </matrix>
+					<instance_geometry url="#geom_3d_1">
+						<bind_material>
+							<technique_common>
+								<instance_material symbol="geom_3d_1_material" target="#_daed54b0fe6e11e1a21f0800200c9a66">
+									<bind_vertex_input semantic="texcoord0" input_semantic="TEXCOORD" input_set="0" />
+								</instance_material>
+							</technique_common>
+						</bind_material>
+					</instance_geometry>
+				</node>
+				<node id="Node_3" name="x3g_room:Wall:Middle" layer="_72_EGR_ROOM5_D3_WALL">
+					<matrix>-1 0 0 27.140351 0 -1 0 -2.5215348 0 0 1 0 0 0 0 1 </matrix>
+					<instance_geometry url="#geom_3d_2">
+						<bind_material>
+							<technique_common>
+								<instance_material symbol="geom_3d_2_material" target="#_daed54b0fe6e11e1a21f0800200c9a66">
+									<bind_vertex_input semantic="texcoord0" input_semantic="TEXCOORD" input_set="0" />
+								</instance_material>
+							</technique_common>
+						</bind_material>
+					</instance_geometry>
+				</node>
+			</node>
+			<node id="Node_4" name="EGR_INSERT" layer="_72_EGR_INSERT">
+				<node id="Node_5" name="x3g_room:Wall:Right" layer="_72_EGR_ROOM5_D3_WALL">
+					<matrix>0 -1 0 9.3842598 1 0 0 -2.5215348 0 0 1 0 0 0 0 1 </matrix>
+					<instance_geometry url="#geom_3d_3">
+						<bind_material>
+							<technique_common>
+								<instance_material symbol="geom_3d_3_material" target="#_daed54b0fe6e11e1a21f0800200c9a66">
+									<bind_vertex_input semantic="texcoord0" input_semantic="TEXCOORD" input_set="0" />
+								</instance_material>
+							</technique_common>
+						</bind_material>
+					</instance_geometry>
+				</node>
+				<node id="Node_6" name="x3g_room:Wall:Left" layer="_72_EGR_ROOM5_D3_WALL">
+					<matrix>0 -1 0 9.3842598 1 0 0 -2.5215348 0 0 1 0 0 0 0 1 </matrix>
+					<instance_geometry url="#geom_3d_4">
+						<bind_material>
+							<technique_common>
+								<instance_material symbol="geom_3d_4_material" target="#_daed54b0fe6e11e1a21f0800200c9a66">
+									<bind_vertex_input semantic="texcoord0" input_semantic="TEXCOORD" input_set="0" />
+								</instance_material>
+							</technique_common>
+						</bind_material>
+					</instance_geometry>
+				</node>
+				<node id="Node_7" name="x3g_room:Wall:Middle" layer="_72_EGR_ROOM5_D3_WALL">
+					<matrix>0 -1 0 9.3842598 1 0 0 -2.5215348 0 0 1 0 0 0 0 1 </matrix>
+					<instance_geometry url="#geom_3d_5">
+						<bind_material>
+							<technique_common>
+								<instance_material symbol="geom_3d_5_material" target="#_daed54b0fe6e11e1a21f0800200c9a66">
+									<bind_vertex_input semantic="texcoord0" input_semantic="TEXCOORD" input_set="0" />
+								</instance_material>
+							</technique_common>
+						</bind_material>
+					</instance_geometry>
+				</node>
+			</node>
+			<node id="Node_8" name="EGR_INSERT" layer="_72_EGR_INSERT">
+				<node id="Node_9" name="x3g_room:Wall:Right" layer="_72_EGR_ROOM5_D3_WALL">
+					<matrix>-1 0 0 9.3842598 0 -1 0 -1.5128288 0 0 1 0 0 0 0 1 </matrix>
+					<instance_geometry url="#geom_3d_6">
+						<bind_material>
+							<technique_common>
+								<instance_material symbol="geom_3d_6_material" target="#_daed54b0fe6e11e1a21f0800200c9a66">
+									<bind_vertex_input semantic="texcoord0" input_semantic="TEXCOORD" input_set="0" />
+								</instance_material>
+							</technique_common>
+						</bind_material>
+					</instance_geometry>
+				</node>
+				<node id="Node_10" name="x3g_room:Wall:Left" layer="_72_EGR_ROOM5_D3_WALL">
+					<matrix>-1 0 0 9.3842598 0 -1 0 -1.5128288 0 0 1 0 0 0 0 1 </matrix>
+					<instance_geometry url="#geom_3d_7">
+						<bind_material>
+							<technique_common>
+								<instance_material symbol="geom_3d_7_material" target="#_daed54b0fe6e11e1a21f0800200c9a66">
+									<bind_vertex_input semantic="texcoord0" input_semantic="TEXCOORD" input_set="0" />
+								</instance_material>
+							</technique_common>
+						</bind_material>
+					</instance_geometry>
+				</node>
+				<node id="Node_11" name="x3g_room:Wall:Middle" layer="_72_EGR_ROOM5_D3_WALL">
+					<matrix>-1 0 0 9.3842598 0 -1 0 -1.5128288 0 0 1 0 0 0 0 1 </matrix>
+					<instance_geometry url="#geom_3d_8">
+						<bind_material>
+							<technique_common>
+								<instance_material symbol="geom_3d_8_material" target="#_daed54b0fe6e11e1a21f0800200c9a66">
+									<bind_vertex_input semantic="texcoord0" input_semantic="TEXCOORD" input_set="0" />
+								</instance_material>
+							</technique_common>
+						</bind_material>
+					</instance_geometry>
+				</node>
+			</node>
+			<node id="Node_12" name="EGR_INSERT" layer="_72_EGR_INSERT">
+				<node id="Node_13" name="x3g_room:Wall:Right" layer="_72_EGR_ROOM5_D3_WALL">
+					<matrix>0 -1 0 8.155458 1 0 0 -1.5128288 0 0 1 0 0 0 0 1 </matrix>
+					<instance_geometry url="#geom_3d_9">
+						<bind_material>
+							<technique_common>
+								<instance_material symbol="geom_3d_9_material" target="#_daed54b0fe6e11e1a21f0800200c9a66">
+									<bind_vertex_input semantic="texcoord0" input_semantic="TEXCOORD" input_set="0" />
+								</instance_material>
+							</technique_common>
+						</bind_material>
+					</instance_geometry>
+				</node>
+				<node id="Node_14" name="x3g_room:Wall:Left" layer="_72_EGR_ROOM5_D3_WALL">
+					<matrix>0 -1 0 8.155458 1 0 0 -1.5128288 0 0 1 0 0 0 0 1 </matrix>
+					<instance_geometry url="#geom_3d_10">
+						<bind_material>
+							<technique_common>
+								<instance_material symbol="geom_3d_10_material" target="#_daed54b0fe6e11e1a21f0800200c9a66">
+									<bind_vertex_input semantic="texcoord0" input_semantic="TEXCOORD" input_set="0" />
+								</instance_material>
+							</technique_common>
+						</bind_material>
+					</instance_geometry>
+				</node>
+				<node id="Node_15" name="x3g_room:Wall:Middle" layer="_72_EGR_ROOM5_D3_WALL">
+					<matrix>0 -1 0 8.155458 1 0 0 -1.5128288 0 0 1 0 0 0 0 1 </matrix>
+					<instance_geometry url="#geom_3d_11">
+						<bind_material>
+							<technique_common>
+								<instance_material symbol="geom_3d_11_material" target="#_daed54b0fe6e11e1a21f0800200c9a66">
+									<bind_vertex_input semantic="texcoord0" input_semantic="TEXCOORD" input_set="0" />
+								</instance_material>
+							</technique_common>
+						</bind_material>
+					</instance_geometry>
+				</node>
+			</node>
+			<node id="Node_16" name="EGR_INSERT" layer="_72_EGR_INSERT">
+				<node id="Node_17" name="x3g_room:Wall:Right" layer="_72_EGR_ROOM5_D3_WALL">
+					<matrix>-1 0 0 8.155458 0 -1 0 -0.34893494 0 0 1 0 0 0 0 1 </matrix>
+					<instance_geometry url="#geom_3d_12">
+						<bind_material>
+							<technique_common>
+								<instance_material symbol="geom_3d_12_material" target="#_daed54b0fe6e11e1a21f0800200c9a66">
+									<bind_vertex_input semantic="texcoord0" input_semantic="TEXCOORD" input_set="0" />
+								</instance_material>
+							</technique_common>
+						</bind_material>
+					</instance_geometry>
+				</node>
+				<node id="Node_18" name="x3g_room:Wall:Left" layer="_72_EGR_ROOM5_D3_WALL">
+					<matrix>-1 0 0 8.155458 0 -1 0 -0.34893494 0 0 1 0 0 0 0 1 </matrix>
+					<instance_geometry url="#geom_3d_13">
+						<bind_material>
+							<technique_common>
+								<instance_material symbol="geom_3d_13_material" target="#_daed54b0fe6e11e1a21f0800200c9a66">
+									<bind_vertex_input semantic="texcoord0" input_semantic="TEXCOORD" input_set="0" />
+								</instance_material>
+							</technique_common>
+						</bind_material>
+					</instance_geometry>
+				</node>
+				<node id="Node_19" name="x3g_room:Wall:Middle" layer="_72_EGR_ROOM5_D3_WALL">
+					<matrix>-1 0 0 8.155458 0 -1 0 -0.34893494 0 0 1 0 0 0 0 1 </matrix>
+					<instance_geometry url="#geom_3d_14">
+						<bind_material>
+							<technique_common>
+								<instance_material symbol="geom_3d_14_material" target="#_daed54b0fe6e11e1a21f0800200c9a66">
+									<bind_vertex_input semantic="texcoord0" input_semantic="TEXCOORD" input_set="0" />
+								</instance_material>
+							</technique_common>
+						</bind_material>
+					</instance_geometry>
+				</node>
+			</node>
+			<node id="Node_20" name="EGR_INSERT" layer="_72_EGR_INSERT">
+				<node id="Node_21" name="x3g_room:Wall:Right" layer="_72_EGR_ROOM5_D3_WALL">
+					<matrix>0 1 0 0.47572975 -1 0 0 -0.34893494 0 0 1 0 0 0 0 1 </matrix>
+					<instance_geometry url="#geom_3d_15">
+						<bind_material>
+							<technique_common>
+								<instance_material symbol="geom_3d_15_material" target="#_daed54b0fe6e11e1a21f0800200c9a66">
+									<bind_vertex_input semantic="texcoord0" input_semantic="TEXCOORD" input_set="0" />
+								</instance_material>
+							</technique_common>
+						</bind_material>
+					</instance_geometry>
+				</node>
+				<node id="Node_22" name="x3g_room:Wall:Left" layer="_72_EGR_ROOM5_D3_WALL">
+					<matrix>0 1 0 0.47572975 -1 0 0 -0.34893494 0 0 1 0 0 0 0 1 </matrix>
+					<instance_geometry url="#geom_3d_16">
+						<bind_material>
+							<technique_common>
+								<instance_material symbol="geom_3d_16_material" target="#_daed54b0fe6e11e1a21f0800200c9a66">
+									<bind_vertex_input semantic="texcoord0" input_semantic="TEXCOORD" input_set="0" />
+								</instance_material>
+							</technique_common>
+						</bind_material>
+					</instance_geometry>
+				</node>
+				<node id="Node_23" name="x3g_room:Wall:Middle" layer="_72_EGR_ROOM5_D3_WALL">
+					<matrix>0 1 0 0.47572975 -1 0 0 -0.34893494 0 0 1 0 0 0 0 1 </matrix>
+					<instance_geometry url="#geom_3d_17">
+						<bind_material>
+							<technique_common>
+								<instance_material symbol="geom_3d_17_material" target="#_daed54b0fe6e11e1a21f0800200c9a66">
+									<bind_vertex_input semantic="texcoord0" input_semantic="TEXCOORD" input_set="0" />
+								</instance_material>
+							</technique_common>
+						</bind_material>
+					</instance_geometry>
+				</node>
+			</node>
+			<node id="Node_24" name="EGR_INSERT" layer="_72_EGR_INSERT">
+				<node id="Node_25" name="x3g_room:Wall:Right" layer="_72_EGR_ROOM5_D3_WALL">
+					<matrix>1 0 0 0.47572975 0 1 0 -15.951498 0 0 1 0 0 0 0 1 </matrix>
+					<instance_geometry url="#geom_3d_18">
+						<bind_material>
+							<technique_common>
+								<instance_material symbol="geom_3d_18_material" target="#_daed54b0fe6e11e1a21f0800200c9a66">
+									<bind_vertex_input semantic="texcoord0" input_semantic="TEXCOORD" input_set="0" />
+								</instance_material>
+							</technique_common>
+						</bind_material>
+					</instance_geometry>
+				</node>
+				<node id="Node_26" name="x3g_room:Wall:Left" layer="_72_EGR_ROOM5_D3_WALL">
+					<matrix>1 0 0 0.47572975 0 1 0 -15.951498 0 0 1 0 0 0 0 1 </matrix>
+					<instance_geometry url="#geom_3d_19">
+						<bind_material>
+							<technique_common>
+								<instance_material symbol="geom_3d_19_material" target="#_daed54b0fe6e11e1a21f0800200c9a66">
+									<bind_vertex_input semantic="texcoord0" input_semantic="TEXCOORD" input_set="0" />
+								</instance_material>
+							</technique_common>
+						</bind_material>
+					</instance_geometry>
+				</node>
+				<node id="Node_27" name="x3g_room:Wall:Middle" layer="_72_EGR_ROOM5_D3_WALL">
+					<matrix>1 0 0 0.47572975 0 1 0 -15.951498 0 0 1 0 0 0 0 1 </matrix>
+					<instance_geometry url="#geom_3d_20">
+						<bind_material>
+							<technique_common>
+								<instance_material symbol="geom_3d_20_material" target="#_daed54b0fe6e11e1a21f0800200c9a66">
+									<bind_vertex_input semantic="texcoord0" input_semantic="TEXCOORD" input_set="0" />
+								</instance_material>
+							</technique_common>
+						</bind_material>
+					</instance_geometry>
+				</node>
+			</node>
+			<node id="Node_28" name="EGR_INSERT" layer="_72_EGR_INSERT">
+				<node id="Node_29" name="x3g_room:Wall:Right" layer="_72_EGR_ROOM5_D3_WALL">
+					<matrix>0 -1 0 9.3842598 1 0 0 -15.951498 0 0 1 0 0 0 0 1 </matrix>
+					<instance_geometry url="#geom_3d_21">
+						<bind_material>
+							<technique_common>
+								<instance_material symbol="geom_3d_21_material" target="#_daed54b0fe6e11e1a21f0800200c9a66">
+									<bind_vertex_input semantic="texcoord0" input_semantic="TEXCOORD" input_set="0" />
+								</instance_material>
+							</technique_common>
+						</bind_material>
+					</instance_geometry>
+				</node>
+				<node id="Node_30" name="x3g_room:Wall:Left" layer="_72_EGR_ROOM5_D3_WALL">
+					<matrix>0 -1 0 9.3842598 1 0 0 -15.951498 0 0 1 0 0 0 0 1 </matrix>
+					<instance_geometry url="#geom_3d_22">
+						<bind_material>
+							<technique_common>
+								<instance_material symbol="geom_3d_22_material" target="#_daed54b0fe6e11e1a21f0800200c9a66">
+									<bind_vertex_input semantic="texcoord0" input_semantic="TEXCOORD" input_set="0" />
+								</instance_material>
+							</technique_common>
+						</bind_material>
+					</instance_geometry>
+				</node>
+				<node id="Node_31" name="x3g_room:Wall:Middle" layer="_72_EGR_ROOM5_D3_WALL">
+					<matrix>0 -1 0 9.3842598 1 0 0 -15.951498 0 0 1 0 0 0 0 1 </matrix>
+					<instance_geometry url="#geom_3d_23">
+						<bind_material>
+							<technique_common>
+								<instance_material symbol="geom_3d_23_material" target="#_daed54b0fe6e11e1a21f0800200c9a66">
+									<bind_vertex_input semantic="texcoord0" input_semantic="TEXCOORD" input_set="0" />
+								</instance_material>
+							</technique_common>
+						</bind_material>
+					</instance_geometry>
+				</node>
+			</node>
+			<node id="Node_32" name="EGR_INSERT" layer="_72_EGR_INSERT">
+				<node id="Node_33" name="x3g_room:Wall:Right" layer="_72_EGR_ROOM5_D3_WALL">
+					<matrix>1 0 0 9.3842598 0 1 0 -11.910428 0 0 1 0 0 0 0 1 </matrix>
+					<instance_geometry url="#geom_3d_24">
+						<bind_material>
+							<technique_common>
+								<instance_material symbol="geom_3d_24_material" target="#_daed54b0fe6e11e1a21f0800200c9a66">
+									<bind_vertex_input semantic="texcoord0" input_semantic="TEXCOORD" input_set="0" />
+								</instance_material>
+							</technique_common>
+						</bind_material>
+					</instance_geometry>
+				</node>
+				<node id="Node_34" name="x3g_room:Wall:Left" layer="_72_EGR_ROOM5_D3_WALL">
+					<matrix>1 0 0 9.3842598 0 1 0 -11.910428 0 0 1 0 0 0 0 1 </matrix>
+					<instance_geometry url="#geom_3d_25">
+						<bind_material>
+							<technique_common>
+								<instance_material symbol="geom_3d_25_material" target="#_daed54b0fe6e11e1a21f0800200c9a66">
+									<bind_vertex_input semantic="texcoord0" input_semantic="TEXCOORD" input_set="0" />
+								</instance_material>
+							</technique_common>
+						</bind_material>
+					</instance_geometry>
+				</node>
+				<node id="Node_35" name="x3g_room:Wall:Middle" layer="_72_EGR_ROOM5_D3_WALL">
+					<matrix>1 0 0 9.3842598 0 1 0 -11.910428 0 0 1 0 0 0 0 1 </matrix>
+					<instance_geometry url="#geom_3d_26">
+						<bind_material>
+							<technique_common>
+								<instance_material symbol="geom_3d_26_material" target="#_daed54b0fe6e11e1a21f0800200c9a66">
+									<bind_vertex_input semantic="texcoord0" input_semantic="TEXCOORD" input_set="0" />
+								</instance_material>
+							</technique_common>
+						</bind_material>
+					</instance_geometry>
+				</node>
+			</node>
+			<node id="Node_36" name="EGR_INSERT" layer="_72_EGR_INSERT">
+				<node id="Node_37" name="x3g_room:Wall:Right" layer="_72_EGR_ROOM5_D3_WALL">
+					<matrix>0 1 0 11.314452 -1 0 0 -11.910428 0 0 1 0 0 0 0 1 </matrix>
+					<instance_geometry url="#geom_3d_27">
+						<bind_material>
+							<technique_common>
+								<instance_material symbol="geom_3d_27_material" target="#_daed54b0fe6e11e1a21f0800200c9a66">
+									<bind_vertex_input semantic="texcoord0" input_semantic="TEXCOORD" input_set="0" />
+								</instance_material>
+							</technique_common>
+						</bind_material>
+					</instance_geometry>
+				</node>
+				<node id="Node_38" name="x3g_room:Wall:Left" layer="_72_EGR_ROOM5_D3_WALL">
+					<matrix>0 1 0 11.314452 -1 0 0 -11.910428 0 0 1 0 0 0 0 1 </matrix>
+					<instance_geometry url="#geom_3d_28">
+						<bind_material>
+							<technique_common>
+								<instance_material symbol="geom_3d_28_material" target="#_daed54b0fe6e11e1a21f0800200c9a66">
+									<bind_vertex_input semantic="texcoord0" input_semantic="TEXCOORD" input_set="0" />
+								</instance_material>
+							</technique_common>
+						</bind_material>
+					</instance_geometry>
+				</node>
+				<node id="Node_39" name="x3g_room:Wall:Middle" layer="_72_EGR_ROOM5_D3_WALL">
+					<matrix>0 1 0 11.314452 -1 0 0 -11.910428 0 0 1 0 0 0 0 1 </matrix>
+					<instance_geometry url="#geom_3d_29">
+						<bind_material>
+							<technique_common>
+								<instance_material symbol="geom_3d_29_material" target="#_daed54b0fe6e11e1a21f0800200c9a66">
+									<bind_vertex_input semantic="texcoord0" input_semantic="TEXCOORD" input_set="0" />
+								</instance_material>
+							</technique_common>
+						</bind_material>
+					</instance_geometry>
+				</node>
+			</node>
+			<node id="Node_40" name="EGR_INSERT" layer="_72_EGR_INSERT">
+				<node id="Node_41" name="x3g_room:Wall:Right" layer="_72_EGR_ROOM5_D3_WALL">
+					<matrix>1 0 0 11.314452 0 1 0 -14.383702 0 0 1 0 0 0 0 1 </matrix>
+					<instance_geometry url="#geom_3d_30">
+						<bind_material>
+							<technique_common>
+								<instance_material symbol="geom_3d_30_material" target="#_daed54b0fe6e11e1a21f0800200c9a66">
+									<bind_vertex_input semantic="texcoord0" input_semantic="TEXCOORD" input_set="0" />
+								</instance_material>
+							</technique_common>
+						</bind_material>
+					</instance_geometry>
+				</node>
+				<node id="Node_42" name="x3g_room:Wall:Left" layer="_72_EGR_ROOM5_D3_WALL">
+					<matrix>1 0 0 11.314452 0 1 0 -14.383702 0 0 1 0 0 0 0 1 </matrix>
+					<instance_geometry url="#geom_3d_31">
+						<bind_material>
+							<technique_common>
+								<instance_material symbol="geom_3d_31_material" target="#_daed54b0fe6e11e1a21f0800200c9a66">
+									<bind_vertex_input semantic="texcoord0" input_semantic="TEXCOORD" input_set="0" />
+								</instance_material>
+							</technique_common>
+						</bind_material>
+					</instance_geometry>
+				</node>
+				<node id="Node_43" name="x3g_room:Wall:Middle" layer="_72_EGR_ROOM5_D3_WALL">
+					<matrix>1 0 0 11.314452 0 1 0 -14.383702 0 0 1 0 0 0 0 1 </matrix>
+					<instance_geometry url="#geom_3d_32">
+						<bind_material>
+							<technique_common>
+								<instance_material symbol="geom_3d_32_material" target="#_daed54b0fe6e11e1a21f0800200c9a66">
+									<bind_vertex_input semantic="texcoord0" input_semantic="TEXCOORD" input_set="0" />
+								</instance_material>
+							</technique_common>
+						</bind_material>
+					</instance_geometry>
+				</node>
+			</node>
+			<node id="Node_44" name="EGR_INSERT" layer="_72_EGR_INSERT">
+				<node id="Node_45" name="x3g_room:Wall:Right" layer="_72_EGR_ROOM5_D3_WALL">
+					<matrix>0 -1 0 25.486871 1 0 0 -14.383702 0 0 1 0 0 0 0 1 </matrix>
+					<instance_geometry url="#geom_3d_33">
+						<bind_material>
+							<technique_common>
+								<instance_material symbol="geom_3d_33_material" target="#_daed54b0fe6e11e1a21f0800200c9a66">
+									<bind_vertex_input semantic="texcoord0" input_semantic="TEXCOORD" input_set="0" />
+								</instance_material>
+							</technique_common>
+						</bind_material>
+					</instance_geometry>
+				</node>
+				<node id="Node_46" name="x3g_room:Wall:Left" layer="_72_EGR_ROOM5_D3_WALL">
+					<matrix>0 -1 0 25.486871 1 0 0 -14.383702 0 0 1 0 0 0 0 1 </matrix>
+					<instance_geometry url="#geom_3d_34">
+						<bind_material>
+							<technique_common>
+								<instance_material symbol="geom_3d_34_material" target="#_daed54b0fe6e11e1a21f0800200c9a66">
+									<bind_vertex_input semantic="texcoord0" input_semantic="TEXCOORD" input_set="0" />
+								</instance_material>
+							</technique_common>
+						</bind_material>
+					</instance_geometry>
+				</node>
+				<node id="Node_47" name="x3g_room:Wall:Middle" layer="_72_EGR_ROOM5_D3_WALL">
+					<matrix>0 -1 0 25.486871 1 0 0 -14.383702 0 0 1 0 0 0 0 1 </matrix>
+					<instance_geometry url="#geom_3d_35">
+						<bind_material>
+							<technique_common>
+								<instance_material symbol="geom_3d_35_material" target="#_daed54b0fe6e11e1a21f0800200c9a66">
+									<bind_vertex_input semantic="texcoord0" input_semantic="TEXCOORD" input_set="0" />
+								</instance_material>
+							</technique_common>
+						</bind_material>
+					</instance_geometry>
+				</node>
+			</node>
+			<node id="Node_48" name="EGR_INSERT" layer="_72_EGR_INSERT">
+				<node id="Node_49" name="x3g_room:Wall:Right" layer="_72_EGR_ROOM5_D3_WALL">
+					<matrix>1 0 0 25.486871 0 1 0 -8.7582156 0 0 1 0 0 0 0 1 </matrix>
+					<instance_geometry url="#geom_3d_36">
+						<bind_material>
+							<technique_common>
+								<instance_material symbol="geom_3d_36_material" target="#_daed54b0fe6e11e1a21f0800200c9a66">
+									<bind_vertex_input semantic="texcoord0" input_semantic="TEXCOORD" input_set="0" />
+								</instance_material>
+							</technique_common>
+						</bind_material>
+					</instance_geometry>
+				</node>
+				<node id="Node_50" name="x3g_room:Wall:Left" layer="_72_EGR_ROOM5_D3_WALL">
+					<matrix>1 0 0 25.486871 0 1 0 -8.7582156 0 0 1 0 0 0 0 1 </matrix>
+					<instance_geometry url="#geom_3d_37">
+						<bind_material>
+							<technique_common>
+								<instance_material symbol="geom_3d_37_material" target="#_daed54b0fe6e11e1a21f0800200c9a66">
+									<bind_vertex_input semantic="texcoord0" input_semantic="TEXCOORD" input_set="0" />
+								</instance_material>
+							</technique_common>
+						</bind_material>
+					</instance_geometry>
+				</node>
+				<node id="Node_51" name="x3g_room:Wall:Middle" layer="_72_EGR_ROOM5_D3_WALL">
+					<matrix>1 0 0 25.486871 0 1 0 -8.7582156 0 0 1 0 0 0 0 1 </matrix>
+					<instance_geometry url="#geom_3d_38">
+						<bind_material>
+							<technique_common>
+								<instance_material symbol="geom_3d_38_material" target="#_daed54b0fe6e11e1a21f0800200c9a66">
+									<bind_vertex_input semantic="texcoord0" input_semantic="TEXCOORD" input_set="0" />
+								</instance_material>
+							</technique_common>
+						</bind_material>
+					</instance_geometry>
+				</node>
+			</node>
+			<node id="Node_52" name="EGR_INSERT" layer="_72_EGR_INSERT">
+				<node id="Node_53" name="x3g_room:Wall:Right" layer="_72_EGR_ROOM5_D3_WALL">
+					<matrix>0 -1 0 26.353772 1 0 0 -8.7582156 0 0 1 0 0 0 0 1 </matrix>
+					<instance_geometry url="#geom_3d_39">
+						<bind_material>
+							<technique_common>
+								<instance_material symbol="geom_3d_39_material" target="#_daed54b0fe6e11e1a21f0800200c9a66">
+									<bind_vertex_input semantic="texcoord0" input_semantic="TEXCOORD" input_set="0" />
+								</instance_material>
+							</technique_common>
+						</bind_material>
+					</instance_geometry>
+				</node>
+				<node id="Node_54" name="x3g_room:Wall:Left" layer="_72_EGR_ROOM5_D3_WALL">
+					<matrix>0 -1 0 26.353772 1 0 0 -8.7582156 0 0 1 0 0 0 0 1 </matrix>
+					<instance_geometry url="#geom_3d_40">
+						<bind_material>
+							<technique_common>
+								<instance_material symbol="geom_3d_40_material" target="#_daed54b0fe6e11e1a21f0800200c9a66">
+									<bind_vertex_input semantic="texcoord0" input_semantic="TEXCOORD" input_set="0" />
+								</instance_material>
+							</technique_common>
+						</bind_material>
+					</instance_geometry>
+				</node>
+				<node id="Node_55" name="x3g_room:Wall:Middle" layer="_72_EGR_ROOM5_D3_WALL">
+					<matrix>0 -1 0 26.353772 1 0 0 -8.7582156 0 0 1 0 0 0 0 1 </matrix>
+					<instance_geometry url="#geom_3d_41">
+						<bind_material>
+							<technique_common>
+								<instance_material symbol="geom_3d_41_material" target="#_daed54b0fe6e11e1a21f0800200c9a66">
+									<bind_vertex_input semantic="texcoord0" input_semantic="TEXCOORD" input_set="0" />
+								</instance_material>
+							</technique_common>
+						</bind_material>
+					</instance_geometry>
+				</node>
+			</node>
+			<node id="Node_56" name="EGR_INSERT" layer="_72_EGR_INSERT">
+				<node id="Node_57" name="x3g_room:Wall:Right" layer="_72_EGR_ROOM5_D3_WALL">
+					<matrix>1 0 0 26.353772 0 1 0 -8.162406 0 0 1 0 0 0 0 1 </matrix>
+					<instance_geometry url="#geom_3d_42">
+						<bind_material>
+							<technique_common>
+								<instance_material symbol="geom_3d_42_material" target="#_daed54b0fe6e11e1a21f0800200c9a66">
+									<bind_vertex_input semantic="texcoord0" input_semantic="TEXCOORD" input_set="0" />
+								</instance_material>
+							</technique_common>
+						</bind_material>
+					</instance_geometry>
+				</node>
+				<node id="Node_58" name="x3g_room:Wall:Left" layer="_72_EGR_ROOM5_D3_WALL">
+					<matrix>1 0 0 26.353772 0 1 0 -8.162406 0 0 1 0 0 0 0 1 </matrix>
+					<instance_geometry url="#geom_3d_43">
+						<bind_material>
+							<technique_common>
+								<instance_material symbol="geom_3d_43_material" target="#_daed54b0fe6e11e1a21f0800200c9a66">
+									<bind_vertex_input semantic="texcoord0" input_semantic="TEXCOORD" input_set="0" />
+								</instance_material>
+							</technique_common>
+						</bind_material>
+					</instance_geometry>
+				</node>
+				<node id="Node_59" name="x3g_room:Wall:Middle" layer="_72_EGR_ROOM5_D3_WALL">
+					<matrix>1 0 0 26.353772 0 1 0 -8.162406 0 0 1 0 0 0 0 1 </matrix>
+					<instance_geometry url="#geom_3d_44">
+						<bind_material>
+							<technique_common>
+								<instance_material symbol="geom_3d_44_material" target="#_daed54b0fe6e11e1a21f0800200c9a66">
+									<bind_vertex_input semantic="texcoord0" input_semantic="TEXCOORD" input_set="0" />
+								</instance_material>
+							</technique_common>
+						</bind_material>
+					</instance_geometry>
+				</node>
+			</node>
+			<node id="Node_60" name="EGR_INSERT" layer="_72_EGR_INSERT">
+				<node id="Node_61" name="x3g_room:Wall:Right" layer="_72_EGR_ROOM5_D3_WALL">
+					<matrix>0 -1 0 27.140351 1 0 0 -8.162406 0 0 1 0 0 0 0 1 </matrix>
+					<instance_geometry url="#geom_3d_45">
+						<bind_material>
+							<technique_common>
+								<instance_material symbol="geom_3d_45_material" target="#_daed54b0fe6e11e1a21f0800200c9a66">
+									<bind_vertex_input semantic="texcoord0" input_semantic="TEXCOORD" input_set="0" />
+								</instance_material>
+							</technique_common>
+						</bind_material>
+					</instance_geometry>
+				</node>
+				<node id="Node_62" name="x3g_room:Wall:Left" layer="_72_EGR_ROOM5_D3_WALL">
+					<matrix>0 -1 0 27.140351 1 0 0 -8.162406 0 0 1 0 0 0 0 1 </matrix>
+					<instance_geometry url="#geom_3d_46">
+						<bind_material>
+							<technique_common>
+								<instance_material symbol="geom_3d_46_material" target="#_daed54b0fe6e11e1a21f0800200c9a66">
+									<bind_vertex_input semantic="texcoord0" input_semantic="TEXCOORD" input_set="0" />
+								</instance_material>
+							</technique_common>
+						</bind_material>
+					</instance_geometry>
+				</node>
+				<node id="Node_63" name="x3g_room:Wall:Middle" layer="_72_EGR_ROOM5_D3_WALL">
+					<matrix>0 -1 0 27.140351 1 0 0 -8.162406 0 0 1 0 0 0 0 1 </matrix>
+					<instance_geometry url="#geom_3d_47">
+						<bind_material>
+							<technique_common>
+								<instance_material symbol="geom_3d_47_material" target="#_daed54b0fe6e11e1a21f0800200c9a66">
+									<bind_vertex_input semantic="texcoord0" input_semantic="TEXCOORD" input_set="0" />
+								</instance_material>
+							</technique_common>
+						</bind_material>
+					</instance_geometry>
+				</node>
+			</node>
+		</visual_scene>
+	</library_visual_scenes>
+	<library_geometries>
+		<geometry id="geom_3d_7" name="x3g_room:Wall:Left">
+			<mesh>
+				<source id="geom_3d_7-positions">
+					<float_array id="geom_3d_7-positions-array" count="12">
+						-0.12358987 -0.12358987 0 -0.12358987 -0.12358987 3 1.105212 -0.12358987 0 1.105212 -0.12358987 3 
+					</float_array>
+					<technique_common>
+						<accessor count="4" source="#geom_3d_7-positions-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_7-normals">
+					<float_array id="geom_3d_7-normals-array" count="6">
+						0 -1 0 0 1 0 
+					</float_array>
+					<technique_common>
+						<accessor count="2" source="#geom_3d_7-normals-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_7-texcoord">
+					<float_array id="geom_3d_7-texcoord-array" count="8">
+						-0.12358987 0 -0.12358987 3 1.105212 0 1.105212 3 
+					</float_array>
+					<technique_common>
+						<accessor count="4" source="#geom_3d_7-texcoord-array" stride="2">
+							 <param name="S" type="float" />
+							 <param name="T" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="geom_3d_7-vertices">
+					<input semantic="POSITION" source="#geom_3d_7-positions" />
+				</vertices>
+				<triangles count="4" material="geom_3d_7_material">
+					<input offset="0" semantic="VERTEX" source="#geom_3d_7-vertices" set="0" />
+					<input offset="1" semantic="NORMAL" source="#geom_3d_7-normals" set="0" />
+					<input offset="2" semantic="TEXCOORD" source="#geom_3d_7-texcoord" set="0" />
+					<p>3 0 3 1 0 1 2 0 2 2 1 2 1 1 1 3 1 3 2 0 2 1 0 1 0 0 0 0 1 0 1 1 1 2 1 2 </p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="geom_3d_8" name="x3g_room:Wall:Middle">
+			<mesh>
+				<source id="geom_3d_8-positions">
+					<float_array id="geom_3d_8-positions-array" count="24">
+						-0.12358987 -0.12358987 0 -0.12358987 -0.12358987 3 0.12358987 0.12358987 0 0.12358987 0.12358987 3 1.105212 -0.12358987 0 1.105212 -0.12358987 3 1.3523917 0.12358987 0 1.3523917 0.12358987 3 
+					</float_array>
+					<technique_common>
+						<accessor count="8" source="#geom_3d_8-positions-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_8-normals">
+					<float_array id="geom_3d_8-normals-array" count="12">
+						-0.70710677 0.70710677 0 0 0 -1 0 0 1 0.70710677 -0.70710677 0 
+					</float_array>
+					<technique_common>
+						<accessor count="4" source="#geom_3d_8-normals-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_8-texcoord">
+					<float_array id="geom_3d_8-texcoord-array" count="32">
+						-1.3523917 0.12358987 -1.105212 -0.12358987 -0.12358987 -0.12358987 -0.12358987 0 -0.12358987 0.12358987 -0.12358987 3 0.12358987 -0.12358987 0.12358987 0 0.12358987 0.12358987 0.12358987 3 1.105212 -0.12358987 1.105212 0 1.105212 3 1.3523917 0 1.3523917 0.12358987 1.3523917 3 
+					</float_array>
+					<technique_common>
+						<accessor count="16" source="#geom_3d_8-texcoord-array" stride="2">
+							 <param name="S" type="float" />
+							 <param name="T" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="geom_3d_8-vertices">
+					<input semantic="POSITION" source="#geom_3d_8-positions" />
+				</vertices>
+				<triangles count="16" material="geom_3d_8_material">
+					<input offset="0" semantic="VERTEX" source="#geom_3d_8-vertices" set="0" />
+					<input offset="1" semantic="NORMAL" source="#geom_3d_8-normals" set="0" />
+					<input offset="2" semantic="TEXCOORD" source="#geom_3d_8-texcoord" set="0" />
+					<p>1 0 9 3 0 5 0 0 7 0 3 7 3 3 5 1 3 9 0 0 7 3 0 5 2 0 3 2 3 3 3 3 5 0 3 7 7 3 15 5 3 12 6 3 13 6 0 13 5 0 12 7 0 15 6 3 13 5 3 12 4 3 11 4 0 11 5 0 12 6 0 13 0 1 6 2 1 4 4 1 1 4 2 1 2 2 4 0 2 6 4 1 1 2 1 4 6 1 0 6 2 0 2 2 4 4 2 1 1 2 2 5 2 10 3 2 8 3 1 8 5 1 10 1 1 2 3 2 8 5 2 10 7 2 14 7 1 14 5 1 10 3 1 8 </p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="geom_3d_9" name="x3g_room:Wall:Right">
+			<mesh>
+				<source id="geom_3d_9-positions">
+					<float_array id="geom_3d_9-positions-array" count="12">
+						-0.12358987 0.12358987 0 -0.12358987 0.12358987 3 1.0403039 0.12358987 0 1.0403039 0.12358987 3 
+					</float_array>
+					<technique_common>
+						<accessor count="4" source="#geom_3d_9-positions-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_9-normals">
+					<float_array id="geom_3d_9-normals-array" count="6">
+						0 -1 0 0 1 0 
+					</float_array>
+					<technique_common>
+						<accessor count="2" source="#geom_3d_9-normals-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_9-texcoord">
+					<float_array id="geom_3d_9-texcoord-array" count="8">
+						-1.0403039 0 -1.0403039 3 0.12358987 0 0.12358987 3 
+					</float_array>
+					<technique_common>
+						<accessor count="4" source="#geom_3d_9-texcoord-array" stride="2">
+							 <param name="S" type="float" />
+							 <param name="T" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="geom_3d_9-vertices">
+					<input semantic="POSITION" source="#geom_3d_9-positions" />
+				</vertices>
+				<triangles count="4" material="geom_3d_9_material">
+					<input offset="0" semantic="VERTEX" source="#geom_3d_9-vertices" set="0" />
+					<input offset="1" semantic="NORMAL" source="#geom_3d_9-normals" set="0" />
+					<input offset="2" semantic="TEXCOORD" source="#geom_3d_9-texcoord" set="0" />
+					<p>1 1 3 3 1 1 0 1 2 0 0 2 3 0 1 1 0 3 0 1 2 3 1 1 2 1 0 2 0 0 3 0 1 0 0 2 </p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="geom_3d_10" name="x3g_room:Wall:Left">
+			<mesh>
+				<source id="geom_3d_10-positions">
+					<float_array id="geom_3d_10-positions-array" count="12">
+						0.12358987 -0.12358987 0 0.12358987 -0.12358987 3 1.2874837 -0.12358987 0 1.2874837 -0.12358987 3 
+					</float_array>
+					<technique_common>
+						<accessor count="4" source="#geom_3d_10-positions-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_10-normals">
+					<float_array id="geom_3d_10-normals-array" count="6">
+						0 -1 0 0 1 0 
+					</float_array>
+					<technique_common>
+						<accessor count="2" source="#geom_3d_10-normals-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_10-texcoord">
+					<float_array id="geom_3d_10-texcoord-array" count="8">
+						0.12358987 0 0.12358987 3 1.2874837 0 1.2874837 3 
+					</float_array>
+					<technique_common>
+						<accessor count="4" source="#geom_3d_10-texcoord-array" stride="2">
+							 <param name="S" type="float" />
+							 <param name="T" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="geom_3d_10-vertices">
+					<input semantic="POSITION" source="#geom_3d_10-positions" />
+				</vertices>
+				<triangles count="4" material="geom_3d_10_material">
+					<input offset="0" semantic="VERTEX" source="#geom_3d_10-vertices" set="0" />
+					<input offset="1" semantic="NORMAL" source="#geom_3d_10-normals" set="0" />
+					<input offset="2" semantic="TEXCOORD" source="#geom_3d_10-texcoord" set="0" />
+					<p>3 0 3 1 0 1 2 0 2 2 1 2 1 1 1 3 1 3 2 0 2 1 0 1 0 0 0 0 1 0 1 1 1 2 1 2 </p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="geom_3d_17" name="x3g_room:Wall:Middle">
+			<mesh>
+				<source id="geom_3d_17-positions">
+					<float_array id="geom_3d_17-positions-array" count="24">
+						-0.12358987 -0.12358987 0 -0.12358987 -0.12358987 3 0.12358987 0.12358987 0 0.12358987 0.12358987 3 15.478973 0.12358987 0 15.478973 0.12358987 3 15.726152 -0.12358987 0 15.726152 -0.12358987 3 
+					</float_array>
+					<technique_common>
+						<accessor count="8" source="#geom_3d_17-positions-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_17-normals">
+					<float_array id="geom_3d_17-normals-array" count="18">
+						-0.70710677 -0.70710677 0 -0.70710677 0.70710677 0 0 0 -1 0 0 1 0.70710677 -0.70710677 0 0.70710677 0.70710677 0 
+					</float_array>
+					<technique_common>
+						<accessor count="6" source="#geom_3d_17-normals-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_17-texcoord">
+					<float_array id="geom_3d_17-texcoord-array" count="24">
+						-15.726152 -0.12358987 -15.478973 0.12358987 -0.12358987 -0.12358987 -0.12358987 0 -0.12358987 0.12358987 -0.12358987 3 0.12358987 -0.12358987 0.12358987 0 0.12358987 0.12358987 0.12358987 3 15.478973 0.12358987 15.726152 -0.12358987 
+					</float_array>
+					<technique_common>
+						<accessor count="12" source="#geom_3d_17-texcoord-array" stride="2">
+							 <param name="S" type="float" />
+							 <param name="T" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="geom_3d_17-vertices">
+					<input semantic="POSITION" source="#geom_3d_17-positions" />
+				</vertices>
+				<triangles count="16" material="geom_3d_17_material">
+					<input offset="0" semantic="VERTEX" source="#geom_3d_17-vertices" set="0" />
+					<input offset="1" semantic="NORMAL" source="#geom_3d_17-normals" set="0" />
+					<input offset="2" semantic="TEXCOORD" source="#geom_3d_17-texcoord" set="0" />
+					<p>1 1 9 3 1 5 0 1 7 0 4 7 3 4 5 1 4 9 0 1 7 3 1 5 2 1 3 2 4 3 3 4 5 0 4 7 5 5 9 7 5 5 4 5 7 4 0 7 7 0 5 5 0 9 4 5 7 7 5 5 6 5 3 6 0 3 7 0 5 4 0 7 6 2 0 0 2 6 4 2 1 4 3 1 0 3 6 6 3 0 4 2 1 0 2 6 2 2 4 2 3 4 0 3 6 4 3 1 1 3 2 7 3 11 3 3 8 3 2 8 7 2 11 1 2 2 3 3 8 7 3 11 5 3 10 5 2 10 7 2 11 3 2 8 </p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="geom_3d_11" name="x3g_room:Wall:Middle">
+			<mesh>
+				<source id="geom_3d_11-positions">
+					<float_array id="geom_3d_11-positions-array" count="24">
+						-0.12358987 0.12358987 0 -0.12358987 0.12358987 3 0.12358987 -0.12358987 0 0.12358987 -0.12358987 3 1.0403039 0.12358987 0 1.0403039 0.12358987 3 1.2874837 -0.12358987 0 1.2874837 -0.12358987 3 
+					</float_array>
+					<technique_common>
+						<accessor count="8" source="#geom_3d_11-positions-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_11-normals">
+					<float_array id="geom_3d_11-normals-array" count="12">
+						-0.70710677 -0.70710677 0 0 0 -1 0 0 1 0.70710677 0.70710677 0 
+					</float_array>
+					<technique_common>
+						<accessor count="4" source="#geom_3d_11-normals-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_11-texcoord">
+					<float_array id="geom_3d_11-texcoord-array" count="32">
+						-1.2874837 -0.12358987 -1.2874837 0 -1.2874837 3 -1.0403039 0 -1.0403039 0.12358987 -1.0403039 3 -0.12358987 -0.12358987 -0.12358987 0 -0.12358987 0.12358987 -0.12358987 3 0.12358987 -0.12358987 0.12358987 0 0.12358987 0.12358987 0.12358987 3 1.0403039 0.12358987 1.2874837 -0.12358987 
+					</float_array>
+					<technique_common>
+						<accessor count="16" source="#geom_3d_11-texcoord-array" stride="2">
+							 <param name="S" type="float" />
+							 <param name="T" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="geom_3d_11-vertices">
+					<input semantic="POSITION" source="#geom_3d_11-positions" />
+				</vertices>
+				<triangles count="16" material="geom_3d_11_material">
+					<input offset="0" semantic="VERTEX" source="#geom_3d_11-vertices" set="0" />
+					<input offset="1" semantic="NORMAL" source="#geom_3d_11-normals" set="0" />
+					<input offset="2" semantic="TEXCOORD" source="#geom_3d_11-texcoord" set="0" />
+					<p>3 0 13 1 0 9 2 0 11 2 3 11 1 3 9 3 3 13 2 0 11 1 0 9 0 0 7 0 3 7 1 3 9 2 3 11 5 3 5 7 3 2 4 3 3 4 0 3 7 0 2 5 0 5 4 3 3 7 3 2 6 3 1 6 0 1 7 0 2 4 0 3 6 1 0 2 1 6 4 1 4 4 2 4 2 2 6 6 2 0 4 1 4 2 1 6 0 1 12 0 2 12 2 2 6 4 2 4 1 2 8 3 2 10 5 2 14 5 1 14 3 1 10 1 1 8 5 2 14 3 2 10 7 2 15 7 1 15 3 1 10 5 1 14 </p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="geom_3d_15" name="x3g_room:Wall:Right">
+			<mesh>
+				<source id="geom_3d_15-positions">
+					<float_array id="geom_3d_15-positions-array" count="12">
+						0.12358987 0.12358987 0 0.12358987 0.12358987 3 15.478973 0.12358987 0 15.478973 0.12358987 3 
+					</float_array>
+					<technique_common>
+						<accessor count="4" source="#geom_3d_15-positions-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_15-normals">
+					<float_array id="geom_3d_15-normals-array" count="6">
+						0 -1 0 0 1 0 
+					</float_array>
+					<technique_common>
+						<accessor count="2" source="#geom_3d_15-normals-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_15-texcoord">
+					<float_array id="geom_3d_15-texcoord-array" count="8">
+						-15.478973 0 -15.478973 3 -0.12358987 0 -0.12358987 3 
+					</float_array>
+					<technique_common>
+						<accessor count="4" source="#geom_3d_15-texcoord-array" stride="2">
+							 <param name="S" type="float" />
+							 <param name="T" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="geom_3d_15-vertices">
+					<input semantic="POSITION" source="#geom_3d_15-positions" />
+				</vertices>
+				<triangles count="4" material="geom_3d_15_material">
+					<input offset="0" semantic="VERTEX" source="#geom_3d_15-vertices" set="0" />
+					<input offset="1" semantic="NORMAL" source="#geom_3d_15-normals" set="0" />
+					<input offset="2" semantic="TEXCOORD" source="#geom_3d_15-texcoord" set="0" />
+					<p>1 1 3 3 1 1 0 1 2 0 0 2 3 0 1 1 0 3 0 1 2 3 1 1 2 1 0 2 0 0 3 0 1 0 0 2 </p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="geom_3d_18" name="x3g_room:Wall:Right">
+			<mesh>
+				<source id="geom_3d_18-positions">
+					<float_array id="geom_3d_18-positions-array" count="12">
+						0.12358987 0.12358987 0 0.12358987 0.12358987 3 8.7849398 0.12358987 0 8.7849398 0.12358987 3 
+					</float_array>
+					<technique_common>
+						<accessor count="4" source="#geom_3d_18-positions-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_18-normals">
+					<float_array id="geom_3d_18-normals-array" count="6">
+						0 -1 0 0 1 0 
+					</float_array>
+					<technique_common>
+						<accessor count="2" source="#geom_3d_18-normals-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_18-texcoord">
+					<float_array id="geom_3d_18-texcoord-array" count="8">
+						-8.7849398 0 -8.7849398 3 -0.12358987 0 -0.12358987 3 
+					</float_array>
+					<technique_common>
+						<accessor count="4" source="#geom_3d_18-texcoord-array" stride="2">
+							 <param name="S" type="float" />
+							 <param name="T" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="geom_3d_18-vertices">
+					<input semantic="POSITION" source="#geom_3d_18-positions" />
+				</vertices>
+				<triangles count="4" material="geom_3d_18_material">
+					<input offset="0" semantic="VERTEX" source="#geom_3d_18-vertices" set="0" />
+					<input offset="1" semantic="NORMAL" source="#geom_3d_18-normals" set="0" />
+					<input offset="2" semantic="TEXCOORD" source="#geom_3d_18-texcoord" set="0" />
+					<p>1 1 3 3 1 1 0 1 2 0 0 2 3 0 1 1 0 3 0 1 2 3 1 1 2 1 0 2 0 0 3 0 1 0 0 2 </p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="geom_3d_13" name="x3g_room:Wall:Left">
+			<mesh>
+				<source id="geom_3d_13-positions">
+					<float_array id="geom_3d_13-positions-array" count="12">
+						-0.12358987 -0.12358987 0 -0.12358987 -0.12358987 3 7.803318 -0.12358987 0 7.803318 -0.12358987 3 
+					</float_array>
+					<technique_common>
+						<accessor count="4" source="#geom_3d_13-positions-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_13-normals">
+					<float_array id="geom_3d_13-normals-array" count="6">
+						0 1 0 0 -1 0 
+					</float_array>
+					<technique_common>
+						<accessor count="2" source="#geom_3d_13-normals-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_13-texcoord">
+					<float_array id="geom_3d_13-texcoord-array" count="8">
+						-0.12358987 0 -0.12358987 3 7.803318 0 7.803318 3 
+					</float_array>
+					<technique_common>
+						<accessor count="4" source="#geom_3d_13-texcoord-array" stride="2">
+							 <param name="S" type="float" />
+							 <param name="T" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="geom_3d_13-vertices">
+					<input semantic="POSITION" source="#geom_3d_13-positions" />
+				</vertices>
+				<triangles count="4" material="geom_3d_13_material">
+					<input offset="0" semantic="VERTEX" source="#geom_3d_13-vertices" set="0" />
+					<input offset="1" semantic="NORMAL" source="#geom_3d_13-normals" set="0" />
+					<input offset="2" semantic="TEXCOORD" source="#geom_3d_13-texcoord" set="0" />
+					<p>3 1 3 1 1 1 2 1 2 2 0 2 1 0 1 3 0 3 2 1 2 1 1 1 0 1 0 0 0 0 1 0 1 2 0 2 </p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="geom_3d_12" name="x3g_room:Wall:Right">
+			<mesh>
+				<source id="geom_3d_12-positions">
+					<float_array id="geom_3d_12-positions-array" count="12">
+						0.12358987 0.12358987 0 0.12358987 0.12358987 3 7.5561385 0.12358987 0 7.5561385 0.12358987 3 
+					</float_array>
+					<technique_common>
+						<accessor count="4" source="#geom_3d_12-positions-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_12-normals">
+					<float_array id="geom_3d_12-normals-array" count="6">
+						0 1 0 0 -1 0 
+					</float_array>
+					<technique_common>
+						<accessor count="2" source="#geom_3d_12-normals-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_12-texcoord">
+					<float_array id="geom_3d_12-texcoord-array" count="8">
+						-7.5561385 0 -7.5561385 3 -0.12358987 0 -0.12358987 3 
+					</float_array>
+					<technique_common>
+						<accessor count="4" source="#geom_3d_12-texcoord-array" stride="2">
+							 <param name="S" type="float" />
+							 <param name="T" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="geom_3d_12-vertices">
+					<input semantic="POSITION" source="#geom_3d_12-positions" />
+				</vertices>
+				<triangles count="4" material="geom_3d_12_material">
+					<input offset="0" semantic="VERTEX" source="#geom_3d_12-vertices" set="0" />
+					<input offset="1" semantic="NORMAL" source="#geom_3d_12-normals" set="0" />
+					<input offset="2" semantic="TEXCOORD" source="#geom_3d_12-texcoord" set="0" />
+					<p>1 0 3 3 0 1 0 0 2 0 1 2 3 1 1 1 1 3 0 0 2 3 0 1 2 0 0 2 1 0 3 1 1 0 1 2 </p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="geom_3d_14" name="x3g_room:Wall:Middle">
+			<mesh>
+				<source id="geom_3d_14-positions">
+					<float_array id="geom_3d_14-positions-array" count="24">
+						-0.12358987 -0.12358987 0 -0.12358987 -0.12358987 3 0.12358987 0.12358987 0 0.12358987 0.12358987 3 7.5561385 0.12358987 0 7.5561385 0.12358987 3 7.803318 -0.12358987 0 7.803318 -0.12358987 3 
+					</float_array>
+					<technique_common>
+						<accessor count="8" source="#geom_3d_14-positions-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_14-normals">
+					<float_array id="geom_3d_14-normals-array" count="18">
+						-0.70710677 -0.70710677 0 -0.70710677 0.70710677 0 0 0 -1 0 0 1 0.70710677 -0.70710677 0 0.70710677 0.70710677 0 
+					</float_array>
+					<technique_common>
+						<accessor count="6" source="#geom_3d_14-normals-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_14-texcoord">
+					<float_array id="geom_3d_14-texcoord-array" count="24">
+						-7.803318 -0.12358987 -7.5561385 0.12358987 -0.12358987 -0.12358987 -0.12358987 0 -0.12358987 0.12358987 -0.12358987 3 0.12358987 -0.12358987 0.12358987 0 0.12358987 0.12358987 0.12358987 3 7.5561385 0.12358987 7.803318 -0.12358987 
+					</float_array>
+					<technique_common>
+						<accessor count="12" source="#geom_3d_14-texcoord-array" stride="2">
+							 <param name="S" type="float" />
+							 <param name="T" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="geom_3d_14-vertices">
+					<input semantic="POSITION" source="#geom_3d_14-positions" />
+				</vertices>
+				<triangles count="16" material="geom_3d_14_material">
+					<input offset="0" semantic="VERTEX" source="#geom_3d_14-vertices" set="0" />
+					<input offset="1" semantic="NORMAL" source="#geom_3d_14-normals" set="0" />
+					<input offset="2" semantic="TEXCOORD" source="#geom_3d_14-texcoord" set="0" />
+					<p>1 1 9 3 1 5 0 1 7 0 4 7 3 4 5 1 4 9 0 1 7 3 1 5 2 1 3 2 4 3 3 4 5 0 4 7 5 5 9 7 5 5 4 5 7 4 0 7 7 0 5 5 0 9 4 5 7 7 5 5 6 5 3 6 0 3 7 0 5 4 0 7 6 2 0 0 2 6 4 2 1 4 3 1 0 3 6 6 3 0 4 2 1 0 2 6 2 2 4 2 3 4 0 3 6 4 3 1 1 3 2 7 3 11 3 3 8 3 2 8 7 2 11 1 2 2 3 3 8 7 3 11 5 3 10 5 2 10 7 2 11 3 2 8 </p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="geom_3d_16" name="x3g_room:Wall:Left">
+			<mesh>
+				<source id="geom_3d_16-positions">
+					<float_array id="geom_3d_16-positions-array" count="12">
+						-0.12358987 -0.12358987 0 -0.12358987 -0.12358987 3 15.726152 -0.12358987 0 15.726152 -0.12358987 3 
+					</float_array>
+					<technique_common>
+						<accessor count="4" source="#geom_3d_16-positions-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_16-normals">
+					<float_array id="geom_3d_16-normals-array" count="6">
+						0 -1 0 0 1 0 
+					</float_array>
+					<technique_common>
+						<accessor count="2" source="#geom_3d_16-normals-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_16-texcoord">
+					<float_array id="geom_3d_16-texcoord-array" count="8">
+						-0.12358987 0 -0.12358987 3 15.726152 0 15.726152 3 
+					</float_array>
+					<technique_common>
+						<accessor count="4" source="#geom_3d_16-texcoord-array" stride="2">
+							 <param name="S" type="float" />
+							 <param name="T" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="geom_3d_16-vertices">
+					<input semantic="POSITION" source="#geom_3d_16-positions" />
+				</vertices>
+				<triangles count="4" material="geom_3d_16_material">
+					<input offset="0" semantic="VERTEX" source="#geom_3d_16-vertices" set="0" />
+					<input offset="1" semantic="NORMAL" source="#geom_3d_16-normals" set="0" />
+					<input offset="2" semantic="TEXCOORD" source="#geom_3d_16-texcoord" set="0" />
+					<p>3 0 3 1 0 1 2 0 2 2 1 2 1 1 1 3 1 3 2 0 2 1 0 1 0 0 0 0 1 0 1 1 1 2 1 2 </p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="geom_3d_19" name="x3g_room:Wall:Left">
+			<mesh>
+				<source id="geom_3d_19-positions">
+					<float_array id="geom_3d_19-positions-array" count="12">
+						-0.12358987 -0.12358987 0 -0.12358987 -0.12358987 3 9.0321198 -0.12358987 0 9.0321198 -0.12358987 3 
+					</float_array>
+					<technique_common>
+						<accessor count="4" source="#geom_3d_19-positions-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_19-normals">
+					<float_array id="geom_3d_19-normals-array" count="6">
+						0 -1 0 0 1 0 
+					</float_array>
+					<technique_common>
+						<accessor count="2" source="#geom_3d_19-normals-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_19-texcoord">
+					<float_array id="geom_3d_19-texcoord-array" count="8">
+						-0.12358987 0 -0.12358987 3 9.0321198 0 9.0321198 3 
+					</float_array>
+					<technique_common>
+						<accessor count="4" source="#geom_3d_19-texcoord-array" stride="2">
+							 <param name="S" type="float" />
+							 <param name="T" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="geom_3d_19-vertices">
+					<input semantic="POSITION" source="#geom_3d_19-positions" />
+				</vertices>
+				<triangles count="4" material="geom_3d_19_material">
+					<input offset="0" semantic="VERTEX" source="#geom_3d_19-vertices" set="0" />
+					<input offset="1" semantic="NORMAL" source="#geom_3d_19-normals" set="0" />
+					<input offset="2" semantic="TEXCOORD" source="#geom_3d_19-texcoord" set="0" />
+					<p>3 0 3 1 0 1 2 0 2 2 1 2 1 1 1 3 1 3 2 0 2 1 0 1 0 0 0 0 1 0 1 1 1 2 1 2 </p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="geom_3d_22" name="x3g_room:Wall:Left">
+			<mesh>
+				<source id="geom_3d_22-positions">
+					<float_array id="geom_3d_22-positions-array" count="12">
+						-0.12358987 -0.12358987 0 -0.12358987 -0.12358987 3 3.91748 -0.12358987 0 3.91748 -0.12358987 3 
+					</float_array>
+					<technique_common>
+						<accessor count="4" source="#geom_3d_22-positions-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_22-normals">
+					<float_array id="geom_3d_22-normals-array" count="6">
+						0 1 0 0 -1 0 
+					</float_array>
+					<technique_common>
+						<accessor count="2" source="#geom_3d_22-normals-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_22-texcoord">
+					<float_array id="geom_3d_22-texcoord-array" count="8">
+						-0.12358987 0 -0.12358987 3 3.91748 0 3.91748 3 
+					</float_array>
+					<technique_common>
+						<accessor count="4" source="#geom_3d_22-texcoord-array" stride="2">
+							 <param name="S" type="float" />
+							 <param name="T" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="geom_3d_22-vertices">
+					<input semantic="POSITION" source="#geom_3d_22-positions" />
+				</vertices>
+				<triangles count="4" material="geom_3d_22_material">
+					<input offset="0" semantic="VERTEX" source="#geom_3d_22-vertices" set="0" />
+					<input offset="1" semantic="NORMAL" source="#geom_3d_22-normals" set="0" />
+					<input offset="2" semantic="TEXCOORD" source="#geom_3d_22-texcoord" set="0" />
+					<p>3 1 3 1 1 1 2 1 2 2 0 2 1 0 1 3 0 3 2 1 2 1 1 1 0 1 0 0 0 0 1 0 1 2 0 2 </p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="geom_3d_21" name="x3g_room:Wall:Right">
+			<mesh>
+				<source id="geom_3d_21-positions">
+					<float_array id="geom_3d_21-positions-array" count="12">
+						0.12358987 0.12358987 0 0.12358987 0.12358987 3 4.1646595 0.12358987 0 4.1646595 0.12358987 3 
+					</float_array>
+					<technique_common>
+						<accessor count="4" source="#geom_3d_21-positions-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_21-normals">
+					<float_array id="geom_3d_21-normals-array" count="6">
+						0 1 0 0 -1 0 
+					</float_array>
+					<technique_common>
+						<accessor count="2" source="#geom_3d_21-normals-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_21-texcoord">
+					<float_array id="geom_3d_21-texcoord-array" count="8">
+						-4.1646595 0 -4.1646595 3 -0.12358987 0 -0.12358987 3 
+					</float_array>
+					<technique_common>
+						<accessor count="4" source="#geom_3d_21-texcoord-array" stride="2">
+							 <param name="S" type="float" />
+							 <param name="T" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="geom_3d_21-vertices">
+					<input semantic="POSITION" source="#geom_3d_21-positions" />
+				</vertices>
+				<triangles count="4" material="geom_3d_21_material">
+					<input offset="0" semantic="VERTEX" source="#geom_3d_21-vertices" set="0" />
+					<input offset="1" semantic="NORMAL" source="#geom_3d_21-normals" set="0" />
+					<input offset="2" semantic="TEXCOORD" source="#geom_3d_21-texcoord" set="0" />
+					<p>1 0 3 3 0 1 0 0 2 0 1 2 3 1 1 1 1 3 0 0 2 3 0 1 2 0 0 2 1 0 3 1 1 0 1 2 </p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="geom_3d_20" name="x3g_room:Wall:Middle">
+			<mesh>
+				<source id="geom_3d_20-positions">
+					<float_array id="geom_3d_20-positions-array" count="24">
+						-0.12358987 -0.12358987 0 -0.12358987 -0.12358987 3 0.12358987 0.12358987 0 0.12358987 0.12358987 3 8.7849398 0.12358987 0 8.7849398 0.12358987 3 9.0321198 -0.12358987 0 9.0321198 -0.12358987 3 
+					</float_array>
+					<technique_common>
+						<accessor count="8" source="#geom_3d_20-positions-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_20-normals">
+					<float_array id="geom_3d_20-normals-array" count="18">
+						-0.70710677 -0.70710677 0 -0.70710677 0.70710677 0 0 0 -1 0 0 1 0.70710677 -0.70710677 0 0.70710677 0.70710677 0 
+					</float_array>
+					<technique_common>
+						<accessor count="6" source="#geom_3d_20-normals-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_20-texcoord">
+					<float_array id="geom_3d_20-texcoord-array" count="32">
+						-9.0321198 -0.12358987 -9.0321198 0 -9.0321198 3 -8.7849398 0 -8.7849398 0.12358987 -8.7849398 3 -0.12358987 -0.12358987 -0.12358987 0 -0.12358987 0.12358987 -0.12358987 3 0.12358987 -0.12358987 0.12358987 0 0.12358987 0.12358987 0.12358987 3 8.7849398 0.12358987 9.0321198 -0.12358987 
+					</float_array>
+					<technique_common>
+						<accessor count="16" source="#geom_3d_20-texcoord-array" stride="2">
+							 <param name="S" type="float" />
+							 <param name="T" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="geom_3d_20-vertices">
+					<input semantic="POSITION" source="#geom_3d_20-positions" />
+				</vertices>
+				<triangles count="16" material="geom_3d_20_material">
+					<input offset="0" semantic="VERTEX" source="#geom_3d_20-vertices" set="0" />
+					<input offset="1" semantic="NORMAL" source="#geom_3d_20-normals" set="0" />
+					<input offset="2" semantic="TEXCOORD" source="#geom_3d_20-texcoord" set="0" />
+					<p>1 1 13 3 1 9 0 1 11 0 4 11 3 4 9 1 4 13 0 1 11 3 1 9 2 1 7 2 4 7 3 4 9 0 4 11 5 5 5 7 5 2 4 5 3 4 0 3 7 0 2 5 0 5 4 5 3 7 5 2 6 5 1 6 0 1 7 0 2 4 0 3 6 2 0 0 2 10 4 2 4 4 3 4 0 3 10 6 3 0 4 2 4 0 2 10 2 2 8 2 3 8 0 3 10 4 3 4 1 3 6 7 3 15 3 3 12 3 2 12 7 2 15 1 2 6 3 3 12 7 3 15 5 3 14 5 2 14 7 2 15 3 2 12 </p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="geom_3d_24" name="x3g_room:Wall:Right">
+			<mesh>
+				<source id="geom_3d_24-positions">
+					<float_array id="geom_3d_24-positions-array" count="12">
+						-0.12358987 0.12358987 0 -0.12358987 0.12358987 3 2.053782 0.12358987 0 2.053782 0.12358987 3 
+					</float_array>
+					<technique_common>
+						<accessor count="4" source="#geom_3d_24-positions-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_24-normals">
+					<float_array id="geom_3d_24-normals-array" count="6">
+						0 -1 0 0 1 0 
+					</float_array>
+					<technique_common>
+						<accessor count="2" source="#geom_3d_24-normals-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_24-texcoord">
+					<float_array id="geom_3d_24-texcoord-array" count="8">
+						-2.053782 0 -2.053782 3 0.12358987 0 0.12358987 3 
+					</float_array>
+					<technique_common>
+						<accessor count="4" source="#geom_3d_24-texcoord-array" stride="2">
+							 <param name="S" type="float" />
+							 <param name="T" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="geom_3d_24-vertices">
+					<input semantic="POSITION" source="#geom_3d_24-positions" />
+				</vertices>
+				<triangles count="4" material="geom_3d_24_material">
+					<input offset="0" semantic="VERTEX" source="#geom_3d_24-vertices" set="0" />
+					<input offset="1" semantic="NORMAL" source="#geom_3d_24-normals" set="0" />
+					<input offset="2" semantic="TEXCOORD" source="#geom_3d_24-texcoord" set="0" />
+					<p>1 1 3 3 1 1 0 1 2 0 0 2 3 0 1 1 0 3 0 1 2 3 1 1 2 1 0 2 0 0 3 0 1 0 0 2 </p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="geom_3d_23" name="x3g_room:Wall:Middle">
+			<mesh>
+				<source id="geom_3d_23-positions">
+					<float_array id="geom_3d_23-positions-array" count="24">
+						-0.12358987 -0.12358987 0 -0.12358987 -0.12358987 3 0.12358987 0.12358987 0 0.12358987 0.12358987 3 3.91748 -0.12358987 0 3.91748 -0.12358987 3 4.1646595 0.12358987 0 4.1646595 0.12358987 3 
+					</float_array>
+					<technique_common>
+						<accessor count="8" source="#geom_3d_23-positions-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_23-normals">
+					<float_array id="geom_3d_23-normals-array" count="12">
+						-0.70710677 0.70710677 0 0 0 -1 0 0 1 0.70710677 -0.70710677 0 
+					</float_array>
+					<technique_common>
+						<accessor count="4" source="#geom_3d_23-normals-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_23-texcoord">
+					<float_array id="geom_3d_23-texcoord-array" count="24">
+						-4.1646595 0.12358987 -3.91748 -0.12358987 -0.12358987 -0.12358987 -0.12358987 0 -0.12358987 0.12358987 -0.12358987 3 0.12358987 -0.12358987 0.12358987 0 0.12358987 0.12358987 0.12358987 3 3.91748 -0.12358987 4.1646595 0.12358987 
+					</float_array>
+					<technique_common>
+						<accessor count="12" source="#geom_3d_23-texcoord-array" stride="2">
+							 <param name="S" type="float" />
+							 <param name="T" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="geom_3d_23-vertices">
+					<input semantic="POSITION" source="#geom_3d_23-positions" />
+				</vertices>
+				<triangles count="16" material="geom_3d_23_material">
+					<input offset="0" semantic="VERTEX" source="#geom_3d_23-vertices" set="0" />
+					<input offset="1" semantic="NORMAL" source="#geom_3d_23-normals" set="0" />
+					<input offset="2" semantic="TEXCOORD" source="#geom_3d_23-texcoord" set="0" />
+					<p>1 0 9 3 0 5 0 0 7 0 3 7 3 3 5 1 3 9 0 0 7 3 0 5 2 0 3 2 3 3 3 3 5 0 3 7 7 3 9 5 3 5 6 3 7 6 0 7 5 0 5 7 0 9 6 3 7 5 3 5 4 3 3 4 0 3 5 0 5 6 0 7 0 1 6 2 1 4 4 1 1 4 2 1 2 2 4 0 2 6 4 1 1 2 1 4 6 1 0 6 2 0 2 2 4 4 2 1 1 2 2 5 2 10 3 2 8 3 1 8 5 1 10 1 1 2 3 2 8 5 2 10 7 2 11 7 1 11 5 1 10 3 1 8 </p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="geom_3d_26" name="x3g_room:Wall:Middle">
+			<mesh>
+				<source id="geom_3d_26-positions">
+					<float_array id="geom_3d_26-positions-array" count="24">
+						-0.12358987 0.12358987 0 -0.12358987 0.12358987 3 0.12358987 -0.12358987 0 0.12358987 -0.12358987 3 1.8066024 -0.12358987 0 1.8066024 -0.12358987 3 2.053782 0.12358987 0 2.053782 0.12358987 3 
+					</float_array>
+					<technique_common>
+						<accessor count="8" source="#geom_3d_26-positions-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_26-normals">
+					<float_array id="geom_3d_26-normals-array" count="18">
+						-0.70710677 -0.70710677 0 -0.70710677 0.70710677 0 0 0 -1 0 0 1 0.70710677 -0.70710677 0 0.70710677 0.70710677 0 
+					</float_array>
+					<technique_common>
+						<accessor count="6" source="#geom_3d_26-normals-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_26-texcoord">
+					<float_array id="geom_3d_26-texcoord-array" count="24">
+						-2.053782 0.12358987 -1.8066024 -0.12358987 -0.12358987 -0.12358987 -0.12358987 0 -0.12358987 0.12358987 -0.12358987 3 0.12358987 -0.12358987 0.12358987 0 0.12358987 0.12358987 0.12358987 3 1.8066024 -0.12358987 2.053782 0.12358987 
+					</float_array>
+					<technique_common>
+						<accessor count="12" source="#geom_3d_26-texcoord-array" stride="2">
+							 <param name="S" type="float" />
+							 <param name="T" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="geom_3d_26-vertices">
+					<input semantic="POSITION" source="#geom_3d_26-positions" />
+				</vertices>
+				<triangles count="16" material="geom_3d_26_material">
+					<input offset="0" semantic="VERTEX" source="#geom_3d_26-vertices" set="0" />
+					<input offset="1" semantic="NORMAL" source="#geom_3d_26-normals" set="0" />
+					<input offset="2" semantic="TEXCOORD" source="#geom_3d_26-texcoord" set="0" />
+					<p>3 0 9 1 0 5 2 0 7 2 5 7 1 5 5 3 5 9 2 0 7 1 0 5 0 0 3 0 5 3 1 5 5 2 5 7 7 4 9 5 4 5 6 4 7 6 1 7 5 1 5 7 1 9 6 4 7 5 4 5 4 4 3 4 1 3 5 1 5 6 1 7 4 2 1 2 2 2 6 2 0 6 3 0 2 3 2 4 3 1 6 2 0 2 2 2 0 2 8 0 3 8 2 3 2 6 3 0 3 3 6 5 3 10 1 3 4 1 2 4 5 2 10 3 2 6 1 3 4 5 3 10 7 3 11 7 2 11 5 2 10 1 2 4 </p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="geom_3d_27" name="x3g_room:Wall:Right">
+			<mesh>
+				<source id="geom_3d_27-positions">
+					<float_array id="geom_3d_27-positions-array" count="12">
+						-0.12358987 0.12358987 0 -0.12358987 0.12358987 3 2.3496845 0.12358987 0 2.3496845 0.12358987 3 
+					</float_array>
+					<technique_common>
+						<accessor count="4" source="#geom_3d_27-positions-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_27-normals">
+					<float_array id="geom_3d_27-normals-array" count="6">
+						0 -1 0 0 1 0 
+					</float_array>
+					<technique_common>
+						<accessor count="2" source="#geom_3d_27-normals-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_27-texcoord">
+					<float_array id="geom_3d_27-texcoord-array" count="8">
+						-2.3496845 0 -2.3496845 3 0.12358987 0 0.12358987 3 
+					</float_array>
+					<technique_common>
+						<accessor count="4" source="#geom_3d_27-texcoord-array" stride="2">
+							 <param name="S" type="float" />
+							 <param name="T" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="geom_3d_27-vertices">
+					<input semantic="POSITION" source="#geom_3d_27-positions" />
+				</vertices>
+				<triangles count="4" material="geom_3d_27_material">
+					<input offset="0" semantic="VERTEX" source="#geom_3d_27-vertices" set="0" />
+					<input offset="1" semantic="NORMAL" source="#geom_3d_27-normals" set="0" />
+					<input offset="2" semantic="TEXCOORD" source="#geom_3d_27-texcoord" set="0" />
+					<p>1 1 3 3 1 1 0 1 2 0 0 2 3 0 1 1 0 3 0 1 2 3 1 1 2 1 0 2 0 0 3 0 1 0 0 2 </p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="geom_3d_29" name="x3g_room:Wall:Middle">
+			<mesh>
+				<source id="geom_3d_29-positions">
+					<float_array id="geom_3d_29-positions-array" count="24">
+						-0.12358987 0.12358987 0 -0.12358987 0.12358987 3 0.12358987 -0.12358987 0 0.12358987 -0.12358987 3 2.3496845 0.12358987 0 2.3496845 0.12358987 3 2.5968642 -0.12358987 0 2.5968642 -0.12358987 3 
+					</float_array>
+					<technique_common>
+						<accessor count="8" source="#geom_3d_29-positions-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_29-normals">
+					<float_array id="geom_3d_29-normals-array" count="12">
+						-0.70710677 -0.70710677 0 0 0 -1 0 0 1 0.70710677 0.70710677 0 
+					</float_array>
+					<technique_common>
+						<accessor count="4" source="#geom_3d_29-normals-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_29-texcoord">
+					<float_array id="geom_3d_29-texcoord-array" count="32">
+						-2.5968642 -0.12358987 -2.5968642 0 -2.5968642 3 -2.3496845 0 -2.3496845 0.12358987 -2.3496845 3 -0.12358987 -0.12358987 -0.12358987 0 -0.12358987 0.12358987 -0.12358987 3 0.12358987 -0.12358987 0.12358987 0 0.12358987 0.12358987 0.12358987 3 2.3496845 0.12358987 2.5968642 -0.12358987 
+					</float_array>
+					<technique_common>
+						<accessor count="16" source="#geom_3d_29-texcoord-array" stride="2">
+							 <param name="S" type="float" />
+							 <param name="T" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="geom_3d_29-vertices">
+					<input semantic="POSITION" source="#geom_3d_29-positions" />
+				</vertices>
+				<triangles count="16" material="geom_3d_29_material">
+					<input offset="0" semantic="VERTEX" source="#geom_3d_29-vertices" set="0" />
+					<input offset="1" semantic="NORMAL" source="#geom_3d_29-normals" set="0" />
+					<input offset="2" semantic="TEXCOORD" source="#geom_3d_29-texcoord" set="0" />
+					<p>3 0 13 1 0 9 2 0 11 2 3 11 1 3 9 3 3 13 2 0 11 1 0 9 0 0 7 0 3 7 1 3 9 2 3 11 5 3 5 7 3 2 4 3 3 4 0 3 7 0 2 5 0 5 4 3 3 7 3 2 6 3 1 6 0 1 7 0 2 4 0 3 6 1 0 2 1 6 4 1 4 4 2 4 2 2 6 6 2 0 4 1 4 2 1 6 0 1 12 0 2 12 2 2 6 4 2 4 1 2 8 3 2 10 5 2 14 5 1 14 3 1 10 1 1 8 5 2 14 3 2 10 7 2 15 7 1 15 3 1 10 5 1 14 </p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="geom_3d_31" name="x3g_room:Wall:Left">
+			<mesh>
+				<source id="geom_3d_31-positions">
+					<float_array id="geom_3d_31-positions-array" count="12">
+						-0.12358987 -0.12358987 0 -0.12358987 -0.12358987 3 14.296009 -0.12358987 0 14.296009 -0.12358987 3 
+					</float_array>
+					<technique_common>
+						<accessor count="4" source="#geom_3d_31-positions-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_31-normals">
+					<float_array id="geom_3d_31-normals-array" count="6">
+						0 -1 0 0 1 0 
+					</float_array>
+					<technique_common>
+						<accessor count="2" source="#geom_3d_31-normals-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_31-texcoord">
+					<float_array id="geom_3d_31-texcoord-array" count="8">
+						-0.12358987 0 -0.12358987 3 14.296009 0 14.296009 3 
+					</float_array>
+					<technique_common>
+						<accessor count="4" source="#geom_3d_31-texcoord-array" stride="2">
+							 <param name="S" type="float" />
+							 <param name="T" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="geom_3d_31-vertices">
+					<input semantic="POSITION" source="#geom_3d_31-positions" />
+				</vertices>
+				<triangles count="4" material="geom_3d_31_material">
+					<input offset="0" semantic="VERTEX" source="#geom_3d_31-vertices" set="0" />
+					<input offset="1" semantic="NORMAL" source="#geom_3d_31-normals" set="0" />
+					<input offset="2" semantic="TEXCOORD" source="#geom_3d_31-texcoord" set="0" />
+					<p>3 0 3 1 0 1 2 0 2 2 1 2 1 1 1 3 1 3 2 0 2 1 0 1 0 0 0 0 1 0 1 1 1 2 1 2 </p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="geom_3d_33" name="x3g_room:Wall:Right">
+			<mesh>
+				<source id="geom_3d_33-positions">
+					<float_array id="geom_3d_33-positions-array" count="12">
+						0.12358987 0.12358987 0 0.12358987 0.12358987 3 5.7490768 0.12358987 0 5.7490768 0.12358987 3 
+					</float_array>
+					<technique_common>
+						<accessor count="4" source="#geom_3d_33-positions-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_33-normals">
+					<float_array id="geom_3d_33-normals-array" count="6">
+						0 -1 0 0 1 0 
+					</float_array>
+					<technique_common>
+						<accessor count="2" source="#geom_3d_33-normals-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_33-texcoord">
+					<float_array id="geom_3d_33-texcoord-array" count="8">
+						-5.7490768 0 -5.7490768 3 -0.12358987 0 -0.12358987 3 
+					</float_array>
+					<technique_common>
+						<accessor count="4" source="#geom_3d_33-texcoord-array" stride="2">
+							 <param name="S" type="float" />
+							 <param name="T" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="geom_3d_33-vertices">
+					<input semantic="POSITION" source="#geom_3d_33-positions" />
+				</vertices>
+				<triangles count="4" material="geom_3d_33_material">
+					<input offset="0" semantic="VERTEX" source="#geom_3d_33-vertices" set="0" />
+					<input offset="1" semantic="NORMAL" source="#geom_3d_33-normals" set="0" />
+					<input offset="2" semantic="TEXCOORD" source="#geom_3d_33-texcoord" set="0" />
+					<p>1 1 3 3 1 1 0 1 2 0 0 2 3 0 1 1 0 3 0 1 2 3 1 1 2 1 0 2 0 0 3 0 1 0 0 2 </p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="geom_3d_30" name="x3g_room:Wall:Right">
+			<mesh>
+				<source id="geom_3d_30-positions">
+					<float_array id="geom_3d_30-positions-array" count="12">
+						0.12358987 0.12358987 0 0.12358987 0.12358987 3 14.048829 0.12358987 0 14.048829 0.12358987 3 
+					</float_array>
+					<technique_common>
+						<accessor count="4" source="#geom_3d_30-positions-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_30-normals">
+					<float_array id="geom_3d_30-normals-array" count="6">
+						0 -1 0 0 1 0 
+					</float_array>
+					<technique_common>
+						<accessor count="2" source="#geom_3d_30-normals-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_30-texcoord">
+					<float_array id="geom_3d_30-texcoord-array" count="8">
+						-14.048829 0 -14.048829 3 -0.12358987 0 -0.12358987 3 
+					</float_array>
+					<technique_common>
+						<accessor count="4" source="#geom_3d_30-texcoord-array" stride="2">
+							 <param name="S" type="float" />
+							 <param name="T" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="geom_3d_30-vertices">
+					<input semantic="POSITION" source="#geom_3d_30-positions" />
+				</vertices>
+				<triangles count="4" material="geom_3d_30_material">
+					<input offset="0" semantic="VERTEX" source="#geom_3d_30-vertices" set="0" />
+					<input offset="1" semantic="NORMAL" source="#geom_3d_30-normals" set="0" />
+					<input offset="2" semantic="TEXCOORD" source="#geom_3d_30-texcoord" set="0" />
+					<p>1 1 3 3 1 1 0 1 2 0 0 2 3 0 1 1 0 3 0 1 2 3 1 1 2 1 0 2 0 0 3 0 1 0 0 2 </p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="geom_3d_25" name="x3g_room:Wall:Left">
+			<mesh>
+				<source id="geom_3d_25-positions">
+					<float_array id="geom_3d_25-positions-array" count="12">
+						0.12358987 -0.12358987 0 0.12358987 -0.12358987 3 1.8066024 -0.12358987 0 1.8066024 -0.12358987 3 
+					</float_array>
+					<technique_common>
+						<accessor count="4" source="#geom_3d_25-positions-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_25-normals">
+					<float_array id="geom_3d_25-normals-array" count="6">
+						0 -1 0 0 1 0 
+					</float_array>
+					<technique_common>
+						<accessor count="2" source="#geom_3d_25-normals-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_25-texcoord">
+					<float_array id="geom_3d_25-texcoord-array" count="8">
+						0.12358987 0 0.12358987 3 1.8066024 0 1.8066024 3 
+					</float_array>
+					<technique_common>
+						<accessor count="4" source="#geom_3d_25-texcoord-array" stride="2">
+							 <param name="S" type="float" />
+							 <param name="T" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="geom_3d_25-vertices">
+					<input semantic="POSITION" source="#geom_3d_25-positions" />
+				</vertices>
+				<triangles count="4" material="geom_3d_25_material">
+					<input offset="0" semantic="VERTEX" source="#geom_3d_25-vertices" set="0" />
+					<input offset="1" semantic="NORMAL" source="#geom_3d_25-normals" set="0" />
+					<input offset="2" semantic="TEXCOORD" source="#geom_3d_25-texcoord" set="0" />
+					<p>3 0 3 1 0 1 2 0 2 2 1 2 1 1 1 3 1 3 2 0 2 1 0 1 0 0 0 0 1 0 1 1 1 2 1 2 </p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="geom_3d_32" name="x3g_room:Wall:Middle">
+			<mesh>
+				<source id="geom_3d_32-positions">
+					<float_array id="geom_3d_32-positions-array" count="24">
+						-0.12358987 -0.12358987 0 -0.12358987 -0.12358987 3 0.12358987 0.12358987 0 0.12358987 0.12358987 3 14.048829 0.12358987 0 14.048829 0.12358987 3 14.296009 -0.12358987 0 14.296009 -0.12358987 3 
+					</float_array>
+					<technique_common>
+						<accessor count="8" source="#geom_3d_32-positions-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_32-normals">
+					<float_array id="geom_3d_32-normals-array" count="18">
+						-0.70710677 -0.70710677 0 -0.70710677 0.70710677 0 0 0 -1 0 0 1 0.70710677 -0.70710677 0 0.70710677 0.70710677 0 
+					</float_array>
+					<technique_common>
+						<accessor count="6" source="#geom_3d_32-normals-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_32-texcoord">
+					<float_array id="geom_3d_32-texcoord-array" count="32">
+						-14.296009 -0.12358987 -14.296009 0 -14.296009 3 -14.048829 0 -14.048829 0.12358987 -14.048829 3 -0.12358987 -0.12358987 -0.12358987 0 -0.12358987 0.12358987 -0.12358987 3 0.12358987 -0.12358987 0.12358987 0 0.12358987 0.12358987 0.12358987 3 14.048829 0.12358987 14.296009 -0.12358987 
+					</float_array>
+					<technique_common>
+						<accessor count="16" source="#geom_3d_32-texcoord-array" stride="2">
+							 <param name="S" type="float" />
+							 <param name="T" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="geom_3d_32-vertices">
+					<input semantic="POSITION" source="#geom_3d_32-positions" />
+				</vertices>
+				<triangles count="16" material="geom_3d_32_material">
+					<input offset="0" semantic="VERTEX" source="#geom_3d_32-vertices" set="0" />
+					<input offset="1" semantic="NORMAL" source="#geom_3d_32-normals" set="0" />
+					<input offset="2" semantic="TEXCOORD" source="#geom_3d_32-texcoord" set="0" />
+					<p>1 1 13 3 1 9 0 1 11 0 4 11 3 4 9 1 4 13 0 1 11 3 1 9 2 1 7 2 4 7 3 4 9 0 4 11 5 5 5 7 5 2 4 5 3 4 0 3 7 0 2 5 0 5 4 5 3 7 5 2 6 5 1 6 0 1 7 0 2 4 0 3 6 2 0 0 2 10 4 2 4 4 3 4 0 3 10 6 3 0 4 2 4 0 2 10 2 2 8 2 3 8 0 3 10 4 3 4 1 3 6 7 3 15 3 3 12 3 2 12 7 2 15 1 2 6 3 3 12 7 3 15 5 3 14 5 2 14 7 2 15 3 2 12 </p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="geom_3d_34" name="x3g_room:Wall:Left">
+			<mesh>
+				<source id="geom_3d_34-positions">
+					<float_array id="geom_3d_34-positions-array" count="12">
+						-0.12358987 -0.12358987 0 -0.12358987 -0.12358987 3 5.5018969 -0.12358987 0 5.5018969 -0.12358987 3 
+					</float_array>
+					<technique_common>
+						<accessor count="4" source="#geom_3d_34-positions-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_34-normals">
+					<float_array id="geom_3d_34-normals-array" count="6">
+						0 -1 0 0 1 0 
+					</float_array>
+					<technique_common>
+						<accessor count="2" source="#geom_3d_34-normals-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_34-texcoord">
+					<float_array id="geom_3d_34-texcoord-array" count="8">
+						-0.12358987 0 -0.12358987 3 5.5018969 0 5.5018969 3 
+					</float_array>
+					<technique_common>
+						<accessor count="4" source="#geom_3d_34-texcoord-array" stride="2">
+							 <param name="S" type="float" />
+							 <param name="T" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="geom_3d_34-vertices">
+					<input semantic="POSITION" source="#geom_3d_34-positions" />
+				</vertices>
+				<triangles count="4" material="geom_3d_34_material">
+					<input offset="0" semantic="VERTEX" source="#geom_3d_34-vertices" set="0" />
+					<input offset="1" semantic="NORMAL" source="#geom_3d_34-normals" set="0" />
+					<input offset="2" semantic="TEXCOORD" source="#geom_3d_34-texcoord" set="0" />
+					<p>3 0 3 1 0 1 2 0 2 2 1 2 1 1 1 3 1 3 2 0 2 1 0 1 0 0 0 0 1 0 1 1 1 2 1 2 </p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="geom_3d_28" name="x3g_room:Wall:Left">
+			<mesh>
+				<source id="geom_3d_28-positions">
+					<float_array id="geom_3d_28-positions-array" count="12">
+						0.12358987 -0.12358987 0 0.12358987 -0.12358987 3 2.5968642 -0.12358987 0 2.5968642 -0.12358987 3 
+					</float_array>
+					<technique_common>
+						<accessor count="4" source="#geom_3d_28-positions-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_28-normals">
+					<float_array id="geom_3d_28-normals-array" count="6">
+						0 1 0 0 -1 0 
+					</float_array>
+					<technique_common>
+						<accessor count="2" source="#geom_3d_28-normals-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_28-texcoord">
+					<float_array id="geom_3d_28-texcoord-array" count="8">
+						0.12358987 0 0.12358987 3 2.5968642 0 2.5968642 3 
+					</float_array>
+					<technique_common>
+						<accessor count="4" source="#geom_3d_28-texcoord-array" stride="2">
+							 <param name="S" type="float" />
+							 <param name="T" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="geom_3d_28-vertices">
+					<input semantic="POSITION" source="#geom_3d_28-positions" />
+				</vertices>
+				<triangles count="4" material="geom_3d_28_material">
+					<input offset="0" semantic="VERTEX" source="#geom_3d_28-vertices" set="0" />
+					<input offset="1" semantic="NORMAL" source="#geom_3d_28-normals" set="0" />
+					<input offset="2" semantic="TEXCOORD" source="#geom_3d_28-texcoord" set="0" />
+					<p>3 1 3 1 1 1 2 1 2 2 0 2 1 0 1 3 0 3 2 1 2 1 1 1 0 1 0 0 0 0 1 0 1 2 0 2 </p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="geom_3d_38" name="x3g_room:Wall:Middle">
+			<mesh>
+				<source id="geom_3d_38-positions">
+					<float_array id="geom_3d_38-positions-array" count="24">
+						-0.12358987 0.12358987 0 -0.12358987 0.12358987 3 0.12358987 -0.12358987 0 0.12358987 -0.12358987 3 0.74331111 0.12358987 0 0.74331111 0.12358987 3 0.99049085 -0.12358987 0 0.99049085 -0.12358987 3 
+					</float_array>
+					<technique_common>
+						<accessor count="8" source="#geom_3d_38-positions-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_38-normals">
+					<float_array id="geom_3d_38-normals-array" count="12">
+						-0.70710677 -0.70710677 0 0 0 -1 0 0 1 0.70710677 0.70710677 0 
+					</float_array>
+					<technique_common>
+						<accessor count="4" source="#geom_3d_38-normals-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_38-texcoord">
+					<float_array id="geom_3d_38-texcoord-array" count="32">
+						-0.99049085 -0.12358987 -0.99049085 0 -0.99049085 3 -0.74331111 0 -0.74331111 0.12358987 -0.74331111 3 -0.12358987 -0.12358987 -0.12358987 0 -0.12358987 0.12358987 -0.12358987 3 0.12358987 -0.12358987 0.12358987 0 0.12358987 0.12358987 0.12358987 3 0.74331111 0.12358987 0.99049085 -0.12358987 
+					</float_array>
+					<technique_common>
+						<accessor count="16" source="#geom_3d_38-texcoord-array" stride="2">
+							 <param name="S" type="float" />
+							 <param name="T" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="geom_3d_38-vertices">
+					<input semantic="POSITION" source="#geom_3d_38-positions" />
+				</vertices>
+				<triangles count="16" material="geom_3d_38_material">
+					<input offset="0" semantic="VERTEX" source="#geom_3d_38-vertices" set="0" />
+					<input offset="1" semantic="NORMAL" source="#geom_3d_38-normals" set="0" />
+					<input offset="2" semantic="TEXCOORD" source="#geom_3d_38-texcoord" set="0" />
+					<p>3 0 13 1 0 9 2 0 11 2 3 11 1 3 9 3 3 13 2 0 11 1 0 9 0 0 7 0 3 7 1 3 9 2 3 11 5 3 5 7 3 2 4 3 3 4 0 3 7 0 2 5 0 5 4 3 3 7 3 2 6 3 1 6 0 1 7 0 2 4 0 3 6 1 0 2 1 6 4 1 4 4 2 4 2 2 6 6 2 0 4 1 4 2 1 6 0 1 12 0 2 12 2 2 6 4 2 4 1 2 8 3 2 10 5 2 14 5 1 14 3 1 10 1 1 8 5 2 14 3 2 10 7 2 15 7 1 15 3 1 10 5 1 14 </p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="geom_3d_42" name="x3g_room:Wall:Right">
+			<mesh>
+				<source id="geom_3d_42-positions">
+					<float_array id="geom_3d_42-positions-array" count="12">
+						-0.12358987 0.12358987 0 -0.12358987 0.12358987 3 0.66298896 0.12358987 0 0.66298896 0.12358987 3 
+					</float_array>
+					<technique_common>
+						<accessor count="4" source="#geom_3d_42-positions-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_42-normals">
+					<float_array id="geom_3d_42-normals-array" count="6">
+						0 -1 0 0 1 0 
+					</float_array>
+					<technique_common>
+						<accessor count="2" source="#geom_3d_42-normals-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_42-texcoord">
+					<float_array id="geom_3d_42-texcoord-array" count="8">
+						-0.66298896 0 -0.66298896 3 0.12358987 0 0.12358987 3 
+					</float_array>
+					<technique_common>
+						<accessor count="4" source="#geom_3d_42-texcoord-array" stride="2">
+							 <param name="S" type="float" />
+							 <param name="T" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="geom_3d_42-vertices">
+					<input semantic="POSITION" source="#geom_3d_42-positions" />
+				</vertices>
+				<triangles count="4" material="geom_3d_42_material">
+					<input offset="0" semantic="VERTEX" source="#geom_3d_42-vertices" set="0" />
+					<input offset="1" semantic="NORMAL" source="#geom_3d_42-normals" set="0" />
+					<input offset="2" semantic="TEXCOORD" source="#geom_3d_42-texcoord" set="0" />
+					<p>1 1 3 3 1 1 0 1 2 0 0 2 3 0 1 1 0 3 0 1 2 3 1 1 2 1 0 2 0 0 3 0 1 0 0 2 </p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="geom_3d_35" name="x3g_room:Wall:Middle">
+			<mesh>
+				<source id="geom_3d_35-positions">
+					<float_array id="geom_3d_35-positions-array" count="24">
+						-0.12358987 -0.12358987 0 -0.12358987 -0.12358987 3 0.12358987 0.12358987 0 0.12358987 0.12358987 3 5.5018969 -0.12358987 0 5.5018969 -0.12358987 3 5.7490768 0.12358987 0 5.7490768 0.12358987 3 
+					</float_array>
+					<technique_common>
+						<accessor count="8" source="#geom_3d_35-positions-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_35-normals">
+					<float_array id="geom_3d_35-normals-array" count="12">
+						-0.70710677 0.70710677 0 0 0 -1 0 0 1 0.70710677 -0.70710677 0 
+					</float_array>
+					<technique_common>
+						<accessor count="4" source="#geom_3d_35-normals-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_35-texcoord">
+					<float_array id="geom_3d_35-texcoord-array" count="32">
+						-5.7490768 0.12358987 -5.5018969 -0.12358987 -0.12358987 -0.12358987 -0.12358987 0 -0.12358987 0.12358987 -0.12358987 3 0.12358987 -0.12358987 0.12358987 0 0.12358987 0.12358987 0.12358987 3 5.5018969 -0.12358987 5.5018969 0 5.5018969 3 5.7490768 0 5.7490768 0.12358987 5.7490768 3 
+					</float_array>
+					<technique_common>
+						<accessor count="16" source="#geom_3d_35-texcoord-array" stride="2">
+							 <param name="S" type="float" />
+							 <param name="T" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="geom_3d_35-vertices">
+					<input semantic="POSITION" source="#geom_3d_35-positions" />
+				</vertices>
+				<triangles count="16" material="geom_3d_35_material">
+					<input offset="0" semantic="VERTEX" source="#geom_3d_35-vertices" set="0" />
+					<input offset="1" semantic="NORMAL" source="#geom_3d_35-normals" set="0" />
+					<input offset="2" semantic="TEXCOORD" source="#geom_3d_35-texcoord" set="0" />
+					<p>1 0 9 3 0 5 0 0 7 0 3 7 3 3 5 1 3 9 0 0 7 3 0 5 2 0 3 2 3 3 3 3 5 0 3 7 7 3 15 5 3 12 6 3 13 6 0 13 5 0 12 7 0 15 6 3 13 5 3 12 4 3 11 4 0 11 5 0 12 6 0 13 0 1 6 2 1 4 4 1 1 4 2 1 2 2 4 0 2 6 4 1 1 2 1 4 6 1 0 6 2 0 2 2 4 4 2 1 1 2 2 5 2 10 3 2 8 3 1 8 5 1 10 1 1 2 3 2 8 5 2 10 7 2 14 7 1 14 5 1 10 3 1 8 </p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="geom_3d_41" name="x3g_room:Wall:Middle">
+			<mesh>
+				<source id="geom_3d_41-positions">
+					<float_array id="geom_3d_41-positions-array" count="24">
+						-0.12358987 -0.12358987 0 -0.12358987 -0.12358987 3 0.12358987 0.12358987 0 0.12358987 0.12358987 3 0.47221974 -0.12358987 0 0.47221974 -0.12358987 3 0.71939945 0.12358987 0 0.71939945 0.12358987 3 
+					</float_array>
+					<technique_common>
+						<accessor count="8" source="#geom_3d_41-positions-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_41-normals">
+					<float_array id="geom_3d_41-normals-array" count="12">
+						-0.70710677 0.70710677 0 0 0 -1 0 0 1 0.70710677 -0.70710677 0 
+					</float_array>
+					<technique_common>
+						<accessor count="4" source="#geom_3d_41-normals-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_41-texcoord">
+					<float_array id="geom_3d_41-texcoord-array" count="24">
+						-0.71939945 0.12358987 -0.47221974 -0.12358987 -0.12358987 -0.12358987 -0.12358987 0 -0.12358987 0.12358987 -0.12358987 3 0.12358987 -0.12358987 0.12358987 0 0.12358987 0.12358987 0.12358987 3 0.47221974 -0.12358987 0.71939945 0.12358987 
+					</float_array>
+					<technique_common>
+						<accessor count="12" source="#geom_3d_41-texcoord-array" stride="2">
+							 <param name="S" type="float" />
+							 <param name="T" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="geom_3d_41-vertices">
+					<input semantic="POSITION" source="#geom_3d_41-positions" />
+				</vertices>
+				<triangles count="16" material="geom_3d_41_material">
+					<input offset="0" semantic="VERTEX" source="#geom_3d_41-vertices" set="0" />
+					<input offset="1" semantic="NORMAL" source="#geom_3d_41-normals" set="0" />
+					<input offset="2" semantic="TEXCOORD" source="#geom_3d_41-texcoord" set="0" />
+					<p>1 0 9 3 0 5 0 0 7 0 3 7 3 3 5 1 3 9 0 0 7 3 0 5 2 0 3 2 3 3 3 3 5 0 3 7 7 3 9 5 3 5 6 3 7 6 0 7 5 0 5 7 0 9 6 3 7 5 3 5 4 3 3 4 0 3 5 0 5 6 0 7 0 1 6 2 1 4 4 1 1 4 2 1 2 2 4 0 2 6 4 1 1 2 1 4 6 1 0 6 2 0 2 2 4 4 2 1 1 2 2 5 2 10 3 2 8 3 1 8 5 1 10 1 1 2 3 2 8 5 2 10 7 2 11 7 1 11 5 1 10 3 1 8 </p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="geom_3d_43" name="x3g_room:Wall:Left">
+			<mesh>
+				<source id="geom_3d_43-positions">
+					<float_array id="geom_3d_43-positions-array" count="12">
+						0.12358987 -0.12358987 0 0.12358987 -0.12358987 3 0.91016871 -0.12358987 0 0.91016871 -0.12358987 3 
+					</float_array>
+					<technique_common>
+						<accessor count="4" source="#geom_3d_43-positions-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_43-normals">
+					<float_array id="geom_3d_43-normals-array" count="6">
+						0 -1 0 0 1 0 
+					</float_array>
+					<technique_common>
+						<accessor count="2" source="#geom_3d_43-normals-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_43-texcoord">
+					<float_array id="geom_3d_43-texcoord-array" count="8">
+						0.12358987 0 0.12358987 3 0.91016871 0 0.91016871 3 
+					</float_array>
+					<technique_common>
+						<accessor count="4" source="#geom_3d_43-texcoord-array" stride="2">
+							 <param name="S" type="float" />
+							 <param name="T" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="geom_3d_43-vertices">
+					<input semantic="POSITION" source="#geom_3d_43-positions" />
+				</vertices>
+				<triangles count="4" material="geom_3d_43_material">
+					<input offset="0" semantic="VERTEX" source="#geom_3d_43-vertices" set="0" />
+					<input offset="1" semantic="NORMAL" source="#geom_3d_43-normals" set="0" />
+					<input offset="2" semantic="TEXCOORD" source="#geom_3d_43-texcoord" set="0" />
+					<p>3 0 3 1 0 1 2 0 2 2 1 2 1 1 1 3 1 3 2 0 2 1 0 1 0 0 0 0 1 0 1 1 1 2 1 2 </p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="geom_3d_36" name="x3g_room:Wall:Right">
+			<mesh>
+				<source id="geom_3d_36-positions">
+					<float_array id="geom_3d_36-positions-array" count="12">
+						-0.12358987 0.12358987 0 -0.12358987 0.12358987 3 0.74331111 0.12358987 0 0.74331111 0.12358987 3 
+					</float_array>
+					<technique_common>
+						<accessor count="4" source="#geom_3d_36-positions-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_36-normals">
+					<float_array id="geom_3d_36-normals-array" count="6">
+						0 -1 0 0 1 0 
+					</float_array>
+					<technique_common>
+						<accessor count="2" source="#geom_3d_36-normals-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_36-texcoord">
+					<float_array id="geom_3d_36-texcoord-array" count="8">
+						-0.74331111 0 -0.74331111 3 0.12358987 0 0.12358987 3 
+					</float_array>
+					<technique_common>
+						<accessor count="4" source="#geom_3d_36-texcoord-array" stride="2">
+							 <param name="S" type="float" />
+							 <param name="T" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="geom_3d_36-vertices">
+					<input semantic="POSITION" source="#geom_3d_36-positions" />
+				</vertices>
+				<triangles count="4" material="geom_3d_36_material">
+					<input offset="0" semantic="VERTEX" source="#geom_3d_36-vertices" set="0" />
+					<input offset="1" semantic="NORMAL" source="#geom_3d_36-normals" set="0" />
+					<input offset="2" semantic="TEXCOORD" source="#geom_3d_36-texcoord" set="0" />
+					<p>1 1 3 3 1 1 0 1 2 0 0 2 3 0 1 1 0 3 0 1 2 3 1 1 2 1 0 2 0 0 3 0 1 0 0 2 </p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="geom_3d_37" name="x3g_room:Wall:Left">
+			<mesh>
+				<source id="geom_3d_37-positions">
+					<float_array id="geom_3d_37-positions-array" count="12">
+						0.12358987 -0.12358987 0 0.12358987 -0.12358987 3 0.99049085 -0.12358987 0 0.99049085 -0.12358987 3 
+					</float_array>
+					<technique_common>
+						<accessor count="4" source="#geom_3d_37-positions-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_37-normals">
+					<float_array id="geom_3d_37-normals-array" count="6">
+						0 -1 0 0 1 0 
+					</float_array>
+					<technique_common>
+						<accessor count="2" source="#geom_3d_37-normals-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_37-texcoord">
+					<float_array id="geom_3d_37-texcoord-array" count="8">
+						0.12358987 0 0.12358987 3 0.99049085 0 0.99049085 3 
+					</float_array>
+					<technique_common>
+						<accessor count="4" source="#geom_3d_37-texcoord-array" stride="2">
+							 <param name="S" type="float" />
+							 <param name="T" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="geom_3d_37-vertices">
+					<input semantic="POSITION" source="#geom_3d_37-positions" />
+				</vertices>
+				<triangles count="4" material="geom_3d_37_material">
+					<input offset="0" semantic="VERTEX" source="#geom_3d_37-vertices" set="0" />
+					<input offset="1" semantic="NORMAL" source="#geom_3d_37-normals" set="0" />
+					<input offset="2" semantic="TEXCOORD" source="#geom_3d_37-texcoord" set="0" />
+					<p>3 0 3 1 0 1 2 0 2 2 1 2 1 1 1 3 1 3 2 0 2 1 0 1 0 0 0 0 1 0 1 1 1 2 1 2 </p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="geom_3d_40" name="x3g_room:Wall:Left">
+			<mesh>
+				<source id="geom_3d_40-positions">
+					<float_array id="geom_3d_40-positions-array" count="12">
+						-0.12358987 -0.12358987 0 -0.12358987 -0.12358987 3 0.47221974 -0.12358987 0 0.47221974 -0.12358987 3 
+					</float_array>
+					<technique_common>
+						<accessor count="4" source="#geom_3d_40-positions-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_40-normals">
+					<float_array id="geom_3d_40-normals-array" count="6">
+						0 -1 0 0 1 0 
+					</float_array>
+					<technique_common>
+						<accessor count="2" source="#geom_3d_40-normals-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_40-texcoord">
+					<float_array id="geom_3d_40-texcoord-array" count="8">
+						-0.12358987 0 -0.12358987 3 0.47221974 0 0.47221974 3 
+					</float_array>
+					<technique_common>
+						<accessor count="4" source="#geom_3d_40-texcoord-array" stride="2">
+							 <param name="S" type="float" />
+							 <param name="T" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="geom_3d_40-vertices">
+					<input semantic="POSITION" source="#geom_3d_40-positions" />
+				</vertices>
+				<triangles count="4" material="geom_3d_40_material">
+					<input offset="0" semantic="VERTEX" source="#geom_3d_40-vertices" set="0" />
+					<input offset="1" semantic="NORMAL" source="#geom_3d_40-normals" set="0" />
+					<input offset="2" semantic="TEXCOORD" source="#geom_3d_40-texcoord" set="0" />
+					<p>3 0 3 1 0 1 2 0 2 2 1 2 1 1 1 3 1 3 2 0 2 1 0 1 0 0 0 0 1 0 1 1 1 2 1 2 </p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="geom_3d_39" name="x3g_room:Wall:Right">
+			<mesh>
+				<source id="geom_3d_39-positions">
+					<float_array id="geom_3d_39-positions-array" count="12">
+						0.12358987 0.12358987 0 0.12358987 0.12358987 3 0.71939945 0.12358987 0 0.71939945 0.12358987 3 
+					</float_array>
+					<technique_common>
+						<accessor count="4" source="#geom_3d_39-positions-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_39-normals">
+					<float_array id="geom_3d_39-normals-array" count="6">
+						0 -1 0 0 1 0 
+					</float_array>
+					<technique_common>
+						<accessor count="2" source="#geom_3d_39-normals-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_39-texcoord">
+					<float_array id="geom_3d_39-texcoord-array" count="8">
+						-0.71939945 0 -0.71939945 3 -0.12358987 0 -0.12358987 3 
+					</float_array>
+					<technique_common>
+						<accessor count="4" source="#geom_3d_39-texcoord-array" stride="2">
+							 <param name="S" type="float" />
+							 <param name="T" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="geom_3d_39-vertices">
+					<input semantic="POSITION" source="#geom_3d_39-positions" />
+				</vertices>
+				<triangles count="4" material="geom_3d_39_material">
+					<input offset="0" semantic="VERTEX" source="#geom_3d_39-vertices" set="0" />
+					<input offset="1" semantic="NORMAL" source="#geom_3d_39-normals" set="0" />
+					<input offset="2" semantic="TEXCOORD" source="#geom_3d_39-texcoord" set="0" />
+					<p>1 1 3 3 1 1 0 1 2 0 0 2 3 0 1 1 0 3 0 1 2 3 1 1 2 1 0 2 0 0 3 0 1 0 0 2 </p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="geom_3d_44" name="x3g_room:Wall:Middle">
+			<mesh>
+				<source id="geom_3d_44-positions">
+					<float_array id="geom_3d_44-positions-array" count="24">
+						-0.12358987 0.12358987 0 -0.12358987 0.12358987 3 0.12358987 -0.12358987 0 0.12358987 -0.12358987 3 0.66298896 0.12358987 0 0.66298896 0.12358987 3 0.91016871 -0.12358987 0 0.91016871 -0.12358987 3 
+					</float_array>
+					<technique_common>
+						<accessor count="8" source="#geom_3d_44-positions-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_44-normals">
+					<float_array id="geom_3d_44-normals-array" count="12">
+						-0.70710677 -0.70710677 0 0 0 -1 0 0 1 0.70710677 0.70710677 0 
+					</float_array>
+					<technique_common>
+						<accessor count="4" source="#geom_3d_44-normals-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_44-texcoord">
+					<float_array id="geom_3d_44-texcoord-array" count="32">
+						-0.91016871 -0.12358987 -0.91016871 0 -0.91016871 3 -0.66298896 0 -0.66298896 0.12358987 -0.66298896 3 -0.12358987 -0.12358987 -0.12358987 0 -0.12358987 0.12358987 -0.12358987 3 0.12358987 -0.12358987 0.12358987 0 0.12358987 0.12358987 0.12358987 3 0.66298896 0.12358987 0.91016871 -0.12358987 
+					</float_array>
+					<technique_common>
+						<accessor count="16" source="#geom_3d_44-texcoord-array" stride="2">
+							 <param name="S" type="float" />
+							 <param name="T" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="geom_3d_44-vertices">
+					<input semantic="POSITION" source="#geom_3d_44-positions" />
+				</vertices>
+				<triangles count="16" material="geom_3d_44_material">
+					<input offset="0" semantic="VERTEX" source="#geom_3d_44-vertices" set="0" />
+					<input offset="1" semantic="NORMAL" source="#geom_3d_44-normals" set="0" />
+					<input offset="2" semantic="TEXCOORD" source="#geom_3d_44-texcoord" set="0" />
+					<p>3 0 13 1 0 9 2 0 11 2 3 11 1 3 9 3 3 13 2 0 11 1 0 9 0 0 7 0 3 7 1 3 9 2 3 11 5 3 5 7 3 2 4 3 3 4 0 3 7 0 2 5 0 5 4 3 3 7 3 2 6 3 1 6 0 1 7 0 2 4 0 3 6 1 0 2 1 6 4 1 4 4 2 4 2 2 6 6 2 0 4 1 4 2 1 6 0 1 12 0 2 12 2 2 6 4 2 4 1 2 8 3 2 10 5 2 14 5 1 14 3 1 10 1 1 8 5 2 14 3 2 10 7 2 15 7 1 15 3 1 10 5 1 14 </p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="geom_3d_45" name="x3g_room:Wall:Right">
+			<mesh>
+				<source id="geom_3d_45-positions">
+					<float_array id="geom_3d_45-positions-array" count="12">
+						0.12358987 0.12358987 0 0.12358987 0.12358987 3 5.5172811 0.12358987 0 5.5172811 0.12358987 3 
+					</float_array>
+					<technique_common>
+						<accessor count="4" source="#geom_3d_45-positions-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_45-normals">
+					<float_array id="geom_3d_45-normals-array" count="6">
+						0 -1 0 0 1 0 
+					</float_array>
+					<technique_common>
+						<accessor count="2" source="#geom_3d_45-normals-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_45-texcoord">
+					<float_array id="geom_3d_45-texcoord-array" count="8">
+						-5.5172811 0 -5.5172811 3 -0.12358987 0 -0.12358987 3 
+					</float_array>
+					<technique_common>
+						<accessor count="4" source="#geom_3d_45-texcoord-array" stride="2">
+							 <param name="S" type="float" />
+							 <param name="T" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="geom_3d_45-vertices">
+					<input semantic="POSITION" source="#geom_3d_45-positions" />
+				</vertices>
+				<triangles count="4" material="geom_3d_45_material">
+					<input offset="0" semantic="VERTEX" source="#geom_3d_45-vertices" set="0" />
+					<input offset="1" semantic="NORMAL" source="#geom_3d_45-normals" set="0" />
+					<input offset="2" semantic="TEXCOORD" source="#geom_3d_45-texcoord" set="0" />
+					<p>1 1 3 3 1 1 0 1 2 0 0 2 3 0 1 1 0 3 0 1 2 3 1 1 2 1 0 2 0 0 3 0 1 0 0 2 </p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="geom_3d_46" name="x3g_room:Wall:Left">
+			<mesh>
+				<source id="geom_3d_46-positions">
+					<float_array id="geom_3d_46-positions-array" count="12">
+						-0.12358987 -0.12358987 0 -0.12358987 -0.12358987 3 5.764461 -0.12358987 0 5.764461 -0.12358987 3 
+					</float_array>
+					<technique_common>
+						<accessor count="4" source="#geom_3d_46-positions-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_46-normals">
+					<float_array id="geom_3d_46-normals-array" count="6">
+						0 -1 0 0 1 0 
+					</float_array>
+					<technique_common>
+						<accessor count="2" source="#geom_3d_46-normals-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_46-texcoord">
+					<float_array id="geom_3d_46-texcoord-array" count="8">
+						-0.12358987 0 -0.12358987 3 5.764461 0 5.764461 3 
+					</float_array>
+					<technique_common>
+						<accessor count="4" source="#geom_3d_46-texcoord-array" stride="2">
+							 <param name="S" type="float" />
+							 <param name="T" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="geom_3d_46-vertices">
+					<input semantic="POSITION" source="#geom_3d_46-positions" />
+				</vertices>
+				<triangles count="4" material="geom_3d_46_material">
+					<input offset="0" semantic="VERTEX" source="#geom_3d_46-vertices" set="0" />
+					<input offset="1" semantic="NORMAL" source="#geom_3d_46-normals" set="0" />
+					<input offset="2" semantic="TEXCOORD" source="#geom_3d_46-texcoord" set="0" />
+					<p>3 0 3 1 0 1 2 0 2 2 1 2 1 1 1 3 1 3 2 0 2 1 0 1 0 0 0 0 1 0 1 1 1 2 1 2 </p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="geom_3d_47" name="x3g_room:Wall:Middle">
+			<mesh>
+				<source id="geom_3d_47-positions">
+					<float_array id="geom_3d_47-positions-array" count="24">
+						-0.12358987 -0.12358987 0 -0.12358987 -0.12358987 3 0.12358987 0.12358987 0 0.12358987 0.12358987 3 5.5172811 0.12358987 0 5.5172811 0.12358987 3 5.764461 -0.12358987 0 5.764461 -0.12358987 3 
+					</float_array>
+					<technique_common>
+						<accessor count="8" source="#geom_3d_47-positions-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_47-normals">
+					<float_array id="geom_3d_47-normals-array" count="18">
+						-0.70710677 -0.70710677 0 -0.70710677 0.70710677 0 0 0 -1 0 0 1 0.70710677 -0.70710677 0 0.70710677 0.70710677 0 
+					</float_array>
+					<technique_common>
+						<accessor count="6" source="#geom_3d_47-normals-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_47-texcoord">
+					<float_array id="geom_3d_47-texcoord-array" count="32">
+						-5.764461 -0.12358987 -5.764461 0 -5.764461 3 -5.5172811 0 -5.5172811 0.12358987 -5.5172811 3 -0.12358987 -0.12358987 -0.12358987 0 -0.12358987 0.12358987 -0.12358987 3 0.12358987 -0.12358987 0.12358987 0 0.12358987 0.12358987 0.12358987 3 5.5172811 0.12358987 5.764461 -0.12358987 
+					</float_array>
+					<technique_common>
+						<accessor count="16" source="#geom_3d_47-texcoord-array" stride="2">
+							 <param name="S" type="float" />
+							 <param name="T" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="geom_3d_47-vertices">
+					<input semantic="POSITION" source="#geom_3d_47-positions" />
+				</vertices>
+				<triangles count="16" material="geom_3d_47_material">
+					<input offset="0" semantic="VERTEX" source="#geom_3d_47-vertices" set="0" />
+					<input offset="1" semantic="NORMAL" source="#geom_3d_47-normals" set="0" />
+					<input offset="2" semantic="TEXCOORD" source="#geom_3d_47-texcoord" set="0" />
+					<p>1 1 13 3 1 9 0 1 11 0 4 11 3 4 9 1 4 13 0 1 11 3 1 9 2 1 7 2 4 7 3 4 9 0 4 11 5 5 5 7 5 2 4 5 3 4 0 3 7 0 2 5 0 5 4 5 3 7 5 2 6 5 1 6 0 1 7 0 2 4 0 3 6 2 0 0 2 10 4 2 4 4 3 4 0 3 10 6 3 0 4 2 4 0 2 10 2 2 8 2 3 8 0 3 10 4 3 4 1 3 6 7 3 15 3 3 12 3 2 12 7 2 15 1 2 6 3 3 12 7 3 15 5 3 14 5 2 14 7 2 15 3 2 12 </p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="geom_3d_0" name="x3g_room:Wall:Right">
+			<mesh>
+				<source id="geom_3d_0-positions">
+					<float_array id="geom_3d_0-positions-array" count="12">
+						0.12358987 0.12358987 0 0.12358987 0.12358987 3 17.879681 0.12358987 0 17.879681 0.12358987 3 
+					</float_array>
+					<technique_common>
+						<accessor count="4" source="#geom_3d_0-positions-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_0-normals">
+					<float_array id="geom_3d_0-normals-array" count="6">
+						0 -1 0 0 1 0 
+					</float_array>
+					<technique_common>
+						<accessor count="2" source="#geom_3d_0-normals-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_0-texcoord">
+					<float_array id="geom_3d_0-texcoord-array" count="8">
+						-17.879681 0 -17.879681 3 -0.12358987 0 -0.12358987 3 
+					</float_array>
+					<technique_common>
+						<accessor count="4" source="#geom_3d_0-texcoord-array" stride="2">
+							 <param name="S" type="float" />
+							 <param name="T" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="geom_3d_0-vertices">
+					<input semantic="POSITION" source="#geom_3d_0-positions" />
+				</vertices>
+				<triangles count="4" material="geom_3d_0_material">
+					<input offset="0" semantic="VERTEX" source="#geom_3d_0-vertices" set="0" />
+					<input offset="1" semantic="NORMAL" source="#geom_3d_0-normals" set="0" />
+					<input offset="2" semantic="TEXCOORD" source="#geom_3d_0-texcoord" set="0" />
+					<p>1 1 3 3 1 1 0 1 2 0 0 2 3 0 1 1 0 3 0 1 2 3 1 1 2 1 0 2 0 0 3 0 1 0 0 2 </p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="geom_3d_3" name="x3g_room:Wall:Right">
+			<mesh>
+				<source id="geom_3d_3-positions">
+					<float_array id="geom_3d_3-positions-array" count="12">
+						-0.12358987 0.12358987 0 -0.12358987 0.12358987 3 0.88511622 0.12358987 0 0.88511622 0.12358987 3 
+					</float_array>
+					<technique_common>
+						<accessor count="4" source="#geom_3d_3-positions-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_3-normals">
+					<float_array id="geom_3d_3-normals-array" count="6">
+						0 -1 0 0 1 0 
+					</float_array>
+					<technique_common>
+						<accessor count="2" source="#geom_3d_3-normals-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_3-texcoord">
+					<float_array id="geom_3d_3-texcoord-array" count="8">
+						-0.88511622 0 -0.88511622 3 0.12358987 0 0.12358987 3 
+					</float_array>
+					<technique_common>
+						<accessor count="4" source="#geom_3d_3-texcoord-array" stride="2">
+							 <param name="S" type="float" />
+							 <param name="T" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="geom_3d_3-vertices">
+					<input semantic="POSITION" source="#geom_3d_3-positions" />
+				</vertices>
+				<triangles count="4" material="geom_3d_3_material">
+					<input offset="0" semantic="VERTEX" source="#geom_3d_3-vertices" set="0" />
+					<input offset="1" semantic="NORMAL" source="#geom_3d_3-normals" set="0" />
+					<input offset="2" semantic="TEXCOORD" source="#geom_3d_3-texcoord" set="0" />
+					<p>1 1 3 3 1 1 0 1 2 0 0 2 3 0 1 1 0 3 0 1 2 3 1 1 2 1 0 2 0 0 3 0 1 0 0 2 </p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="geom_3d_2" name="x3g_room:Wall:Middle">
+			<mesh>
+				<source id="geom_3d_2-positions">
+					<float_array id="geom_3d_2-positions-array" count="24">
+						-0.12358987 -0.12358987 0 -0.12358987 -0.12358987 3 0.12358987 0.12358987 0 0.12358987 0.12358987 3 17.632502 -0.12358987 0 17.632502 -0.12358987 3 17.879681 0.12358987 0 17.879681 0.12358987 3 
+					</float_array>
+					<technique_common>
+						<accessor count="8" source="#geom_3d_2-positions-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_2-normals">
+					<float_array id="geom_3d_2-normals-array" count="12">
+						-0.70710677 0.70710677 0 0 0 -1 0 0 1 0.70710677 -0.70710677 0 
+					</float_array>
+					<technique_common>
+						<accessor count="4" source="#geom_3d_2-normals-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_2-texcoord">
+					<float_array id="geom_3d_2-texcoord-array" count="24">
+						-17.879681 0.12358987 -17.632502 -0.12358987 -0.12358987 -0.12358987 -0.12358987 0 -0.12358987 0.12358987 -0.12358987 3 0.12358987 -0.12358987 0.12358987 0 0.12358987 0.12358987 0.12358987 3 17.632502 -0.12358987 17.879681 0.12358987 
+					</float_array>
+					<technique_common>
+						<accessor count="12" source="#geom_3d_2-texcoord-array" stride="2">
+							 <param name="S" type="float" />
+							 <param name="T" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="geom_3d_2-vertices">
+					<input semantic="POSITION" source="#geom_3d_2-positions" />
+				</vertices>
+				<triangles count="16" material="geom_3d_2_material">
+					<input offset="0" semantic="VERTEX" source="#geom_3d_2-vertices" set="0" />
+					<input offset="1" semantic="NORMAL" source="#geom_3d_2-normals" set="0" />
+					<input offset="2" semantic="TEXCOORD" source="#geom_3d_2-texcoord" set="0" />
+					<p>1 0 9 3 0 5 0 0 7 0 3 7 3 3 5 1 3 9 0 0 7 3 0 5 2 0 3 2 3 3 3 3 5 0 3 7 7 3 9 5 3 5 6 3 7 6 0 7 5 0 5 7 0 9 6 3 7 5 3 5 4 3 3 4 0 3 5 0 5 6 0 7 0 1 6 2 1 4 4 1 1 4 2 1 2 2 4 0 2 6 4 1 1 2 1 4 6 1 0 6 2 0 2 2 4 4 2 1 1 2 2 5 2 10 3 2 8 3 1 8 5 1 10 1 1 2 3 2 8 5 2 10 7 2 11 7 1 11 5 1 10 3 1 8 </p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="geom_3d_4" name="x3g_room:Wall:Left">
+			<mesh>
+				<source id="geom_3d_4-positions">
+					<float_array id="geom_3d_4-positions-array" count="12">
+						0.12358987 -0.12358987 0 0.12358987 -0.12358987 3 1.132296 -0.12358987 0 1.132296 -0.12358987 3 
+					</float_array>
+					<technique_common>
+						<accessor count="4" source="#geom_3d_4-positions-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_4-normals">
+					<float_array id="geom_3d_4-normals-array" count="6">
+						0 -1 0 0 1 0 
+					</float_array>
+					<technique_common>
+						<accessor count="2" source="#geom_3d_4-normals-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_4-texcoord">
+					<float_array id="geom_3d_4-texcoord-array" count="8">
+						0.12358987 0 0.12358987 3 1.132296 0 1.132296 3 
+					</float_array>
+					<technique_common>
+						<accessor count="4" source="#geom_3d_4-texcoord-array" stride="2">
+							 <param name="S" type="float" />
+							 <param name="T" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="geom_3d_4-vertices">
+					<input semantic="POSITION" source="#geom_3d_4-positions" />
+				</vertices>
+				<triangles count="4" material="geom_3d_4_material">
+					<input offset="0" semantic="VERTEX" source="#geom_3d_4-vertices" set="0" />
+					<input offset="1" semantic="NORMAL" source="#geom_3d_4-normals" set="0" />
+					<input offset="2" semantic="TEXCOORD" source="#geom_3d_4-texcoord" set="0" />
+					<p>3 0 3 1 0 1 2 0 2 2 1 2 1 1 1 3 1 3 2 0 2 1 0 1 0 0 0 0 1 0 1 1 1 2 1 2 </p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="geom_3d_5" name="x3g_room:Wall:Middle">
+			<mesh>
+				<source id="geom_3d_5-positions">
+					<float_array id="geom_3d_5-positions-array" count="24">
+						-0.12358987 0.12358987 0 -0.12358987 0.12358987 3 0.12358987 -0.12358987 0 0.12358987 -0.12358987 3 0.88511622 0.12358987 0 0.88511622 0.12358987 3 1.132296 -0.12358987 0 1.132296 -0.12358987 3 
+					</float_array>
+					<technique_common>
+						<accessor count="8" source="#geom_3d_5-positions-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_5-normals">
+					<float_array id="geom_3d_5-normals-array" count="12">
+						-0.70710677 -0.70710677 0 0 0 -1 0 0 1 0.70710677 0.70710677 0 
+					</float_array>
+					<technique_common>
+						<accessor count="4" source="#geom_3d_5-normals-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_5-texcoord">
+					<float_array id="geom_3d_5-texcoord-array" count="32">
+						-1.132296 -0.12358987 -1.132296 0 -1.132296 3 -0.88511622 0 -0.88511622 0.12358987 -0.88511622 3 -0.12358987 -0.12358987 -0.12358987 0 -0.12358987 0.12358987 -0.12358987 3 0.12358987 -0.12358987 0.12358987 0 0.12358987 0.12358987 0.12358987 3 0.88511622 0.12358987 1.132296 -0.12358987 
+					</float_array>
+					<technique_common>
+						<accessor count="16" source="#geom_3d_5-texcoord-array" stride="2">
+							 <param name="S" type="float" />
+							 <param name="T" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="geom_3d_5-vertices">
+					<input semantic="POSITION" source="#geom_3d_5-positions" />
+				</vertices>
+				<triangles count="16" material="geom_3d_5_material">
+					<input offset="0" semantic="VERTEX" source="#geom_3d_5-vertices" set="0" />
+					<input offset="1" semantic="NORMAL" source="#geom_3d_5-normals" set="0" />
+					<input offset="2" semantic="TEXCOORD" source="#geom_3d_5-texcoord" set="0" />
+					<p>3 0 13 1 0 9 2 0 11 2 3 11 1 3 9 3 3 13 2 0 11 1 0 9 0 0 7 0 3 7 1 3 9 2 3 11 5 3 5 7 3 2 4 3 3 4 0 3 7 0 2 5 0 5 4 3 3 7 3 2 6 3 1 6 0 1 7 0 2 4 0 3 6 1 0 2 1 6 4 1 4 4 2 4 2 2 6 6 2 0 4 1 4 2 1 6 0 1 12 0 2 12 2 2 6 4 2 4 1 2 8 3 2 10 5 2 14 5 1 14 3 1 10 1 1 8 5 2 14 3 2 10 7 2 15 7 1 15 3 1 10 5 1 14 </p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="geom_3d_1" name="x3g_room:Wall:Left">
+			<mesh>
+				<source id="geom_3d_1-positions">
+					<float_array id="geom_3d_1-positions-array" count="12">
+						-0.12358987 -0.12358987 0 -0.12358987 -0.12358987 3 17.632502 -0.12358987 0 17.632502 -0.12358987 3 
+					</float_array>
+					<technique_common>
+						<accessor count="4" source="#geom_3d_1-positions-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_1-normals">
+					<float_array id="geom_3d_1-normals-array" count="6">
+						0 -1 0 0 1 0 
+					</float_array>
+					<technique_common>
+						<accessor count="2" source="#geom_3d_1-normals-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_1-texcoord">
+					<float_array id="geom_3d_1-texcoord-array" count="8">
+						-0.12358987 0 -0.12358987 3 17.632502 0 17.632502 3 
+					</float_array>
+					<technique_common>
+						<accessor count="4" source="#geom_3d_1-texcoord-array" stride="2">
+							 <param name="S" type="float" />
+							 <param name="T" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="geom_3d_1-vertices">
+					<input semantic="POSITION" source="#geom_3d_1-positions" />
+				</vertices>
+				<triangles count="4" material="geom_3d_1_material">
+					<input offset="0" semantic="VERTEX" source="#geom_3d_1-vertices" set="0" />
+					<input offset="1" semantic="NORMAL" source="#geom_3d_1-normals" set="0" />
+					<input offset="2" semantic="TEXCOORD" source="#geom_3d_1-texcoord" set="0" />
+					<p>3 0 3 1 0 1 2 0 2 2 1 2 1 1 1 3 1 3 2 0 2 1 0 1 0 0 0 0 1 0 1 1 1 2 1 2 </p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="geom_3d_6" name="x3g_room:Wall:Right">
+			<mesh>
+				<source id="geom_3d_6-positions">
+					<float_array id="geom_3d_6-positions-array" count="12">
+						0.12358987 0.12358987 0 0.12358987 0.12358987 3 1.3523917 0.12358987 0 1.3523917 0.12358987 3 
+					</float_array>
+					<technique_common>
+						<accessor count="4" source="#geom_3d_6-positions-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_6-normals">
+					<float_array id="geom_3d_6-normals-array" count="6">
+						0 -1 0 0 1 0 
+					</float_array>
+					<technique_common>
+						<accessor count="2" source="#geom_3d_6-normals-array" stride="3">
+							 <param name="X" type="float" />
+							 <param name="Y" type="float" />
+							 <param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geom_3d_6-texcoord">
+					<float_array id="geom_3d_6-texcoord-array" count="8">
+						-1.3523917 0 -1.3523917 3 -0.12358987 0 -0.12358987 3 
+					</float_array>
+					<technique_common>
+						<accessor count="4" source="#geom_3d_6-texcoord-array" stride="2">
+							 <param name="S" type="float" />
+							 <param name="T" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="geom_3d_6-vertices">
+					<input semantic="POSITION" source="#geom_3d_6-positions" />
+				</vertices>
+				<triangles count="4" material="geom_3d_6_material">
+					<input offset="0" semantic="VERTEX" source="#geom_3d_6-vertices" set="0" />
+					<input offset="1" semantic="NORMAL" source="#geom_3d_6-normals" set="0" />
+					<input offset="2" semantic="TEXCOORD" source="#geom_3d_6-texcoord" set="0" />
+					<p>1 1 3 3 1 1 0 1 2 0 0 2 3 0 1 1 0 3 0 1 2 3 1 1 2 1 0 2 0 0 3 0 1 0 0 2 </p>
+				</triangles>
+			</mesh>
+		</geometry>
+	</library_geometries>
+	<library_materials>
+		<material id="_daed54b0fe6e11e1a21f0800200c9a66" name="Wallpaper">
+			<instance_effect url="#_daed54b0fe6e11e1a21f0800200c9a66_effect" />
+		</material>
+	</library_materials>
+	<library_effects>
+		<effect id="_daed54b0fe6e11e1a21f0800200c9a66_effect">
+			<profile_COMMON>
+				<newparam sid="_daed54b0fe6e11e1a21f0800200c9a66_effect-surface">
+					<surface type="2D">
+						<init_from>image</init_from>
+					</surface>
+				</newparam>
+				<newparam sid="_daed54b0fe6e11e1a21f0800200c9a66_effect-sampler">
+					<sampler2D>
+						<source>_daed54b0fe6e11e1a21f0800200c9a66_effect-surface</source>
+						<wrap_s>WRAP</wrap_s>
+						<wrap_t>WRAP</wrap_t>
+						<minfilter>LINEAR_MIPMAP_LINEAR</minfilter>
+						<magfilter>LINEAR</magfilter>
+						<border_color>0 0 0 0</border_color>
+					</sampler2D>
+				</newparam>
+				<technique sid="technique">
+					<phong>
+						<emission>
+							<color>0 0 0 1</color>
+						</emission>
+						<ambient>
+							<color>1 1 1 1</color>
+						</ambient>
+						<diffuse>
+							<texture texture="_daed54b0fe6e11e1a21f0800200c9a66_effect-sampler" texcoord="texcoord0" />
+						</diffuse>
+						<specular>
+							<color>0 0 0 1</color>
+						</specular>
+						<shininess>
+							<float>0</float>
+						</shininess>
+					</phong>
+				</technique>
+			</profile_COMMON>
+		</effect>
+	</library_effects>
+	<scene>
+		<instance_visual_scene url="#defaultScene" />
+	</scene>
+</COLLADA>

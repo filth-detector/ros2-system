@@ -1,0 +1,315 @@
+<?xml version="1.0" ?>
+<!--
+  office.sdf — Simple indoor office world for Gazebo Harmonic.
+
+  A 10 m × 8 m walled room with:
+    - Interior partition wall (creates two "rooms" with a doorway)
+    - Desk, cabinet, boxes, and a column as navigation obstacles
+    - Ground plane with checkerboard for visual reference
+    - Directional sun light
+
+  Robot spawns at origin (0, 0, 0) facing +X.
+-->
+<sdf version="1.8">
+  <world name="office">
+
+    <!-- ============================================================ -->
+    <!-- Physics                                                       -->
+    <!-- ============================================================ -->
+    <physics name="1ms" type="ignored">
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1.0</real_time_factor>
+    </physics>
+
+    <!-- ============================================================ -->
+    <!-- Required world-level system plugins                           -->
+    <!-- ============================================================ -->
+    <plugin filename="gz-sim-physics-system"
+            name="gz::sim::systems::Physics"/>
+    <plugin filename="gz-sim-user-commands-system"
+            name="gz::sim::systems::UserCommands"/>
+    <plugin filename="gz-sim-scene-broadcaster-system"
+            name="gz::sim::systems::SceneBroadcaster"/>
+    <plugin filename="gz-sim-sensors-system"
+            name="gz::sim::systems::Sensors">
+      <render_engine>ogre2</render_engine>
+    </plugin>
+    <plugin filename="gz-sim-imu-system"
+            name="gz::sim::systems::Imu"/>
+    <plugin filename="gz-sim-contact-system"
+            name="gz::sim::systems::Contact"/>
+
+    <!-- ============================================================ -->
+    <!-- Lighting                                                      -->
+    <!-- ============================================================ -->
+    <light type="directional" name="sun">
+      <cast_shadows>true</cast_shadows>
+      <pose>0 0 10 0 0 0</pose>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <constant>0.9</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <direction>-0.5 0.1 -0.9</direction>
+    </light>
+
+    <!-- ============================================================ -->
+    <!-- Ground Plane                                                  -->
+    <!-- ============================================================ -->
+    <model name="ground_plane">
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>50 50</size>
+            </plane>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>50 50</size>
+            </plane>
+          </geometry>
+          <material>
+            <ambient>0.8 0.8 0.8 1</ambient>
+            <diffuse>0.8 0.8 0.8 1</diffuse>
+            <specular>0.5 0.5 0.5 1</specular>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- ============================================================ -->
+    <!-- Outer Walls (10 m × 8 m room)                                 -->
+    <!-- ============================================================ -->
+
+    <!-- North wall (along X at Y=+4) -->
+    <model name="wall_north">
+      <static>true</static>
+      <pose>0 4 1 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry><box><size>10.3 0.15 2</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>10.3 0.15 2</size></box></geometry>
+          <material>
+            <ambient>0.9 0.9 0.85 1</ambient>
+            <diffuse>0.9 0.9 0.85 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- South wall -->
+    <model name="wall_south">
+      <static>true</static>
+      <pose>0 -4 1 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry><box><size>10.3 0.15 2</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>10.3 0.15 2</size></box></geometry>
+          <material>
+            <ambient>0.9 0.9 0.85 1</ambient>
+            <diffuse>0.9 0.9 0.85 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- East wall -->
+    <model name="wall_east">
+      <static>true</static>
+      <pose>5 0 1 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry><box><size>0.15 8.3 2</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>0.15 8.3 2</size></box></geometry>
+          <material>
+            <ambient>0.9 0.9 0.85 1</ambient>
+            <diffuse>0.9 0.9 0.85 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- West wall -->
+    <model name="wall_west">
+      <static>true</static>
+      <pose>-5 0 1 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry><box><size>0.15 8.3 2</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>0.15 8.3 2</size></box></geometry>
+          <material>
+            <ambient>0.9 0.9 0.85 1</ambient>
+            <diffuse>0.9 0.9 0.85 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- ============================================================ -->
+    <!-- Interior partition (creates doorway gap of ~1.5 m)            -->
+    <!-- ============================================================ -->
+    <model name="partition_left">
+      <static>true</static>
+      <pose>-2.75 0.5 1 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry><box><size>4.0 0.12 2</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>4.0 0.12 2</size></box></geometry>
+          <material>
+            <ambient>0.85 0.85 0.8 1</ambient>
+            <diffuse>0.85 0.85 0.8 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="partition_right">
+      <static>true</static>
+      <pose>2.75 0.5 1 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry><box><size>3.5 0.12 2</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>3.5 0.12 2</size></box></geometry>
+          <material>
+            <ambient>0.85 0.85 0.8 1</ambient>
+            <diffuse>0.85 0.85 0.8 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- ============================================================ -->
+    <!-- Obstacles                                                     -->
+    <!-- ============================================================ -->
+
+    <!-- Desk -->
+    <model name="desk">
+      <static>true</static>
+      <pose>3.0 2.5 0.4 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry><box><size>1.2 0.6 0.8</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>1.2 0.6 0.8</size></box></geometry>
+          <material>
+            <ambient>0.55 0.35 0.17 1</ambient>
+            <diffuse>0.55 0.35 0.17 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Cabinet -->
+    <model name="cabinet">
+      <static>true</static>
+      <pose>-3.5 -2.5 0.6 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry><box><size>0.8 0.5 1.2</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>0.8 0.5 1.2</size></box></geometry>
+          <material>
+            <ambient>0.4 0.3 0.2 1</ambient>
+            <diffuse>0.4 0.3 0.2 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Box 1 -->
+    <model name="box1">
+      <static>true</static>
+      <pose>1.0 -2.0 0.25 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry><box><size>0.5 0.5 0.5</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>0.5 0.5 0.5</size></box></geometry>
+          <material>
+            <ambient>0.7 0.5 0.2 1</ambient>
+            <diffuse>0.7 0.5 0.2 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Box 2 (rotated) -->
+    <model name="box2">
+      <static>true</static>
+      <pose>3.2 -1.5 0.3 0 0 0.3</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry><box><size>0.6 0.4 0.6</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>0.6 0.4 0.6</size></box></geometry>
+          <material>
+            <ambient>0.3 0.5 0.7 1</ambient>
+            <diffuse>0.3 0.5 0.7 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Cylindrical column -->
+    <model name="column">
+      <static>true</static>
+      <pose>-2.0 -1.5 1 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry><cylinder><radius>0.2</radius><length>2</length></cylinder></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><cylinder><radius>0.2</radius><length>2</length></cylinder></geometry>
+          <material>
+            <ambient>0.7 0.7 0.7 1</ambient>
+            <diffuse>0.7 0.7 0.7 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Bookshelf along north wall -->
+    <model name="bookshelf">
+      <static>true</static>
+      <pose>-2.0 3.5 0.75 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry><box><size>1.5 0.4 1.5</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>1.5 0.4 1.5</size></box></geometry>
+          <material>
+            <ambient>0.5 0.3 0.15 1</ambient>
+            <diffuse>0.5 0.3 0.15 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+  </world>
+</sdf>
