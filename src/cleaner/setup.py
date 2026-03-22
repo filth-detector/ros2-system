@@ -1,6 +1,6 @@
 from setuptools import find_packages, setup
 
-package_name = 'filth_detector'
+package_name = 'cleaner'
 
 setup(
     name=package_name,
@@ -13,7 +13,7 @@ setup(
     ],
     install_requires=['setuptools'],
     zip_safe=True,
-    maintainer='bobross',
+    maintainer='Ugnius Stašaitis',
     maintainer_email='ugnius@dev.stasaitis.me',
     description='TODO: Package description',
     license='TODO: License declaration',
@@ -24,7 +24,9 @@ setup(
     },
     entry_points={
         'console_scripts': [
-            'filth_detector = filth_detector.filth_detector:main'
+            'filth_detector = cleaner.filth_detector:main',
+            'path_planner = cleaner.path_planner:main',
+            'visualizer = cleaner.visualizer:main'
         ],
     },
 )

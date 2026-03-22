@@ -12,15 +12,8 @@
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>
 
-  <depend>joy</depend>
-  <depend>teleop_tools</depend>
-  <depend>teleop_twist_joy</depend>
-  <depend>navigation2</depend>
-  <depend>slam_toolbox</depend>
-  <depend>twist_mux</depend>
   <depend>ros_gz_sim</depend>
   <depend>ros_gz_bridge</depend>
-  <depend>pointcloud_to_laserscan</depend>
 
   <export>
     <build_type>ament_cmake</build_type>
