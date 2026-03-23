@@ -11,7 +11,7 @@
     <xacro:property name="al_profile_depth" value="0.04" />
     <xacro:property name="al_profile_height" value="1.45" />
 
-    <xacro:property name="al_profile2_length" value="0.6" />
+    <xacro:property name="al_profile2_length" value="1.0" />
     <xacro:property name="al_profile2_width" value="0.04" />
     <xacro:property name="al_profile2_depth" value="0.08" />
 
@@ -52,21 +52,38 @@
         <xacro:box_inertia m="5.0" x="${al_profile_width}" y="${al_profile_depth}" z="${al_profile_height}" o_xyz="0 0 ${al_profile_height/2.0}" o_rpy="0 0 0" />
     </link>
 
+    <link name="al_profile_connector_link">
+        <visual>
+            <geometry>
+                <box size="0.1 0.1 0.1" />
+            </geometry>
+            <origin xyz="0 0 ${al_profile_height/2.0}" rpy="0 0 0" />
+            <material name="silver" />
+        </visual>
+        <collision>
+            <geometry>
+                <box size="0.1 0.1 0.1" />
+            </geometry>
+            <origin xyz="0 0 ${al_profile_height/2.0}" rpy="0 0 0" />
+        </collision>
+        <xacro:box_inertia m="0.1" x="0.1" y="0.1" z="0.1" o_xyz="0 0 ${al_profile_height/2.0}" o_rpy="0 0 0" />
+    </link>
+
     <link name="al_profile2_link">
         <visual>
             <geometry>
                 <box size="${al_profile2_length} ${al_profile2_width} ${al_profile2_depth}" />
             </geometry>
-            <origin xyz="0 0 0" rpy="0 0 1.5708" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
             <material name="silver" />
         </visual>
         <collision>
             <geometry>
                 <box size="${al_profile2_length} ${al_profile2_width} ${al_profile2_depth}" />
             </geometry>
-            <origin xyz="0 0 0" rpy="0 0 1.5708" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
         </collision>
-        <xacro:box_inertia m="3.0" x="${al_profile2_length}" y="${al_profile2_width}" z="${al_profile2_depth}" o_xyz="0 0 0" o_rpy="0 0 1.5708" />
+        <xacro:box_inertia m="0.1" x="${al_profile2_length}" y="${al_profile2_width}" z="${al_profile2_depth}" o_xyz="0 0 0" o_rpy="0 0 1.5708" />
     </link>
 
     <link name="camera_link">
@@ -94,42 +111,6 @@
                            o_xyz="0 0 0" o_rpy="0 0 0" />
     </link>
 
-    <link name = "lidar_link">
-        <visual>
-            <geometry>
-                <cylinder radius="0.0375" length="0.065" />
-            </geometry>
-            <origin xyz="0 0 0" rpy="0 0 0" />
-            <material name="black" />
-        </visual>
-        <collision>
-            <geometry>
-                <cylinder radius="0.0375" length="0.065" />
-            </geometry>
-            <origin xyz="0 0 0" rpy="0 0 0" />
-        </collision>
-        <xacro:box_inertia m="0.1" x="0.075" y="0.075" z="0.065"
-                           o_xyz="0 0 0" o_rpy="0 0 0" />
-    </link>
-    <!-- 
-    <link name = "unilidar_imu">
-        <visual>
-            <geometry>
-                <box size="0.025 0.025 0.025" />
-            </geometry>
-            <origin xyz="0 0 0" rpy="0 0 0" />
-            <material name="silver" />
-        </visual>
-        <collision>
-            <geometry>
-                <box size="0.025 0.025 0.025" />
-            </geometry>
-            <origin xyz="0 0 0" rpy="0 0 0" />
-        </collision>
-        <xacro:box_inertia m="0.05" x="0.025" y="0.025" z="0.025" 
-                           o_xyz="0 0 0" o_rpy="0 0 0" />
-    </link> -->
-
     <xacro:wheel_link prefix="right_back" />
     <xacro:wheel_link prefix="left_back" />
 
@@ -144,7 +125,7 @@
         </visual>
         <collision>
             <geometry>
-                <sphere radius="${wheel_radius/2.0 - 0.01}"/>
+                <sphere radius="${wheel_radius/2.0 - 0.025}"/>
             </geometry>
         </collision>
         <xacro:sphere_inertia m="0.1" r="${wheel_radius/2.0 - 0.01}" o_xyz="0 0 0" o_rpy="0 0 0" />
@@ -165,34 +146,24 @@
         <origin xyz="${base_length/2 - 0.09} 0 ${-wheel_radius/2}"/>
     </joint>
 
-    <!-- Sim: base_link is root, lidar is a child (Gazebo diff_drive publishes odom→base_link) -->
-    <xacro:if value="${sim_mode}">
-        <joint name="lidar_base_link_joint" type="fixed">
-            <parent link="base_link"/>
-            <child link="lidar_link"/>
-            <origin xyz="${al_profile_width} 0 ${((al_profile_height+base_height+wheel_radius/2)-0.14)}" rpy="3.1416 0 -0.3926"/>
-        </joint>
-    </xacro:if>
-
-    <!-- Real hardware: lidar_link is root (Point-LIO publishes odom→lidar_link) -->
-    <xacro:unless value="${sim_mode}">
-        <joint name="lidar_base_link_joint" type="fixed">
-            <parent link="lidar_link"/>
-            <child link="base_link"/>
-            <origin xyz="${al_profile_width} ${-(0.065/2)} ${((al_profile_height+base_height+wheel_radius/2)-0.14)}" rpy="3.1416 0 -0.3926"/>
-        </joint>
-    </xacro:unless>
-
     <joint name="al_profile_joint" type="fixed">
         <parent link="base_link" />
         <child link="al_profile_link" />
         <origin xyz="0 0 ${base_height}" rpy="0 0 0" />
     </joint>
 
-    <joint name="al_profile2_joint" type="fixed">
+    <joint name="al_profile_connector_joint" type="prismatic">
         <parent link="al_profile_link" />
+        <child link="al_profile_connector_link" />
+        <origin xyz="0 0 ${base_height}" rpy="0 0 0" />
+        <axis xyz="0 0 1" /> <limit lower="${-al_profile_height/2.0}" upper="${al_profile_height/2.0 - base_height - 0.1}" effort="100.0" velocity="0.5" />
+    </joint>
+
+    <joint name="al_profile2_joint" type="prismatic">
+        <parent link="al_profile_connector_link" />
         <child link="al_profile2_link" />
-        <origin xyz="${al_profile_width} 0 ${al_profile_height/2.0}" rpy="0 0 0" />
+        <origin xyz="0 0 ${al_profile_height/2.0}" rpy="0 0 0" />
+        <axis xyz="1 0 0" /> <limit lower="${-al_profile2_length/2.0}" upper="${al_profile2_length/2.0}" effort="100.0" velocity="0.5" />
     </joint>
 
     <joint name="camera_joint" type="fixed">
@@ -200,11 +171,4 @@
         <child link="camera_link" />
         <origin xyz="0 0 ${al_profile_height+0.015}" rpy="0 0.26179 -1.5708" />
     </joint>
-
-    <!-- <joint name="imu_lidar_joint" type="fixed">
-        <parent link="unilidar_imu"/>
-        <child link="lidar_link"/>
-        <origin xyz="0.007698 0.014655 -0.00667"/>
-    </joint> -->
-
 </robot>

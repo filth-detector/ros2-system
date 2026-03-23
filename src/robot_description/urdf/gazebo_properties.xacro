@@ -1,24 +1,6 @@
 <?xml version="1.0"?>
-<!--
-  gazebo_properties.xacro — Gazebo Harmonic simulation plugins.
-
-  Conditionally included by robot.xacro when use_sim:=true.
-  Provides physics simulation for the differential-drive robot:
-
-  Plugins:
-    - DiffDrive         — Subscribes to /cmd_vel, publishes /odom + TF
-    - JointStatePublisher — Publishes /joint_states for wheel joints
-    - 3D GPU LiDAR      — Simulates Unitree L1 (360° × 18-line, 25 m range)
-    - IMU sensor         — 200 Hz accelerometer + gyroscope on base_link
-
-  Topic names use absolute paths so the ros_gz_bridge can map them
-  directly to ROS 2 topics without model-name scoping.
--->
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-    <!-- ============================================================ -->
-    <!-- Differential Drive Controller                                 -->
-    <!-- ============================================================ -->
     <gazebo>
         <plugin filename="gz-sim-diff-drive-system"
                 name="gz::sim::systems::DiffDrive">
@@ -41,85 +23,18 @@
         </plugin>
     </gazebo>
 
-    <!-- ============================================================ -->
-    <!-- Joint State Publisher (wheel rotations)                       -->
-    <!-- ============================================================ -->
     <gazebo>
         <plugin filename="gz-sim-joint-state-publisher-system"
                 name="gz::sim::systems::JointStatePublisher">
             <joint_name>base_left_back_wheel_joint</joint_name>
             <joint_name>base_right_back_wheel_joint</joint_name>
+            <joint_name>al_profile_connector_joint</joint_name>
+            <joint_name>al_profile2_joint</joint_name>
             <topic>/joint_states</topic>
             <update_rate>10</update_rate>
         </plugin>
     </gazebo>
 
-    <!-- ============================================================ -->
-    <!-- 3D LiDAR sensor (simulates Unitree L1)                       -->
-    <!-- 360° horizontal, ~18 vertical lines, 25 m range, 10 Hz       -->
-    <!-- ============================================================ -->
-    <gazebo reference="lidar_link">
-        <sensor name="lidar" type="gpu_lidar">
-            <topic>/scan/points</topic>
-            <update_rate>10</update_rate>
-            <always_on>true</always_on>
-            <visualize>true</visualize>
-            <lidar>
-                <scan>
-                    <horizontal>
-                        <samples>360</samples>
-                        <resolution>1</resolution>
-                        <min_angle>-3.14159</min_angle>
-                        <max_angle>3.14159</max_angle>
-                    </horizontal>
-                    <vertical>
-                        <samples>18</samples>
-                        <resolution>1</resolution>
-                        <min_angle>-0.2618</min_angle>
-                        <max_angle>0.7854</max_angle>
-                    </vertical>
-                </scan>
-                <range>
-                    <min>0.1</min>
-                    <max>25.0</max>
-                    <resolution>0.01</resolution>
-                </range>
-                <noise>
-                    <type>gaussian</type>
-                    <mean>0</mean>
-                    <stddev>0.005</stddev>
-                </noise>
-            </lidar>
-        </sensor>
-    </gazebo>
-
-    <!-- ============================================================ -->
-    <!-- IMU sensor on base_link (200 Hz)                              -->
-    <!-- ============================================================ -->
-    <gazebo reference="base_link">
-        <sensor name="imu" type="imu">
-            <topic>/imu/data</topic>
-            <update_rate>200</update_rate>
-            <always_on>true</always_on>
-            <imu>
-                <angular_velocity>
-                    <x><noise type="gaussian"><mean>0</mean><stddev>0.0002</stddev></noise></x>
-                    <y><noise type="gaussian"><mean>0</mean><stddev>0.0002</stddev></noise></y>
-                    <z><noise type="gaussian"><mean>0</mean><stddev>0.0002</stddev></noise></z>
-                </angular_velocity>
-                <linear_acceleration>
-                    <x><noise type="gaussian"><mean>0</mean><stddev>0.017</stddev></noise></x>
-                    <y><noise type="gaussian"><mean>0</mean><stddev>0.017</stddev></noise></y>
-                    <z><noise type="gaussian"><mean>0</mean><stddev>0.017</stddev></noise></z>
-                </linear_acceleration>
-            </imu>
-        </sensor>
-    </gazebo>
-
-    <!-- ============================================================ -->
-    <!-- RGB Camera sensor (top of al_profile_link, faces +x/forward) -->
-    <!-- 640×480 @ 30 Hz, 80° horizontal FOV                          -->
-    <!-- ============================================================ -->
     <gazebo reference="camera_link">
         <sensor name="camera" type="camera">
             <topic>/camera/image_raw</topic>
@@ -144,6 +59,28 @@
                 </noise>
             </camera>
         </sensor>
+    </gazebo>
+
+    <gazebo>
+        <plugin filename="gz-sim-joint-position-controller-system"
+                name="gz::sim::systems::JointPositionController">
+            <joint_name>al_profile_connector_joint</joint_name>
+            <topic>/slider_z_cmd</topic>
+            <p_gain>10000</p_gain>
+            <i_gain>100</i_gain>
+            <d_gain>1000</d_gain>
+        </plugin>
+    </gazebo>
+
+    <gazebo>
+        <plugin filename="gz-sim-joint-position-controller-system"
+                name="gz::sim::systems::JointPositionController">
+            <joint_name>al_profile2_joint</joint_name>
+            <topic>/slider_x_cmd</topic>
+            <p_gain>10000</p_gain>
+            <i_gain>100</i_gain>
+            <d_gain>1000</d_gain>
+        </plugin>
     </gazebo>
 
     <!-- ============================================================ -->
