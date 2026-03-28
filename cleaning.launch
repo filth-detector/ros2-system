@@ -6,7 +6,7 @@ from launch_ros.actions import Node
 def generate_launch_description():
     model_path_arg = DeclareLaunchArgument(
         'model_path',
-        default_value='../model_tests/segformer.onnx',
+        default_value='../model_tests/model.onnx',
         description='ONNX model file.'
     )
     
