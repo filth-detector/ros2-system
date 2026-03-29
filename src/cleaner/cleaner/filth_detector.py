@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import rclpy
 from rclpy.node import Node
 from sensor_msgs.msg import Image
@@ -6,7 +7,9 @@ import cv2
 import numpy as np
 import onnxruntime as ort
 import sys
-from cleaner.srv import TriggerSegmentation
+
+# Import the standard trigger service
+from std_srvs.srv import Trigger
 
 class ONNXSegmentationModel:
     def __init__(self, model_path, target_size=(512, 512), mean=None, std=None,
@@ -24,6 +27,7 @@ class ONNXSegmentationModel:
     def predict(self, image_bgr):
         original_h, original_w = image_bgr.shape[:2]
 
+        # Pre-processing
         image_rgb = cv2.cvtColor(image_bgr, cv2.COLOR_BGR2RGB)
         image_resized = cv2.resize(image_rgb, self.target_size, interpolation=cv2.INTER_LINEAR)
 
@@ -31,22 +35,36 @@ class ONNXSegmentationModel:
         if self.normalize_input:
             image_processed = (image_processed - self.mean) / self.std
 
+        # (Batch, Channels, Height, Width)
         input_tensor = np.transpose(image_processed, (2, 0, 1))
         input_tensor = np.expand_dims(input_tensor, axis=0)
 
         ort_inputs = {self.input_name: input_tensor}
-        logits = self.session.run(None, ort_inputs)[0][0]
+        outputs = self.session.run(None, ort_inputs)
+    
+        logits = outputs[0]
+    
+        # If shape is (1, C, H, W), strip the 1
+        if len(logits.shape) == 4:
+            logits = logits[0]
+    
+        # We need (H, W, C) for OpenCV resize
+        # If the model is (C, H, W), move C to the end
+        if logits.shape[0] < logits.shape[1] and logits.shape[0] < logits.shape[2]:
+            logits = np.transpose(logits, (1, 2, 0))
 
-        logits = np.transpose(logits, (1, 2, 0))
+        # Resize logits back to original image size
         upsampled_logits = cv2.resize(logits, (original_w, original_h), interpolation=cv2.INTER_LINEAR)
 
-        pred_mask = np.argmax(upsampled_logits, axis=-1).astype(np.uint8)
-        return pred_mask
+        # Generate Mask
+        if len(upsampled_logits.shape) == 3:
+            # Multi-class: Take the strongest class per pixel
+            pred_mask = np.argmax(upsampled_logits, axis=-1).astype(np.uint8)
+        else:
+            # Binary: If it's already (H, W), just threshold it
+            pred_mask = (upsampled_logits > 0.5).astype(np.uint8)
 
-    def draw_overlay(self, image_bgr, pred_mask, color=(0, 0, 255), alpha=0.5):
-        mask_colored = np.zeros_like(image_bgr)
-        mask_colored[pred_mask == 1] = color
-        return cv2.addWeighted(image_bgr, 1.0, mask_colored, alpha, 0)
+        return pred_mask
 
 class FilthDetectorNode(Node):
     def __init__(self):
@@ -94,8 +112,9 @@ class FilthDetectorNode(Node):
         )
         self.publisher = self.create_publisher(Image, '/segmentation_mask', 10)
 
+        # Replaced custom service with std_srvs Trigger
         self._service = self.create_service(
-            TriggerSegmentation,
+            Trigger,
             'trigger_segmentation',
             self.execute_callback)
 
