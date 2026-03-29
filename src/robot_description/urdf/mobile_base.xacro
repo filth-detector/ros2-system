@@ -120,12 +120,12 @@
     <link name="caster_wheel">
         <visual>
             <geometry>
-                <sphere radius="${wheel_radius/2.0 - 0.025}"/>
+                <sphere radius="${wheel_radius/2.0 - 0.026}"/>
             </geometry>
         </visual>
         <collision>
             <geometry>
-                <sphere radius="${wheel_radius/2.0 - 0.025}"/>
+                <sphere radius="${wheel_radius/2.0 - 0.026}"/>
             </geometry>
         </collision>
         <xacro:sphere_inertia m="0.1" r="${wheel_radius/2.0 - 0.01}" o_xyz="0 0 0" o_rpy="0 0 0" />

@@ -66,9 +66,9 @@
                 name="gz::sim::systems::JointPositionController">
             <joint_name>al_profile_connector_joint</joint_name>
             <topic>/slider_z_cmd</topic>
-            <p_gain>10000</p_gain>
-            <i_gain>100</i_gain>
-            <d_gain>1000</d_gain>
+            <p_gain>100.0</p_gain>
+            <i_gain>0.1</i_gain>
+            <d_gain>5.0</d_gain>
         </plugin>
     </gazebo>
 
@@ -77,18 +77,19 @@
                 name="gz::sim::systems::JointPositionController">
             <joint_name>al_profile2_joint</joint_name>
             <topic>/slider_x_cmd</topic>
-            <p_gain>10000</p_gain>
-            <i_gain>100</i_gain>
-            <d_gain>1000</d_gain>
+            <p_gain>100.0</p_gain>
+            <i_gain>0.1</i_gain>
+            <d_gain>5.0</d_gain>
         </plugin>
     </gazebo>
 
     <!-- ============================================================ -->
-    <!-- Wheel friction                                                -->
+    <!-- Wheel friction                                               -->
     <!-- ============================================================ -->
     <gazebo reference="left_back_wheel_link">
         <mu1>1.0</mu1>
         <mu2>1.0</mu2>
+        <fdir1>1 0 0</fdir1>
         <kp>500000.0</kp>
         <kd>10.0</kd>
         <minDepth>0.001</minDepth>
@@ -97,20 +98,25 @@
     <gazebo reference="right_back_wheel_link">
         <mu1>1.0</mu1>
         <mu2>1.0</mu2>
+        <fdir1>1 0 0</fdir1>
         <kp>500000.0</kp>
         <kd>10.0</kd>
         <minDepth>0.001</minDepth>
     </gazebo>
 
-    <!-- Low friction caster for smooth turning -->
-    <gazebo reference="caster_wheel">
-        <mu1>0.001</mu1>
-        <mu2>0.001</mu2>
-        <kp>500000.0</kp>
-        <kd>10.0</kd>
+    <gazebo reference="caster_wheel_joint">
+        <preserveFixedJoint>true</preserveFixedJoint>
     </gazebo>
 
-    <!-- Base link visual colour in Gazebo -->
+    <gazebo reference="caster_wheel">
+        <mu1>0.0</mu1>
+        <mu2>0.0</mu2>
+        <kp>1000000.0</kp>
+        <kd>100.0</kd>
+        <minDepth>0.001</minDepth>
+        <maxVel>1.0</maxVel>
+    </gazebo>
+
     <gazebo reference="base_link">
         <material>
             <ambient>0.0 0.6 0.0 1</ambient>
