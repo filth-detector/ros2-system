@@ -8,7 +8,6 @@ import numpy as np
 import onnxruntime as ort
 import sys
 
-# Import the standard trigger service
 from std_srvs.srv import Trigger
 
 class ONNXSegmentationModel:
@@ -27,7 +26,6 @@ class ONNXSegmentationModel:
     def predict(self, image_bgr):
         original_h, original_w = image_bgr.shape[:2]
 
-        # Pre-processing
         image_rgb = cv2.cvtColor(image_bgr, cv2.COLOR_BGR2RGB)
         image_resized = cv2.resize(image_rgb, self.target_size, interpolation=cv2.INTER_LINEAR)
 
@@ -53,7 +51,6 @@ class ONNXSegmentationModel:
         if logits.shape[0] < logits.shape[1] and logits.shape[0] < logits.shape[2]:
             logits = np.transpose(logits, (1, 2, 0))
 
-        # Resize logits back to original image size
         upsampled_logits = cv2.resize(logits, (original_w, original_h), interpolation=cv2.INTER_LINEAR)
 
         # Generate Mask
