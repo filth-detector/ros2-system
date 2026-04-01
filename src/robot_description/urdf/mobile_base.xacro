@@ -11,9 +11,12 @@
     <xacro:property name="al_profile_depth" value="0.04" />
     <xacro:property name="al_profile_height" value="1.45" />
 
-    <xacro:property name="al_profile2_length" value="1.0" />
+    <xacro:property name="al_profile2_length" value="0.6" />
     <xacro:property name="al_profile2_width" value="0.04" />
     <xacro:property name="al_profile2_depth" value="0.08" />
+
+    <xacro:property name="cleaning_head_pitch_height" value="0.05" />
+    <xacro:property name="cleaning_head_yaw_height" value="0.05" />
 
     <link name="base_footprint" />
 
@@ -52,38 +55,57 @@
         <xacro:box_inertia m="5.0" x="${al_profile_width}" y="${al_profile_depth}" z="${al_profile_height}" o_xyz="0 0 ${al_profile_height/2.0}" o_rpy="0 0 0" />
     </link>
 
-    <link name="al_profile_connector_link">
-        <visual>
-            <geometry>
-                <box size="0.1 0.1 0.1" />
-            </geometry>
-            <origin xyz="0 0 ${al_profile_height/2.0}" rpy="0 0 0" />
-            <material name="silver" />
-        </visual>
-        <collision>
-            <geometry>
-                <box size="0.1 0.1 0.1" />
-            </geometry>
-            <origin xyz="0 0 ${al_profile_height/2.0}" rpy="0 0 0" />
-        </collision>
-        <xacro:box_inertia m="0.1" x="0.1" y="0.1" z="0.1" o_xyz="0 0 ${al_profile_height/2.0}" o_rpy="0 0 0" />
-    </link>
-
     <link name="al_profile2_link">
         <visual>
             <geometry>
                 <box size="${al_profile2_length} ${al_profile2_width} ${al_profile2_depth}" />
             </geometry>
-            <origin xyz="0 0 0" rpy="0 0 0" />
+            <origin xyz="0 0 0" rpy="0 0 1.5708" />
             <material name="silver" />
         </visual>
         <collision>
             <geometry>
                 <box size="${al_profile2_length} ${al_profile2_width} ${al_profile2_depth}" />
             </geometry>
-            <origin xyz="0 0 0" rpy="0 0 0" />
+            <origin xyz="0 0 0" rpy="0 0 1.5708" />
         </collision>
-        <xacro:box_inertia m="0.1" x="${al_profile2_length}" y="${al_profile2_width}" z="${al_profile2_depth}" o_xyz="0 0 0" o_rpy="0 0 1.5708" />
+        <xacro:box_inertia m="3.0" x="${al_profile2_length}" y="${al_profile2_width}" z="${al_profile2_depth}" o_xyz="0 0 0" o_rpy="0 0 1.5708" />
+    </link>
+
+    <link name="cleaning_head_pitch_link">
+        <visual>
+            <geometry>
+                <box size="${cleaning_head_pitch_height} ${cleaning_head_pitch_height} ${cleaning_head_pitch_height}" />
+            </geometry>
+            <material name="black" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
+        </visual>
+        <xacro:box_inertia m="0.1" x="0.030" y="0.040" z="0.030"
+                           o_xyz="0 0 0" o_rpy="0 0 0" />
+    </link>
+
+    <link name="cleaning_head_yaw_link">
+         <visual>
+            <geometry>
+                <cylinder radius="${cleaning_head_pitch_height/2.0}" length="${cleaning_head_yaw_height}"/>
+            </geometry>
+            <material name="green" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
+        </visual>
+        <xacro:box_inertia m="0.1" x="0.030" y="0.040" z="0.030"
+                           o_xyz="0 0 0" o_rpy="0 0 0" />
+    </link>
+
+    <link name="cleaning_head_nozzle_link">
+         <visual>
+            <geometry>
+                <cylinder radius="${cleaning_head_yaw_height/4.0}" length="${cleaning_head_yaw_height*2.0}"/>
+            </geometry>
+            <material name="blue" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
+        </visual>
+        <xacro:box_inertia m="0.1" x="0.030" y="0.040" z="0.030"
+                           o_xyz="0 0 0" o_rpy="0 0 0" />
     </link>
 
     <link name="camera_link">
@@ -114,18 +136,15 @@
     <xacro:wheel_link prefix="right_back" />
     <xacro:wheel_link prefix="left_back" />
 
-    <!-- In sim mode, wheels must be 'continuous' for Gazebo diff_drive plugin -->
-    <xacro:property name="wheel_jt" value="${'continuous' if sim_mode else 'fixed'}" />
-
     <link name="caster_wheel">
         <visual>
             <geometry>
-                <sphere radius="${wheel_radius/2.0 - 0.026}"/>
+                <sphere radius="${wheel_radius/2.0 - 0.025}"/>
             </geometry>
         </visual>
         <collision>
             <geometry>
-                <sphere radius="${wheel_radius/2.0 - 0.026}"/>
+                <sphere radius="${wheel_radius/2.0 - 0.025}"/>
             </geometry>
         </collision>
         <xacro:sphere_inertia m="0.1" r="${wheel_radius/2.0 - 0.01}" o_xyz="0 0 0" o_rpy="0 0 0" />
@@ -137,6 +156,7 @@
         <origin xyz="0 0 ${-wheel_radius}" rpy="0 0 0" />
     </joint>
 
+    <xacro:property name="wheel_jt" value="${'continuous' if sim_mode else 'fixed'}" />
     <xacro:wheel_joint child_prefix = "left_back" xyz = "${(-base_length / 2.0)+0.123} ${(base_width + wheel_length) / 2.0 } 0.025" xyz_axis = "0 1 0" rpy = "0 0 0" joint_type="${wheel_jt}"/>
     <xacro:wheel_joint child_prefix = "right_back" xyz = "${(-base_length / 2.0)+0.123} ${-(base_width + wheel_length) / 2.0 } 0.025" xyz_axis = "0 1 0" rpy = "0 0 0" joint_type="${wheel_jt}"/>
 
@@ -152,23 +172,38 @@
         <origin xyz="0 0 ${base_height}" rpy="0 0 0" />
     </joint>
 
-    <joint name="al_profile_connector_joint" type="prismatic">
+    <joint name="al_profile2_joint" type="fixed">
         <parent link="al_profile_link" />
-        <child link="al_profile_connector_link" />
-        <origin xyz="0 0 ${base_height}" rpy="0 0 0" />
-        <axis xyz="0 0 1" /> <limit lower="${-al_profile_height/2.0}" upper="${al_profile_height/2.0 - base_height - 0.1}" effort="100.0" velocity="0.5" />
+        <child link="al_profile2_link" />
+        <origin xyz="${al_profile_width} 0 ${al_profile_height/2.0}" rpy="0 0 0" />
     </joint>
 
-    <joint name="al_profile2_joint" type="prismatic">
-        <parent link="al_profile_connector_link" />
-        <child link="al_profile2_link" />
-        <origin xyz="0 0 ${al_profile_height/2.0}" rpy="0 0 0" />
-        <axis xyz="1 0 0" /> <limit lower="${-al_profile2_length/2.0}" upper="${al_profile2_length/2.0}" effort="100.0" velocity="0.5" />
+    <joint name="cleaning_head_pitch_joint" type="revolute">
+        <parent link="al_profile2_link" />
+        <child link="cleaning_head_pitch_link" />
+        <origin xyz="0 ${-al_profile2_length/2.0 + cleaning_head_pitch_height/2.0} ${al_profile2_width + cleaning_head_pitch_height/2.0}" rpy="0 0 0" />
+        <axis xyz="1 0 0" />
+        <limit lower="${-pi/2.0}" upper="${pi/2.0}" effort="10.0" velocity="1.0" />
+    </joint>
+
+    <joint name="cleaning_head_yaw_joint" type="revolute">
+        <parent link="cleaning_head_pitch_link" />
+        <child link="cleaning_head_yaw_link" />
+        <origin xyz="0 0 ${cleaning_head_pitch_height}" rpy="0 0 0" />
+        <axis xyz="0 0 1" />
+        <limit lower="${-pi/2.0}" upper="${pi/2.0}" effort="10.0" velocity="1.0" />
+    </joint>
+
+    <joint name="cleaning_head_nozzle_joint" type="fixed">
+        <parent link="cleaning_head_yaw_link" />
+        <child link="cleaning_head_nozzle_link" />
+        <origin xyz="0 -${cleaning_head_yaw_height - 0.01} 0" rpy="${pi/2.0} 0 0" />
     </joint>
 
     <joint name="camera_joint" type="fixed">
-        <parent link="al_profile_link" />
+        <parent link="al_profile2_link" />
         <child link="camera_link" />
-        <origin xyz="0 0 ${al_profile_height+0.015}" rpy="0 0.26179 -1.5708" />
+        <origin xyz="0 ${-al_profile2_length/2.0} 0" rpy="0 0 -1.5708" />
     </joint>
+
 </robot>

@@ -28,8 +28,8 @@
                 name="gz::sim::systems::JointStatePublisher">
             <joint_name>base_left_back_wheel_joint</joint_name>
             <joint_name>base_right_back_wheel_joint</joint_name>
-            <joint_name>al_profile_connector_joint</joint_name>
-            <joint_name>al_profile2_joint</joint_name>
+            <joint_name>cleaning_head_pitch_joint</joint_name>
+            <joint_name>cleaning_head_yaw_joint</joint_name>
             <topic>/joint_states</topic>
             <update_rate>10</update_rate>
         </plugin>
@@ -64,8 +64,8 @@
     <gazebo>
         <plugin filename="gz-sim-joint-position-controller-system"
                 name="gz::sim::systems::JointPositionController">
-            <joint_name>al_profile_connector_joint</joint_name>
-            <topic>/slider_z_cmd</topic>
+            <joint_name>cleaning_head_pitch_joint</joint_name>
+            <topic>/cleaning_head_pitch_target_cmd</topic>
             <p_gain>100.0</p_gain>
             <i_gain>0.1</i_gain>
             <d_gain>5.0</d_gain>
@@ -75,8 +75,8 @@
     <gazebo>
         <plugin filename="gz-sim-joint-position-controller-system"
                 name="gz::sim::systems::JointPositionController">
-            <joint_name>al_profile2_joint</joint_name>
-            <topic>/slider_x_cmd</topic>
+            <joint_name>cleaning_head_yaw_joint</joint_name>
+            <topic>/cleaning_head_yaw_target_cmd</topic>
             <p_gain>100.0</p_gain>
             <i_gain>0.1</i_gain>
             <d_gain>5.0</d_gain>
