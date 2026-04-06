@@ -49,7 +49,15 @@ def generate_launch_description():
         name='visualizer',
         output='screen',
         parameters=[{
-            'resolution_m_per_px': LaunchConfiguration('resolution_m_per_px')
+        }]
+    )
+
+    head_controller_node = Node(
+        package='cleaner',
+        executable='head_controller',
+        name='head_controller',
+        output='screen',
+        parameters=[{
         }]
     )
 
@@ -59,5 +67,6 @@ def generate_launch_description():
         resolution_arg,
         filth_detector_node,
         path_planner_node,
-        visualizer_node
+        visualizer_node,
+        head_controller_node
     ])

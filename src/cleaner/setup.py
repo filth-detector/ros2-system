@@ -26,7 +26,8 @@ setup(
         'console_scripts': [
             'filth_detector = cleaner.filth_detector:main',
             'path_planner = cleaner.path_planner:main',
-            'visualizer = cleaner.visualizer:main'
+            'visualizer = cleaner.visualizer:main',
+            'head_controller = cleaner.head_controller:main'
         ],
     },
 )

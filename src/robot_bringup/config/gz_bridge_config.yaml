@@ -64,3 +64,10 @@
   ros_type_name: sensor_msgs/msg/CameraInfo
   gz_type_name: gz.msgs.CameraInfo
   direction: GZ_TO_ROS
+
+# Nozzle lidar → ROS
+- ros_topic_name: /water_hit_scan
+  gz_topic_name: /water_hit_scan
+  ros_type_name: sensor_msgs/msg/LaserScan
+  gz_type_name: gz.msgs.LaserScan
+  direction: GZ_TO_ROS

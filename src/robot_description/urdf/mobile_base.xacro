@@ -108,6 +108,16 @@
                            o_xyz="0 0 0" o_rpy="0 0 0" />
     </link>
 
+    <link name="cleaning_head_water_link">
+         <visual>
+            <geometry>
+                <cylinder radius="${cleaning_head_yaw_height/6.0}" length="${5}"/>
+            </geometry>
+            <material name="water" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
+        </visual>
+    </link>
+
     <link name="camera_link">
         <visual>
             <geometry>
@@ -200,6 +210,13 @@
         <origin xyz="0 -${cleaning_head_yaw_height - 0.01} 0" rpy="${pi/2.0} 0 0" />
     </joint>
 
+
+    <joint name="cleaning_head_water_joint" type="fixed">
+        <parent link="cleaning_head_nozzle_link" />
+        <child link="cleaning_head_water_link" />
+        <origin xyz="0 0 2.5" rpy="0 0 0" />
+    </joint>
+    
     <joint name="camera_joint" type="fixed">
         <parent link="al_profile2_link" />
         <child link="camera_link" />

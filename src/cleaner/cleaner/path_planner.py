@@ -15,7 +15,6 @@ class LawnmowerPlanner(Node):
         super().__init__('path_planner')
 
         self.declare_parameter('step_size_px', 20) 
-        self.declare_parameter('resolution_m_per_px', 0.01) 
         self.declare_parameter('inflation_radius_px', 10) 
 
         self.br = CvBridge()
@@ -97,8 +96,7 @@ class LawnmowerPlanner(Node):
                 'header': self.latest_mask_msg.header
             }
 
-            resolution = self.get_parameter('resolution_m_per_px').value
-            self.publish_centroids(ordered_centroids, resolution, self.latest_mask_msg.header)
+            self.publish_centroids(ordered_centroids, self.latest_mask_msg.header)
             
             response.success = True
             response.message = f"Extracted and ordered {len(ordered_labels)} filth areas."
@@ -122,7 +120,6 @@ class LawnmowerPlanner(Node):
 
         try:
             step_size = self.get_parameter('step_size_px').value
-            resolution = self.get_parameter('resolution_m_per_px').value
             waypoints = []
 
             labels = self.island_data['labels']
@@ -159,7 +156,7 @@ class LawnmowerPlanner(Node):
 
                     going_right = not going_right
 
-            path_msg = self.create_path_msg(waypoints, resolution, self.island_data['header'])
+            path_msg = self.create_path_msg(waypoints, self.island_data['header'])
             self.path_pub.publish(path_msg)
             
             response.success = True
@@ -173,15 +170,15 @@ class LawnmowerPlanner(Node):
 
         return response
 
-    def publish_centroids(self, centroids_px, resolution, header):
+    def publish_centroids(self, centroids_px, header):
         pose_array = PoseArray()
         pose_array.header.frame_id = 'base_link' 
         pose_array.header.stamp = header.stamp
         
         for (x, y) in centroids_px:
             pose = Pose()
-            pose.position.x = float(x * resolution)
-            pose.position.y = float(y * resolution)
+            pose.position.x = float(x)
+            pose.position.y = float(y)
             pose.position.z = 0.0
             
             pose.orientation.w = 1.0
@@ -189,7 +186,7 @@ class LawnmowerPlanner(Node):
             
         self.centroids_pub.publish(pose_array)
 
-    def create_path_msg(self, waypoints, resolution, header):
+    def create_path_msg(self, waypoints, header):
         path = Path()
         path.header.frame_id = 'base_link' 
         path.header.stamp = header.stamp
@@ -198,8 +195,8 @@ class LawnmowerPlanner(Node):
             pose = PoseStamped()
             pose.header = path.header
             
-            pose.pose.position.x = float(x * resolution)
-            pose.pose.position.y = float(y * resolution)
+            pose.pose.position.x = float(x)
+            pose.pose.position.y = float(y)
             pose.pose.position.z = 0.0
             
             pose.pose.orientation.w = 1.0
