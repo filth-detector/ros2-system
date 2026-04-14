@@ -15,7 +15,6 @@ from launch.substitutions import LaunchConfiguration, PythonExpression
 from launch_ros.actions import Node
 from launch_ros.actions import PushROSNamespace
 from launch_ros.descriptions import ParameterFile
-from nav2_common.launch import ReplaceString, RewrittenYaml
 
 
 def generate_launch_description():

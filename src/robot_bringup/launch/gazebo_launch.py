@@ -19,8 +19,6 @@ from launch_ros.substitutions import FindPackageShare
 
 
 def generate_launch_description():
-    """Build the Gazebo simulation launch with Nav2 and SLAM."""
-
     # ── Package paths ───────────────────────────────────────────────
     desc_share = get_package_share_directory('robot_description')
     bringup_share = get_package_share_directory('robot_bringup')
@@ -113,17 +111,6 @@ def generate_launch_description():
         output='screen',
     )
 
-    # ── RViz ────────────────────────────────────────────────────────
-    rviz_config = os.path.join(bringup_share, 'config', 'rviz_config.rviz')
-
-    rviz = Node(
-        package='rviz2',
-        executable='rviz2',
-        arguments=['-d', rviz_config],
-        parameters=[{'use_sim_time': True}],
-        output='screen',
-    )
-
     gz_camera_frame_fix = Node(
         package='tf2_ros',
         executable='static_transform_publisher',
@@ -147,5 +134,4 @@ def generate_launch_description():
         spawn_robot,
         gz_bridge,
         gz_camera_frame_fix,
-        rviz,
     ])
