@@ -29,7 +29,8 @@ class RobotState(Enum):
     IDLE = 0
     PLANNING = 1
     CLEANING = 2
-    HOLDING = 3 
+    HOLDING = 3
+    MOVING = 4
 
 class VideoLabel(QLabel):
     def __init__(self, parent=None):
@@ -38,12 +39,10 @@ class VideoLabel(QLabel):
 
     def mousePressEvent(self, event):
         if self.gui and getattr(self.gui, 'aim_mode_active', False):
-            # Right click cancels the aim mode completely
             if event.button() == Qt.RightButton:
                 self.gui.cancel_aim_mode()
                 return
 
-            # Left click proceeds with targeting
             if event.button() == Qt.LeftButton:
                 if self.pixmap() is None:
                     return
@@ -71,7 +70,7 @@ class VideoLabel(QLabel):
 
 
 class VideoProcessorThread(QThread):
-    change_pixmap_signal = pyqtSignal(QImage, int) 
+    change_pixmap_signal = pyqtSignal(QImage) 
 
     def __init__(self, ros_node, gui):
         super().__init__()
@@ -79,34 +78,60 @@ class VideoProcessorThread(QThread):
         self.gui = gui
         self.running = True
         self.last_processed_frame = -1
+        
+        self.cached_mask_msg = None
+        self.cached_m_idx = None
+        self.cached_inf_mask_msg = None
+        self.cached_inf_idx = None
+        self.cached_path_msg = None
+        self.cached_path_pts = None
+        self.cached_centroids_msg = None
+        self.cached_centroids_list = None
 
     def run(self):
         while self.running:
-            if self.ros_node.latest_image and self.ros_node.frame_counter != self.last_processed_frame:
+            if self.ros_node.new_frame_event.wait(timeout=0.1):
+                self.ros_node.new_frame_event.clear()
+                
+                if not self.ros_node.latest_image or self.ros_node.frame_counter == self.last_processed_frame:
+                    continue
+                    
                 self.last_processed_frame = self.ros_node.frame_counter
                 
                 try:
                     display_img = self.ros_node.br.imgmsg_to_cv2(self.ros_node.latest_image, desired_encoding='bgr8')
 
                     if self.ros_node.latest_mask is not None:
-                        mask = self.ros_node.br.imgmsg_to_cv2(self.ros_node.latest_mask, desired_encoding='mono8')
-                        m_idx = mask > 0
-                        display_img[m_idx] = display_img[m_idx] * 0.6 + np.array([0, 0, 255]) * 0.4 
+                        if self.ros_node.latest_mask != self.cached_mask_msg:
+                            mask_cv = self.ros_node.br.imgmsg_to_cv2(self.ros_node.latest_mask, desired_encoding='mono8')
+                            self.cached_m_idx = mask_cv > 0
+                            self.cached_mask_msg = self.ros_node.latest_mask
+                            self.cached_inf_mask_msg = None
+                        display_img[self.cached_m_idx] = (display_img[self.cached_m_idx] >> 1) + np.array([0, 0, 127], dtype=np.uint8)
 
                     if self.ros_node.latest_inflated_mask is not None:
-                        inf_mask = self.ros_node.br.imgmsg_to_cv2(self.ros_node.latest_inflated_mask, desired_encoding='mono8')
-                        inf_idx = (inf_mask > 0) & (mask == 0) if self.ros_node.latest_mask is not None else (inf_mask > 0)
-                        display_img[inf_idx] = display_img[inf_idx] * 0.7 + np.array([0, 165, 255]) * 0.3 
+                        if self.ros_node.latest_inflated_mask != self.cached_inf_mask_msg:
+                            inf_mask_cv = self.ros_node.br.imgmsg_to_cv2(self.ros_node.latest_inflated_mask, desired_encoding='mono8')
+                            if self.ros_node.latest_mask is not None and self.cached_m_idx is not None:
+                                self.cached_inf_idx = (inf_mask_cv > 0) & (~self.cached_m_idx)
+                            else:
+                                self.cached_inf_idx = inf_mask_cv > 0
+                            self.cached_inf_mask_msg = self.ros_node.latest_inflated_mask
+                        display_img[self.cached_inf_idx] = (display_img[self.cached_inf_idx] >> 1) + np.array([0, 82, 127], dtype=np.uint8)
 
                     if self.ros_node.latest_path is not None:
-                        waypoints = [[int(p.pose.position.x), int(p.pose.position.y)] for p in self.ros_node.latest_path.poses]
-                        if len(waypoints) > 1:
-                            pts = np.array(waypoints, np.int32).reshape((-1, 1, 2))
-                            cv2.polylines(display_img, [pts], isClosed=False, color=(0, 255, 0), thickness=2)
+                        if self.ros_node.latest_path != self.cached_path_msg:
+                            waypoints = [[int(p.pose.position.x), int(p.pose.position.y)] for p in self.ros_node.latest_path.poses]
+                            self.cached_path_pts = np.array(waypoints, np.int32).reshape((-1, 1, 2)) if len(waypoints) > 1 else None
+                            self.cached_path_msg = self.ros_node.latest_path
+                        if self.cached_path_pts is not None:
+                            cv2.polylines(display_img, [self.cached_path_pts], isClosed=False, color=(0, 255, 0), thickness=2)
 
                     if self.ros_node.latest_centroids is not None:
-                        for i, pose in enumerate(self.ros_node.latest_centroids.poses):
-                            px, py = int(pose.position.x), int(pose.position.y)
+                        if self.ros_node.latest_centroids != self.cached_centroids_msg:
+                            self.cached_centroids_list = [(int(p.position.x), int(p.position.y)) for p in self.ros_node.latest_centroids.poses]
+                            self.cached_centroids_msg = self.ros_node.latest_centroids
+                        for i, (px, py) in enumerate(self.cached_centroids_list):
                             cv2.circle(display_img, (px, py), 6, (255, 0, 0), -1)
                             cv2.putText(display_img, str(i + 1), (px + 8, py - 8), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (255, 255, 0), 2)
 
@@ -127,21 +152,15 @@ class VideoProcessorThread(QThread):
                         cv2.line(display_img, (center_x, center_y - 10), (center_x, center_y + 10), (0, 255, 0), 1)
                         cv2.circle(display_img, (center_x, center_y), 2, (0, 255, 0), -1)
 
-                    h, w = display_img.shape[:2]
-                    fps_val = int(self.ros_node.camera_fps)
-                    cv2.putText(display_img, f"FPS: {fps_val}", (10, h - 20), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0, 255, 0), 2)
-
                     rgb_image = cv2.cvtColor(display_img, cv2.COLOR_BGR2RGB)
                     h, w, ch = rgb_image.shape
                     bytes_per_line = ch * w
                     
                     qt_image = QImage(rgb_image.data, w, h, bytes_per_line, QImage.Format_RGB888).copy()
-                    self.change_pixmap_signal.emit(qt_image, fps_val)
+                    self.change_pixmap_signal.emit(qt_image)
 
                 except Exception as e:
                     self.ros_node.get_logger().error(f"Video thread error: {e}")
-                    
-            time.sleep(0.005) 
 
     def stop(self):
         self.running = False
@@ -172,11 +191,10 @@ class ControlCenterNode(Node):
         self.current_aim_px = None  
         self.previous_aim_px = (320, 240) 
         
-        self.camera_fps = 0.0
-        self.prev_frame_time = time.time()
         self.cleaning_finished_flag = False
         
-        # Keep track of robot movement for enabling/disabling UI buttons
+        self.new_frame_event = threading.Event()
+        
         self.last_vel_time = 0.0
         
         self.cmd_pub = self.create_publisher(Twist, '/cmd_vel', 10)
@@ -207,19 +225,13 @@ class ControlCenterNode(Node):
         self.planner_param_client = self.create_client(SetParameters, '/path_planner/set_parameters')
 
     def vel_cb(self, msg):
-        # Register any commanded velocity coming from inside or outside this node
         if abs(msg.linear.x) > 0.001 or abs(msg.angular.z) > 0.001:
             self.last_vel_time = time.time()
 
     def image_cb(self, msg): 
         self.latest_image = msg
         self.frame_counter += 1
-        current_time = time.time()
-        time_diff = current_time - self.prev_frame_time
-        if time_diff > 0:
-            current_fps = 1.0 / time_diff
-            self.camera_fps = 0.9 * self.camera_fps + 0.1 * current_fps
-        self.prev_frame_time = current_time
+        self.new_frame_event.set()
 
     def mask_cb(self, msg): self.latest_mask = msg
     def inflated_cb(self, msg): self.latest_inflated_mask = msg
@@ -294,6 +306,11 @@ class ControlCenterGUI(QMainWindow):
         
         self.mask_poll_timer = QTimer()
         self.mask_poll_timer.timeout.connect(self.verify_segmentation_result)
+        
+        self.move_stop_timer = QTimer()
+        self.move_stop_timer.setSingleShot(True)
+        self.move_stop_timer.timeout.connect(self._return_to_idle_after_move)
+
 
     def init_ui(self):
         self.setWindowTitle('Cleaning Robot Control Center')
@@ -301,7 +318,6 @@ class ControlCenterGUI(QMainWindow):
         main_widget = QWidget(); self.setCentralWidget(main_widget)
         main_layout = QHBoxLayout(main_widget)
         
-        # --- VIDEO SECTION ---
         video_layout = QVBoxLayout()
         self.video_label = VideoLabel()
         self.video_label.gui = self
@@ -312,14 +328,12 @@ class ControlCenterGUI(QMainWindow):
         video_layout.addWidget(self.video_label)
         main_layout.addLayout(video_layout, stretch=2)
 
-        # --- CONTROL SECTION ---
         control_layout = QVBoxLayout()
         
         self.status_label = QLabel("State: IDLE")
         self.status_label.setStyleSheet("font-weight: bold; font-size: 16px; padding: 8px; border-radius: 6px; border: 1px solid #555; color: #2e7d32; background-color: #c8e6c9;")
         control_layout.addWidget(self.status_label)
         
-        # --- PIPELINE HEADER ---
         lbl_pipeline = QLabel("Cleaning Sequence Pipeline")
         lbl_pipeline.setStyleSheet("font-weight: bold; font-size: 15px; margin-top: 10px; color: white;")
         control_layout.addWidget(lbl_pipeline)
@@ -349,7 +363,6 @@ class ControlCenterGUI(QMainWindow):
         
         control_layout.addWidget(QFrame(frameShape=QFrame.HLine))
 
-        # --- CONFIGURATION HEADER ---
         lbl_config = QLabel("Configuration")
         lbl_config.setStyleSheet("font-weight: bold; font-size: 15px; margin-top: 5px; color: white;")
         control_layout.addWidget(lbl_config)
@@ -374,7 +387,6 @@ class ControlCenterGUI(QMainWindow):
         
         control_layout.addWidget(QFrame(frameShape=QFrame.HLine))
 
-        # --- MANUAL CONTROL HEADER ---
         lbl_manual = QLabel("Manual Control")
         lbl_manual.setStyleSheet("font-weight: bold; font-size: 15px; margin-top: 5px; color: white;")
         control_layout.addWidget(lbl_manual)
@@ -423,14 +435,15 @@ class ControlCenterGUI(QMainWindow):
 
         self.btn_up.pressed.connect(lambda: self.attempt_move(0.2, 0.0, "KEY_W"))
         self.btn_down.pressed.connect(lambda: self.attempt_move(-0.2, 0.0, "KEY_S"))
+        self.btn_up.pressed.connect(lambda: self.attempt_move(0.3, 0.0, "KEY_W"))
+        self.btn_down.pressed.connect(lambda: self.attempt_move(-0.3, 0.0, "KEY_S"))
         self.btn_left.pressed.connect(lambda: self.attempt_move(0.0, 0.5, "KEY_A"))
         self.btn_right.pressed.connect(lambda: self.attempt_move(0.0, -0.5, "KEY_D"))
-        for btn in [self.btn_up, self.btn_down, self.btn_left, self.btn_right]: 
-            btn.released.connect(lambda: self.ros_node.publish_twist(0.0, 0.0))
+        for btn in [self.btn_up, self.btn_down, self.btn_left, self.btn_right]:
+            btn.released.connect(self.stop_moving)
 
         control_layout.addStretch(1)
 
-        # --- TELEMETRY DASHBOARD ---
         lbl_telem = QLabel("Cleaning head coordinates")
         lbl_telem.setStyleSheet("font-weight: bold; font-size: 15px; color: white;")
         control_layout.addWidget(lbl_telem)
@@ -474,7 +487,7 @@ class ControlCenterGUI(QMainWindow):
         self.setFocusPolicy(Qt.StrongFocus)
         self.update_button_states()
 
-    def update_video_feed(self, qt_image, fps):
+    def update_video_feed(self, qt_image):
         pixmap = QPixmap.fromImage(qt_image)
         self.video_label.setPixmap(pixmap.scaled(self.video_label.size(), Qt.KeepAspectRatio, Qt.FastTransformation))
 
@@ -520,83 +533,90 @@ class ControlCenterGUI(QMainWindow):
         elif self.state == RobotState.HOLDING:
             self.status_label.setText("State: AIMED (Hold)")
             self.status_label.setStyleSheet(base_style + "color: #6a1b9a; background-color: #e1bee7;")
+        elif self.state == RobotState.MOVING:
+            self.status_label.setText("State: MOVING")
+            self.status_label.setStyleSheet(base_style + "color: #ef6c00; background-color: #ffe0b2;")
             
         self.update_button_states()
 
     def update_button_states(self):
-        # 1-second delay block after receiving a vel command so the robot can safely stop
-        robot_is_still = (time.time() - self.ros_node.last_vel_time) >= 1.0
 
-        params_enabled = (self.state != RobotState.CLEANING and not self.aim_mode_active)
-        self.slider_step.setEnabled(params_enabled and robot_is_still)
-        self.slider_inflation.setEnabled(params_enabled and robot_is_still)
-
-        # Homing the head relies heavily on it being manipulated previously
-        needs_homing = self.holding_aim or abs(self.ros_node.target_yaw) > 0.01 or abs(self.ros_node.target_pitch) > 0.01
-
-        # 1. Total UI Lockdown if Aim Mode is Active
         if self.aim_mode_active:
-            self.btn_segment.setEnabled(False)
-            self.btn_blobs.setEnabled(False)
-            self.btn_path.setEnabled(False)
-            self.btn_clean.setEnabled(False)
-            self.btn_cancel.setEnabled(False)
-            self.btn_auto.setEnabled(False)
-            self.btn_reset_origin.setEnabled(False)
-            self.btn_up.setEnabled(False)
-            self.btn_down.setEnabled(False)
-            self.btn_left.setEnabled(False)
-            self.btn_right.setEnabled(False)
-            self.btn_aim.setEnabled(True) # Allowed so they can untoggle
+            self.btn_segment.setEnabled(False); self.btn_blobs.setEnabled(False)
+            self.btn_path.setEnabled(False); self.btn_clean.setEnabled(False)
+            self.btn_auto.setEnabled(False); self.btn_cancel.setEnabled(False)
+            self.btn_reset_origin.setEnabled(False); self.btn_up.setEnabled(False)
+            self.btn_down.setEnabled(False); self.btn_left.setEnabled(False)
+            self.btn_right.setEnabled(False); self.slider_step.setEnabled(False)
+            self.slider_inflation.setEnabled(False)
+            self.btn_aim.setEnabled(True)
             return
 
-        # Restore manual buttons if not aiming
-        self.btn_up.setEnabled(True)
-        self.btn_down.setEnabled(True)
-        self.btn_left.setEnabled(True)
-        self.btn_right.setEnabled(True)
-
-        self.btn_reset_origin.setEnabled(needs_homing and robot_is_still)
-
         if self.auto_sequence_active:
-            self.btn_segment.setEnabled(False)
-            self.btn_blobs.setEnabled(False)
-            self.btn_path.setEnabled(False)
-            self.btn_clean.setEnabled(False)
-            self.btn_auto.setEnabled(False)
-            self.btn_aim.setEnabled(False)
+            self.btn_segment.setEnabled(False); self.btn_blobs.setEnabled(False)
+            self.btn_path.setEnabled(False); self.btn_clean.setEnabled(False)
+            self.btn_auto.setEnabled(False); self.btn_aim.setEnabled(False)
+            self.btn_reset_origin.setEnabled(False); self.btn_up.setEnabled(False)
+            self.btn_down.setEnabled(False); self.btn_left.setEnabled(False)
+            self.btn_right.setEnabled(False); self.slider_step.setEnabled(False)
+            self.slider_inflation.setEnabled(False)
             self.btn_cancel.setEnabled(True)
             return
 
         has_mask = self.ros_node.latest_mask is not None
         has_blobs = self.ros_node.latest_centroids is not None
         has_path = self.ros_node.latest_path is not None
+        needs_homing = self.holding_aim or abs(self.ros_node.target_yaw) > 0.01 or abs(self.ros_node.target_pitch) > 0.01
 
-        if self.state in [RobotState.IDLE, RobotState.HOLDING]:
-            self.btn_segment.setEnabled(True and robot_is_still)
-            self.btn_blobs.setEnabled(has_mask and robot_is_still)
-            self.btn_path.setEnabled(has_blobs and robot_is_still)
-            self.btn_clean.setEnabled(has_path and robot_is_still)
-            self.btn_auto.setEnabled(True and robot_is_still)
-            self.btn_aim.setEnabled(True and robot_is_still)
-            self.btn_cancel.setEnabled(self.state == RobotState.HOLDING)
+        if self.state == RobotState.IDLE or self.state == RobotState.HOLDING:
+            self.btn_up.setEnabled(True); self.btn_down.setEnabled(True)
+            self.btn_left.setEnabled(True); self.btn_right.setEnabled(True)
+            self.slider_step.setEnabled(True); self.slider_inflation.setEnabled(True)
             
-        elif self.state == RobotState.PLANNING:
-            self.btn_segment.setEnabled(True and robot_is_still)
-            self.btn_blobs.setEnabled(has_mask and robot_is_still)
-            self.btn_path.setEnabled(has_blobs and robot_is_still)
-            self.btn_clean.setEnabled(has_path and robot_is_still)
-            self.btn_auto.setEnabled(True and robot_is_still) 
-            self.btn_aim.setEnabled(False)
+            self.btn_segment.setEnabled(True)
+            self.btn_blobs.setEnabled(has_mask)
+            self.btn_path.setEnabled(has_blobs)
+            self.btn_clean.setEnabled(has_path)
+            self.btn_auto.setEnabled(True)
+            self.btn_aim.setEnabled(True)
+            
+            self.btn_cancel.setEnabled(self.state == RobotState.HOLDING)
+            self.btn_reset_origin.setEnabled(needs_homing)
+
+        elif self.state == RobotState.MOVING:
+            self.btn_up.setEnabled(True); self.btn_down.setEnabled(True)
+            self.btn_left.setEnabled(True); self.btn_right.setEnabled(True)
             self.btn_cancel.setEnabled(True)
+
+            self.slider_step.setEnabled(False); self.slider_inflation.setEnabled(False)
+            self.btn_segment.setEnabled(False); self.btn_blobs.setEnabled(False)
+            self.btn_path.setEnabled(False); self.btn_clean.setEnabled(False)
+            self.btn_auto.setEnabled(False); self.btn_aim.setEnabled(False)
+            self.btn_reset_origin.setEnabled(False)
+
+        elif self.state == RobotState.PLANNING:
+            self.btn_up.setEnabled(False); self.btn_down.setEnabled(False)
+            self.btn_left.setEnabled(False); self.btn_right.setEnabled(False)
+            self.slider_step.setEnabled(True); self.slider_inflation.setEnabled(True)
+
+            self.btn_segment.setEnabled(True)
+            self.btn_blobs.setEnabled(has_mask)
+            self.btn_path.setEnabled(has_blobs)
+            self.btn_clean.setEnabled(has_path)
+            self.btn_auto.setEnabled(True)
+            self.btn_aim.setEnabled(False)
+
+            self.btn_cancel.setEnabled(True)
+            self.btn_reset_origin.setEnabled(needs_homing)
             
         elif self.state == RobotState.CLEANING:
-            self.btn_segment.setEnabled(False)
-            self.btn_blobs.setEnabled(False)
-            self.btn_path.setEnabled(False)
-            self.btn_clean.setEnabled(False)
-            self.btn_auto.setEnabled(False)
-            self.btn_aim.setEnabled(False)
+            self.btn_up.setEnabled(False); self.btn_down.setEnabled(False)
+            self.btn_left.setEnabled(False); self.btn_right.setEnabled(False)
+            self.slider_step.setEnabled(False); self.slider_inflation.setEnabled(False)
+            self.btn_segment.setEnabled(False); self.btn_blobs.setEnabled(False)
+            self.btn_path.setEnabled(False); self.btn_clean.setEnabled(False)
+            self.btn_auto.setEnabled(False); self.btn_aim.setEnabled(False)
+            self.btn_reset_origin.setEnabled(False)
             self.btn_cancel.setEnabled(True)
 
     def check_and_clear_hold(self, override_reason):
@@ -640,9 +660,19 @@ class ControlCenterGUI(QMainWindow):
         self.ros_node.get_logger().info("Cleaning head origin reset to 0.0")
 
     def attempt_move(self, linear, angular, key_name="UNKNOWN_KEY"):
-        if self.state != RobotState.IDLE: 
+        self.move_stop_timer.stop()
+        if self.state not in [RobotState.IDLE, RobotState.MOVING]:
             self.cancel_operations(f"MANUAL_OVERRIDE_{key_name}")
+        self.set_state(RobotState.MOVING)
         self.ros_node.publish_twist(linear, angular)
+
+    def stop_moving(self):
+        self.ros_node.publish_twist(0.0, 0.0)
+        self.move_stop_timer.start(500)
+
+    def _return_to_idle_after_move(self):
+        if self.state == RobotState.MOVING:
+            self.set_state(RobotState.IDLE)
 
     def cancel_operations(self, reason="UNKNOWN"):
         self.holding_aim = False
@@ -656,6 +686,7 @@ class ControlCenterGUI(QMainWindow):
         
         if self.ros_node.cancel_client.wait_for_service(timeout_sec=0.2):
             self.ros_node.cancel_client.call_async(Trigger.Request())
+        self.ros_node.publish_twist(0.0, 0.0)
         self.reset_origin()
         self.set_state(RobotState.IDLE)
         
@@ -680,15 +711,16 @@ class ControlCenterGUI(QMainWindow):
         key = event.key()
         if key == Qt.Key_W: self.attempt_move(0.2, 0.0, "KEY_W")
         elif key == Qt.Key_S: self.attempt_move(-0.2, 0.0, "KEY_S")
+        if key == Qt.Key_W: self.attempt_move(0.3, 0.0, "KEY_W")
+        elif key == Qt.Key_S: self.attempt_move(-0.3, 0.0, "KEY_S")
         elif key == Qt.Key_A: self.attempt_move(0.0, 0.5, "KEY_A")
         elif key == Qt.Key_D: self.attempt_move(0.0, -0.5, "KEY_D")
             
     def keyReleaseEvent(self, event):
         if event.isAutoRepeat() or self.aim_mode_active: return
-        if event.key() in [Qt.Key_W, Qt.Key_S, Qt.Key_A, Qt.Key_D]: 
-            self.ros_node.publish_twist(0.0, 0.0)
+        if event.key() in [Qt.Key_W, Qt.Key_S, Qt.Key_A, Qt.Key_D]:
+            self.stop_moving()
 
-    # ---- ROS CALLBACKS (Background Thread) ----
     def _cb_segment_done(self, future):
         self.sig_segment_done.emit(future)
 
@@ -701,7 +733,6 @@ class ControlCenterGUI(QMainWindow):
     def _cb_clean_done(self, future):
         self.sig_clean_done.emit(future)
 
-    # ---- UI HANDLERS (Main UI Thread) ----
     def cmd_segment(self):
         self.check_and_clear_hold("CMD_SEGMENT")
         self.set_state(RobotState.PLANNING)
@@ -798,7 +829,6 @@ class ControlCenterGUI(QMainWindow):
         self.check_and_clear_hold("CMD_AUTO_CLEAN")
         self.auto_sequence_active = True
         
-        # Resume pipeline dynamically
         if self.ros_node.latest_path is not None:
             self.cmd_clean()
         elif self.ros_node.latest_centroids is not None:
