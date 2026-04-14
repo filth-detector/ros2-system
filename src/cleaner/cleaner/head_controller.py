@@ -8,25 +8,39 @@ from std_msgs.msg import Float64, Empty
 from std_srvs.srv import Trigger
 from sensor_msgs.msg import JointState
 from geometry_msgs.msg import Point
+from rcl_interfaces.msg import SetParametersResult
 
 class PanTiltController(Node):
     def __init__(self):
         super().__init__('head_controller')
         
+        # Declare Parameters
         self.declare_parameter('image_width', 640)
         self.declare_parameter('image_height', 480)
         self.declare_parameter('camera_fov_rad', math.pi / 2.0) 
-
         self.declare_parameter('cam_offset_y', 0.0) 
         self.declare_parameter('cam_offset_z', 1.1)
-
         self.declare_parameter('target_distance_m', -1.0) 
-
         self.declare_parameter('angle_tolerance_rad', 0.02) 
         self.declare_parameter('waypoint_timeout_sec', 2.0) 
-        
         self.declare_parameter('yaw_joint_name', 'cleaning_head_yaw_joint')
         self.declare_parameter('pitch_joint_name', 'cleaning_head_pitch_joint')
+
+        # Cache parameters locally to prevent massive CPU overhead during callbacks
+        self._cam_offset_y = self.get_parameter('cam_offset_y').value
+        self._cam_offset_z = self.get_parameter('cam_offset_z').value
+        self._target_dist = self.get_parameter('target_distance_m').value
+        self._tolerance = self.get_parameter('angle_tolerance_rad').value
+        self._timeout = self.get_parameter('waypoint_timeout_sec').value
+        self._yaw_name = self.get_parameter('yaw_joint_name').value
+        self._pitch_name = self.get_parameter('pitch_joint_name').value
+
+        self._image_w = self.get_parameter('image_width').value
+        self._image_h = self.get_parameter('image_height').value
+        self.focal_length = self._image_w / (2.0 * math.tan(self.get_parameter('camera_fov_rad').value / 2.0))
+
+        # Dynamic parameter update callback (so the UI can still change values)
+        self.add_on_set_parameters_callback(self.parameter_callback)
 
         self.is_cleaning = False
         self.waypoints_angles = [] 
@@ -36,13 +50,13 @@ class PanTiltController(Node):
         self.current_yaw = 0.0
         self.current_pitch = 0.0
         
-        self.time_seeking_waypoint = 0.0
+        # Cache the joint list indices to avoid O(N) string searches hundreds of times a second
+        self._yaw_idx = None
+        self._pitch_idx = None
         
+        self.time_seeking_waypoint = 0.0
         self.hold_position = False
-
-        w = self.get_parameter('image_width').value
-        fov = self.get_parameter('camera_fov_rad').value
-        self.focal_length = w / (2.0 * math.tan(fov / 2.0))
+        self.log_throttle_counter = 0
 
         self.path_sub = self.create_subscription(Path, '/cleaning_path', self.path_callback, 10)
         self.joint_sub = self.create_subscription(JointState, '/joint_states', self.joint_state_callback, 10)
@@ -59,32 +73,38 @@ class PanTiltController(Node):
         self.dt = 0.02 # 50 Hz
         self.control_timer = self.create_timer(self.dt, self.control_loop)
         
-        self.get_logger().info("Manual-Depth Pan-Tilt Controller initialized (Direct Pixel Mode).")
+        self.get_logger().info("Optimized Manual-Depth Pan-Tilt Controller initialized.")
+
+    def parameter_callback(self, params):
+        for param in params:
+            if param.name == 'cam_offset_y': self._cam_offset_y = param.value
+            elif param.name == 'cam_offset_z': self._cam_offset_z = param.value
+            elif param.name == 'target_distance_m': self._target_dist = param.value
+            elif param.name == 'angle_tolerance_rad': self._tolerance = param.value
+            elif param.name == 'waypoint_timeout_sec': self._timeout = param.value
+        return SetParametersResult(successful=True)
 
     def joint_state_callback(self, msg):
-        yaw_name = self.get_parameter('yaw_joint_name').value
-        pitch_name = self.get_parameter('pitch_joint_name').value
-        
-        try:
-            if yaw_name in msg.name:
-                idx = msg.name.index(yaw_name)
-                self.current_yaw = msg.position[idx]
-                
-            if pitch_name in msg.name:
-                idx = msg.name.index(pitch_name)
-                self.current_pitch = msg.position[idx]
-        except ValueError:
-            pass 
+        # Extremely fast cached index lookup (Uses ~0% CPU compared to list.index())
+        if self._yaw_idx is not None and self._yaw_idx < len(msg.name) and msg.name[self._yaw_idx] == self._yaw_name:
+            self.current_yaw = msg.position[self._yaw_idx]
+        else:
+            try:
+                self._yaw_idx = msg.name.index(self._yaw_name)
+                self.current_yaw = msg.position[self._yaw_idx]
+            except ValueError: pass
+
+        if self._pitch_idx is not None and self._pitch_idx < len(msg.name) and msg.name[self._pitch_idx] == self._pitch_name:
+            self.current_pitch = msg.position[self._pitch_idx]
+        else:
+            try:
+                self._pitch_idx = msg.name.index(self._pitch_name)
+                self.current_pitch = msg.position[self._pitch_idx]
+            except ValueError: pass 
 
     def path_callback(self, msg):
-        offset_y = self.get_parameter('cam_offset_y').value
-        offset_z = self.get_parameter('cam_offset_z').value
-        
-        D = self.get_parameter('target_distance_m').value
-        
-        c_x = self.get_parameter('image_width').value / 2.0
-        c_y = self.get_parameter('image_height').value / 2.0
-        f = self.focal_length
+        c_x = self._image_w / 2.0
+        c_y = self._image_h / 2.0
 
         self.waypoints_angles = []
         self.raw_pixel_waypoints = [] 
@@ -95,8 +115,8 @@ class PanTiltController(Node):
             
             self.raw_pixel_waypoints.append((u_px, v_px))
             
-            ray_y = (c_x - u_px) / f
-            ray_z = (c_y - v_px) / f
+            ray_y = (c_x - u_px) / self.focal_length
+            ray_z = (c_y - v_px) / self.focal_length
             
             target_yaw = math.atan(ray_y)
             target_pitch = -math.atan(ray_z)
@@ -184,19 +204,19 @@ class PanTiltController(Node):
         yaw_error = abs(target_yaw - self.current_yaw)
         pitch_error = abs(target_pitch - self.current_pitch)
 
-        self.get_logger().info(
-            f"Idx: {self.current_target_idx:03d} | "
-            f"YAW [Tgt: {target_yaw:+.3f}, Cur: {self.current_yaw:+.3f}, Err: {yaw_error:.3f}] | "
-            f"PITCH [Tgt: {target_pitch:+.3f}, Cur: {self.current_pitch:+.3f}, Err: {pitch_error:.3f}]"
-        )
+        # Throttled console output (~2Hz) to prevent terminal I/O from spiking the CPU
+        self.log_throttle_counter += 1
+        if self.log_throttle_counter % 25 == 0:
+            self.get_logger().info(
+                f"Idx: {self.current_target_idx:03d} | "
+                f"YAW [Tgt: {target_yaw:+.3f}, Cur: {self.current_yaw:+.3f}, Err: {yaw_error:.3f}] | "
+                f"PITCH [Tgt: {target_pitch:+.3f}, Cur: {self.current_pitch:+.3f}, Err: {pitch_error:.3f}]"
+            )
 
-        tolerance = self.get_parameter('angle_tolerance_rad').value
-        timeout = self.get_parameter('waypoint_timeout_sec').value
-        
         self.time_seeking_waypoint += self.dt
 
-        if (yaw_error <= tolerance and pitch_error <= tolerance) or (self.time_seeking_waypoint >= timeout):
-            if self.time_seeking_waypoint >= timeout:
+        if (yaw_error <= self._tolerance and pitch_error <= self._tolerance) or (self.time_seeking_waypoint >= self._timeout):
+            if self.time_seeking_waypoint >= self._timeout:
                 self.get_logger().warn(f"Waypoint {self.current_target_idx} timed out! Forcing next.")
                 
             self.current_target_idx += 1
